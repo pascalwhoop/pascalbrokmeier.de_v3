@@ -1,0 +1,13 @@
+@media print{
+    //hiding everything we don't need
+    .post-banner, .back-to-top{
+        display: none;
+    }
+    body{
+        background: white;
+    }
+
+    .important-math-wrapper{
+        page-break-inside: avoid;
+    }
+}

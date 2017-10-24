@@ -1,0 +1,41 @@
+///
+/// Forty by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Contact */
+
+#contact {
+  //border-bottom: solid 1px _palette(border);
+  //overflow-x: hidden;
+
+  @include breakpoint(medium) {
+    display: block;
+  }
+
+  ul.actions li {
+    padding: 0 1em 1em 0;
+  }
+
+  ul.flex-btns{
+    display: flex;
+    flex-flow: row wrap;
+    > li{
+      flex: 1 auto;
+      > a{
+        width: 100%;
+      }
+    }
+  }
+
+  @include breakpoint(xsmall) {
+    ul.actions li {
+      width: 100%;
+      a {
+        display: block;
+      }
+    }
+  }
+
+}

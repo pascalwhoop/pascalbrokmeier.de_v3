@@ -1,0 +1,24 @@
+{
+  "name": "Rivi-Website",
+  "version": "1.0.0",
+  "description": "",
+  "screenshots": "node copyScreenshots.js",
+  "dependencies": {
+    "watch": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.9",
+    "@types/watch": "^1.0.0",
+    "browser-sync": "^2.18.12",
+    "concurrently": "^3.5.0"
+  },
+  "scripts": {
+    "start": "node node_modules/concurrently/src/main.js -k -p \"[{name}]\" -n \"Jekyll,Serve,TypeScript\" -c \"yellow.bold,cyan.bold,green.bold\" \"jekyll serve\" \"node node_modules/browser-sync/bin/browser-sync.js start --server '_site' --files './_site'\"",
+    "watch": "jekyll serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-imgs": "tsc dev-scripts/*.ts && node dev-scripts/copyDesktopImages.js",
+    "build": "pandoc scm_summary.md -H header.html --mathjax -o scm_summary.html"
+  },
+  "author": "",
+  "license": "ISC"
+}

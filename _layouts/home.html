@@ -1,0 +1,134 @@
+---
+layout: default
+---
+<!-- Banner -->
+<!-- Note: The "styleN" class below should match that of the header element. -->
+<section id="banner" class="major">
+    <div class="inner">
+        <span class="image">
+            <img src="images/banner.jpg" alt="">
+        </span>
+        <header class="major">
+            <h1>Hi, I'm Pascal</h1>
+        </header>
+        <div class="content">
+            <p>{{site.description}}</p><br>
+            <ul class="actions">
+                <li><a href="#one" class="button next scrolly">Get Started</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<div id="main">
+
+    <section id="one" class="tiles">
+        <!--BLOG-->
+        <article>
+            <span class="image">
+        <img src="images/thumb_blog.jpg" alt=""/>
+        </span>
+            <header class="major">
+                <h3><a href="{{site.blog_link}}" target="_blank">Blog</a></h3>
+                <p>My scribble board. Here I share more and less useful tidbits about technology and sometimes travels or social observations</p>
+                <br>
+                <a href="{{site.blog_link}}" target="_blank" class="button">Show</a>
+            </header>
+        </article>
+
+        <!--PORTFOLIO-->
+        <!--<article>-->
+            <!--<span class="image">-->
+        <!--<img src="images/thumb_portfolio.jpg" alt=""/>-->
+        <!--</span>-->
+            <!--<header class="major">-->
+                <!--<h3><a href="portfolio/" class="link">Portfolio</a></h3>-->
+                <!--<p>Some examples of previous work of mine</p>-->
+                <!--<br>-->
+                <!--<a href="portfolio/" class="button">Show</a>-->
+            <!--</header>-->
+        <!--</article>-->
+        <!--Photography-->
+        <article>
+        <span class="image">
+        <img src="images/thumb_photography.jpg" alt=""/>
+        </span>
+            <header class="major">
+                <h3><a href="https://unsplash.com/@pascalwhoop" target="_blank" class="">Photography</a></h3>
+                <p>Some shots of my travels shared with the community.</p>
+                <br>
+                <a href="https://unsplash.com/@pascalwhoop/" class="button">Show</a>
+            </header>
+        </article>
+
+        <!--ABOUT ME-->
+        <article>
+            <span class="image">
+        <img src="images/thumb_about.jpg" alt=""/><!--TODO -->
+        </span>
+            <header class="major">
+                <h3><a href="about/" class="link">About me</a></h3>
+                <p>Who am I and where am I from</p>
+                <br>
+                <a href="about/" class="button">Show</a>
+            </header>
+        </article>
+
+        <article>
+            <span class="image">
+        <img src="images/thumb_contact2.jpg" alt=""/>
+        </span>
+            <header class="major">
+                <h3><a href="contact/" class="link">Get in contact</a></h3>
+                <p>Want to contact me? Take your pic from several ways of communication. PGP included</p>
+                <br>
+                <a href="contact/" class="button">Show</a>
+            </header>
+        </article>
+
+        <!--Reading list-->
+        <article>
+            <span class="image">
+        <img src="images/thumb_books.jpg" alt=""/>
+        </span>
+            <header class="major">
+                <h3><a href="readinglist/" class="link">See what I am reading</a></h3>
+                <p>Need some ideas for new books?</p>
+                <br>
+                <a href="readinglist/" class="button">Show</a>
+            </header>
+        </article>
+
+        <!--Github Link-->
+        <article>
+            <span class="image">
+        <img src="images/thumb_github.jpg" alt=""/><!--TODO -->
+        </span>
+            <header class="major">
+                <h3><a href="https://github.com/pascalwhoop" target="_blank" class="">Dig in</a></h3>
+                <p>My Github profile</p>
+                <br>
+                <a href="https://github.com/pascalwhoop" target="_blank" class="button">Show</a>
+            </header>
+        </article>
+
+
+
+
+        <!--TILES FOR POSTS-->
+        <!--{% for post in site.posts %}-->
+        <!--<article>-->
+        <!--{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}-->
+        <!--<span class="image">-->
+        <!--<img src="images/pic01.jpg" alt="" />-->
+        <!--</span>-->
+        <!--<header class="major">-->
+        <!--<h3><a href="{{ post.url | relative_url }}" class="link">{{ post.title | escape }}</a></h3>-->
+        <!--<p>{{ post.date | date: date_format }}</p>-->
+        <!--</header>-->
+        <!--</article>-->
+        <!--{% endfor %}-->
+
+    </section>
+</div>

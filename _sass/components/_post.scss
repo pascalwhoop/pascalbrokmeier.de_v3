@@ -1,0 +1,274 @@
+.post {
+  //TODO potential for trouble
+  background-color: _palette(fg);
+  color: _palette(bg);
+
+  //TODO potential for trouble
+  h1, h2, h3, h4, h5, h6, p, input, select, textarea, strong, th, td {
+    color: _palette(bg);
+
+
+  }
+
+  div.post-banner{
+    height: 700px;
+    background-size: cover;
+    position: relative;
+    a{
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        text-decoration: none;
+        border-bottom: none;
+    }
+  }
+
+  @include breakpoint(medium){
+    div.post-banner{
+      height: 400px;
+    }
+  }
+  @include breakpoint(small){
+    div.post-banner{
+      height: 200px;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 20px 0 10px;
+    padding: 0;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    cursor: text;
+    position: relative;
+  }
+
+  h1 {
+    tt, code {
+      font-size: inherit;
+    }
+  }
+
+  h2 {
+    tt, code {
+      font-size: inherit;
+    }
+  }
+
+  h3 {
+    tt, code {
+      font-size: inherit;
+    }
+  }
+
+  h4 {
+    tt, code {
+      font-size: inherit;
+    }
+  }
+
+  h5 {
+    tt, code {
+      font-size: inherit;
+    }
+  }
+
+  h6 {
+    tt, code {
+      font-size: inherit;
+    }
+  }
+  .toggle-box{
+      display: none;
+      padding: 0 0 0 10px;
+      margin : 10px 0 0 0;
+      border-left: 2px solid _palette(border);
+  }
+  .important-math-wrapper {
+    //margin-left: 40px;
+    //margin-right: 40px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid _palette(border-bg);
+    background: _palette(accent4);
+    padding: 10px;
+    table {
+      margin: auto;
+    }
+    pre {
+      text-align: left;
+    }
+    ul li, ol li {
+      list-style-position: inside;
+    }
+  }
+
+  .toc-wrapper{
+    h2{
+      display: inline;
+      span{
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  #toc{
+    &.hidden{
+        height: 0px;
+        overflow: hidden;
+    }
+    i.back-to-top{
+      display: none;
+    }
+  }
+
+  i.back-to-top{
+    font-weight: 200;
+    font-size: 0.8rem;
+    color: _palette(fg-light)
+  }
+
+  img {
+    max-width: 100%;
+    zoom: 50%;
+  }
+
+  span {
+    &.frame {
+      display: block;
+      overflow: hidden;
+      > span {
+        border: 1px solid #dddddd;
+        display: block;
+        float: left;
+        overflow: hidden;
+        margin: 13px 0 0;
+        padding: 7px;
+        width: auto;
+      }
+      span {
+        img {
+          display: block;
+          float: left;
+        }
+        span {
+          clear: both;
+          color: #333333;
+          display: block;
+          padding: 5px 0 0;
+        }
+      }
+    }
+    &.align-center {
+      display: block;
+      overflow: hidden;
+      clear: both;
+      > span {
+        display: block;
+        overflow: hidden;
+        margin: 13px auto 0;
+        text-align: center;
+      }
+      span img {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+    &.align-right {
+      display: block;
+      overflow: hidden;
+      clear: both;
+      > span {
+        display: block;
+        overflow: hidden;
+        margin: 13px 0 0;
+        text-align: right;
+      }
+      span img {
+        margin: 0;
+        text-align: right;
+      }
+    }
+    &.float-left {
+      display: block;
+      margin-right: 13px;
+      overflow: hidden;
+      float: left;
+      span {
+        margin: 13px 0 0;
+      }
+    }
+    &.float-right {
+      display: block;
+      margin-left: 13px;
+      overflow: hidden;
+      float: right;
+      > span {
+        display: block;
+        overflow: hidden;
+        margin: 13px auto 0;
+        text-align: right;
+      }
+    }
+  }
+
+  code, tt {
+    margin: 0 2px;
+    padding: 0 5px;
+    white-space: nowrap;
+    border: 1px solid #eaeaea;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+  }
+
+  pre code {
+    margin: 0;
+    padding: 0;
+    white-space: pre;
+    border: none;
+    background: transparent;
+  }
+
+  .highlight pre, pre {
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    line-height: 19px;
+    overflow: auto;
+    padding: 6px 10px;
+    border-radius: 3px;
+  }
+
+  //.algorithm {
+  //  background-color: _palette(fg);
+  //  color: _palette(bg);
+  //  border: 1px solid #cccccc;
+  //  padding: 6px 10px;
+  //  border-radius: 3px;
+  //  text-align: left;
+  //  font-family: monospace;
+  //}
+
+  pre {
+    code, tt {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+  }
+
+  @media print {
+    table {
+      page-break-inside: avoid;
+    }
+    pre {
+      page-break-inside: avoid;
+      word-wrap: break-word;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<div id="main" class="alt">
+    <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        {% if page.banner %}
+        <div class="post-banner" style=" background-image: url('{{site.baseurl}}/images/posts/{{page.path | split: '/' | last | split: '.' | first}}/banner.jpg')" alt="">
+            {% if page.banner-credit %}
+            {% include photo-credit-unsplash.html %}
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="inner">
+            <header class="major">
+                <h1 itemprop="name headline">{{ page.title | escape }}</h1>
+                <p class="post-meta">
+                    <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+                        {{ page.date | date: date_format }}
+                    </time>
+                    {% if page.author %}
+                    • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
+                    {% endif %}
+                </p>
+            </header>
+
+            <div class="post-content" itemprop="articleBody">
+                {% if page.toc %}
+                <div class="toc-wrapper">
+                    <h2>Table of Contents <span>(Click to expand)</span></h2>
+                    <div id="toc" class="hidden"></div>
+                </div>
+                {% endif %}
+                {{ content }}
+            </div>
+
+            {% if site.disqus.shortname %}
+            {% include disqus_comments.html %}
+            {% endif %}
+        </div>
+
+    </section>
+</div>

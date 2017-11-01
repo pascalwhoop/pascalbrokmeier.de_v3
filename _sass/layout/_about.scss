@@ -3,13 +3,13 @@
   .top {
     @include vendor('align-items', 'top');
     @include vendor('display', 'flex');
-    @include padding(4em, 0, (2em, 0, 0, 0));
+    @include padding(0, 0, (2em, 0, 0, 0));
 
     .text{
       flex: 2;
     }
     .cv-portrait {
-      padding: 20px;
+      padding: 0 0 0 20px;
       flex: 1;
       max-width: 100%;
       width: 400px;

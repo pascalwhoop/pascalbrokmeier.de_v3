@@ -7,6 +7,13 @@
 /* Footer */
 
 	#footer {
+		border-top: solid 1px _palette(fg-light);
+
+
+		//border-top: solid 1px _palette(fg-light);
+
+		@include inner;
+
 		.copyright {
 			font-size: 0.8em;
 			list-style: none;

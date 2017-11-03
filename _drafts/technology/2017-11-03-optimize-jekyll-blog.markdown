@@ -3,7 +3,7 @@ title: Optimizing a Jekyll Blog with minification, image optimisation and cachin
 author: Pascal Brokmeier
 layout: post
 thumbnail: /images/posts/2017-11-03/thumbnail.jpg
-banner: true
+banner: false
 mathjax: false
 tags: jekyll technology blog
 ---
@@ -70,13 +70,17 @@ There are several nice ways to get sexy image positioning going but I refer you 
 Now I used the new liquid tag for my main homepage (which sadly is riddled with images, but that is what I chose). Here are the results
 
 {% cloudinary default /images/posts/2017-11-03/before_cloudinary.png alt="Before load times" %}
-{% cloudinary default /images/posts/2017-11-03/after_cloudinary.png alt="Before load times" %}
+{% cloudinary default /images/posts/2017-11-03/after_cloudinary.png alt="After load times" %}
 
 ## Minification and further speed improvements
 https://habd.as/pagespeed-100-with-jekyll-s3-and-cloudfront/
 
 ## Move to Firebase
-https://chris.banes.me/2017/06/02/jekyll-firebase/
+[Based on this post](https://chris.banes.me/2017/06/02/jekyll-firebase/) the steps are quiet simple. So I'll just summarize them in a quick checklist
+
+[ ] Install firebase cli with `npm install -g firebase-cli`
+
+
 
 ## Get HTTPS
 

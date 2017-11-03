@@ -1,13 +1,16 @@
 .post {
-  //TODO potential for trouble
-  background-color: _palette(fg);
-  color: _palette(bg);
+  // //TODO potential for trouble
+  // background-color: _palette(fg);
+  // color: _palette(bg);
 
   //TODO potential for trouble
-  h1, h2, h3, h4, h5, h6, p, input, select, textarea, strong, th, td {
-    color: _palette(bg);
-
-
+  // h1, h2, h3, h4, h5, h6, p, input, select, textarea, strong, th, td {
+  //   color: _palette(bg);
+  //
+  //
+  // }
+  code{
+      color: _palette(bg);
   }
 
   div.post-banner{

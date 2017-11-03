@@ -42,7 +42,7 @@ exclude:
    - node_modules
    - dev-scripts
    - package.json
-#   - vendor/bundle/
+   - vendor/
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/

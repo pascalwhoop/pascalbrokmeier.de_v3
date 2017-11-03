@@ -33,6 +33,7 @@ unsplash_link: "https://unsplash.com/@pascalwhoop"
 markdown: kramdown
 plugins_dir:
   - jekyll-feed
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

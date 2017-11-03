@@ -36,8 +36,18 @@
 			position: relative;
 			width: 40%;
 
-			.image {
-				display: none;
+			.image{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover; /* Do not scale the image */
+					object-position: center; /* Center the image within the element */
+				}
 			}
 
 			header {
@@ -77,19 +87,9 @@
 				position: absolute;
 				width: 100%;
 				z-index: 2;
+				background-color: transparentize(_palette(bg), 0.75);
 			}
 
-			&:after {
-				background-color: transparentize(_palette(bg), 0.75);
-				content: '';
-				display: block;
-				height: 100%;
-				left: 0;
-				position: absolute;
-				top: 0;
-				width: 100%;
-				z-index: 1;
-			}
 
 			&:hover {
 				&:before {

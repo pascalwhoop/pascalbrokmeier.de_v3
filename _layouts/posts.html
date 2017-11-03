@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div id="posts">
+
+	<section id="one">
+		<div class="inner">
+			<header class="major">
+				<h2>{{page.title}}</h2>
+			</header>
+			{{content}}
+		</div>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="spotlights">
+		    {% for post in site.posts %}
+			<section>
+				<a href="generic.html" class="image">
+					{% assign post_date_data = post.date | date: "%Y-%m-%d" %}
+					{% assign thumb_url = "/images/posts/" | append: post_date_data | append: '/thumb.jpg'%}
+					{{ thumb_url }}
+					{% cloudinary default {{thumb_url}} alt="Before load times" %}
+					<img src="{{post.thumbnail}}" alt="" data-position="center center" />
+				</a>
+				<div class="content">
+					<div class="inner">
+							<h3>
+					          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+						 	</h3>
+						{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+						<p><span class="post-meta">{{ post.date | date: date_format }}</span></p>
+						<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+						<ul class="actions">
+							<li><a href="generic.html" class="button">Learn more</a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		    {% endfor %}
+	</section>
+</div>

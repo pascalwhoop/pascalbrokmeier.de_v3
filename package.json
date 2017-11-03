@@ -13,8 +13,8 @@
     "concurrently": "^3.5.0"
   },
   "scripts": {
-    "start": "node node_modules/concurrently/src/main.js -k -p \"[{name}]\" -n \"Jekyll,Serve,TypeScript\" -c \"yellow.bold,cyan.bold,green.bold\" \"jekyll serve\" \"node node_modules/browser-sync/bin/browser-sync.js start --server '_site' --files './_site'\"",
-    "watch": "jekyll serve",
+    "start": "node node_modules/concurrently/src/main.js -k -p \"[{name}]\" -n \"Jekyll,Serve,TypeScript\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch\" \"node node_modules/browser-sync/bin/browser-sync.js start --server '_site' --files './_site'\"",
+    "watch": "JEKYLL_ENV=production jekyll serve --drafts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-imgs": "tsc dev-scripts/*.ts && node dev-scripts/copyDesktopImages.js",
     "build": "pandoc scm_summary.md -H header.html --mathjax -o scm_summary.html"

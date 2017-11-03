@@ -20,20 +20,49 @@ description: > # this means to ignore newlines until "baseurl:"
   I always look for new projects and exciting things to read about or try myself.
   I do mostly web development and NodeJS with some Java, Python and C here and there.
   For years I worked as a software developer at a German consulting company and for a time at an Australian cloud drone startup,
-  but now live in Naples, Italy to write my master thesis about Neural Networks.
+  but now I live in Naples, Italy to write my master thesis about Neural Networks.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://pascalbrokmeier.de" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: PascalBrokmeier
 github_username:  pascalwhoop
 full_name: Pascal Brokmeier
 short_name: Pascal
-blog_link: "https://medium.com/@pascal.brokmeier"
+blog_link: "/posts"
+#blog_link: "https://medium.com/@pascal.brokmeier"
 unsplash_link: "https://unsplash.com/@pascalwhoop"
 # Build settings
 markdown: kramdown
 plugins_dir:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-cloudinary #used for improving page load speeds with images
+
+cloudinary:
+    cloud_name: pascal-brokmeier
+    verbose: true
+    presets:
+        default:
+          min_width: 320
+          max_width: 1600
+          fallback_max_width: 800
+          width_height: false
+          steps: 5
+          sizes: "(min-width: 50rem) 50rem, 90vw"
+        banner:
+          min_width: 320
+          max_width: 1900
+          width_height: false
+          fallback_max_width: 1600
+          steps: 4
+          sizes: "50vw 80vw 100vw"
+        thumb:
+          min_width: 80
+          max_width: 500
+          width_height: false
+          fallback_max_width: 500
+          steps: 4
+          sizes: "10rem 30rem 50rem"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

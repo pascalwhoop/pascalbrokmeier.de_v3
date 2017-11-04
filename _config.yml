@@ -29,7 +29,7 @@ full_name: Pascal Brokmeier
 short_name: Pascal
 blog_link: "/posts"
 #blog_link: "https://medium.com/@pascal.brokmeier"
-unsplash_link: "https://unsplash.com/@pascalwhoop"
+photography_link: "https://unsplash.com/@pascalwhoop"
 # Build settings
 markdown: kramdown
 plugins_dir:
@@ -37,7 +37,6 @@ plugins_dir:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-cloudinary #used for improving page load speeds with images
-
 cloudinary:
     cloud_name: pascal-brokmeier
     verbose: true
@@ -63,15 +62,3 @@ cloudinary:
           fallback_max_width: 500
           steps: 4
           sizes: "10rem 30rem 50rem"
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-exclude:
-   - node_modules
-   - dev-scripts
-   - package.json
-   - vendor/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/

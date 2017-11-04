@@ -2,10 +2,11 @@
 title: Optimizing a Jekyll Blog with minification, image optimisation and caching on Firebase Hosting
 author: Pascal Brokmeier
 layout: post
-thumbnail: /images/posts/2017-11-03/thumbnail.jpg
+thumb: true
 banner: false
 mathjax: false
 tags: jekyll technology blog
+excerpt: Moving away from a clean and technical but unoptimized jekyll blog to a CDN backed, more efficient blog with dynamic image sizing and more.
 ---
 
 **Where I was:**
@@ -72,10 +73,23 @@ Now I used the new liquid tag for my main homepage (which sadly is riddled with 
 {% cloudinary default /images/posts/2017-11-03/before_cloudinary.png alt="Before load times" %}
 {% cloudinary default /images/posts/2017-11-03/after_cloudinary.png alt="After load times" %}
 
+To quickly add the snippet with Atom, I build a custom snippet that you can add to your snippets.cson
+
+```cson
+'.text.html.basic, .source.gfm':
+  'cloudinary':
+    'prefix': 'climg'
+    'body': '\{\% cloudinary ${1:default} images/posts/$2/$3 alt="$4" \%\}'
+```
+Hint: Remove the backticks, there is only so much possible with escaping characters with 3 different systems using each other. Otherwise my jekyll pipeline breaks.
 ## Move to Firebase
 [Based on this post](https://chris.banes.me/2017/06/02/jekyll-firebase/) the steps are quiet simple. So I'll just summarize them in a quick checklist
 
-[ ] Install firebase cli with `npm install -g firebase-cli`
+- Install firebase cli with `npm install -g firebase-cli`
+- login
+- `firebase init`
+- Add `circle.yml` file as described in post
+- Generate firebase-cli Key and add to circle-ci.com configuration (not in the file, in their online interface)
 
 > **In between benchmark with Google PageSpeed Tools: 86/100** Not bad.
 
@@ -84,8 +98,11 @@ https://habd.as/pagespeed-100-with-jekyll-s3-and-cloudfront/
 
 
 
-
 ## Get HTTPS
+
+This one almost comes out of the box with Firebase. You just need to
+
+{% cloudinary default images/posts/2017-11-03/connect_domain.png alt="Connect domain screenshot" %}
 
 ## Get Caching of ressources
 

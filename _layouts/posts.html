@@ -20,8 +20,9 @@ layout: default
 				<a href="{{ post.url | relative_url }}" class="image">
 					{% assign post_date_data = post.date | date: "%Y-%m-%d" %}
 					{% assign thumb_url = "/images/posts/" | append: post_date_data | append: '/thumb.jpg'%}
-					{% cloudinary default {{thumb_url}} alt="Before load times" %}
-					<img src="{{post.thumbnail}}" alt="" data-position="center center" />
+					{% if post.thumb %}
+					{% cloudinary default {{thumb_url}} alt="thumbnail for post" %}
+					{% endif %}
 				</a>
 				<div class="content">
 					<div class="inner">
@@ -30,7 +31,7 @@ layout: default
 						 	</h3>
 						{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
 						<p><span class="post-meta">{{ post.date | date: date_format }}</span></p>
-						<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
+						<p>{{post.excerpt}}</p>
 						<ul class="actions">
 							<li><a href="{{ post.url | relative_url }}" class="button">Read  more</a></li>
 						</ul>

@@ -4,4 +4,4 @@ title: Blog
 permalink: /posts/
 ---
 
-Some smart text
+A collection of my technical experiments and university summaries. Filtering to be added soon. 

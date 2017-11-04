@@ -27,7 +27,7 @@ layout: default
         <!--BLOG-->
         <article>
             <span class="image">
-                {% cloudinary default images/thumb_blog.jpg alt="Blog Card Background image" %}
+                {% cloudinary thumb images/thumb_blog.jpg alt="Blog Card Background image" %}
         </span>
             <header class="major">
                 <h3><a href="{{site.blog_link}}">Blog</a></h3>
@@ -52,21 +52,21 @@ layout: default
         <!--Photography-->
         <article>
         <span class="image">
-            {% cloudinary default images/thumb_photography2.jpg alt="Blog Card Background image" %}
+            {% cloudinary thumb images/thumb_photography2.jpg alt="Blog Card Background image" %}
 
         </span>
             <header class="major">
-                <h3><a href="https://unsplash.com/@pascalwhoop" target="_blank" class="">Photography</a></h3>
+                <h3><a href="{{site.photography_link}}" target="_blank" class="">Photography</a></h3>
                 <p>Some shots of my travels shared with the community.</p>
                 <br>
-                <a href="https://unsplash.com/@pascalwhoop/" class="button">Show</a>
+                <a href="{{sitephotography_link}}" class="button">Show</a>
             </header>
         </article>
 
         <!--ABOUT ME-->
         <article>
             <span class="image">
-                {% cloudinary default images/thumb_about.jpg alt="About Card Background image" %}
+                {% cloudinary thumb images/thumb_about.jpg alt="About Card Background image" %}
 
         </span>
             <header class="major">
@@ -79,7 +79,7 @@ layout: default
 
         <article>
             <span class="image">
-                {% cloudinary default images/thumb_contact2.jpg alt="Contact Card Background image" %}
+                {% cloudinary thumb images/thumb_contact2.jpg alt="Contact Card Background image" %}
         </span>
             <header class="major">
                 <h3><a href="contact/" class="link">Get in contact</a></h3>
@@ -92,7 +92,7 @@ layout: default
         <!--Reading list-->
         <article>
             <span class="image">
-                {% cloudinary default images/thumb_books.jpg alt="Readinglist Card Background image" %}
+                {% cloudinary thumb images/thumb_books.jpg alt="Readinglist Card Background image" %}
         </span>
             <header class="major">
                 <h3><a href="readinglist/" class="link">See what I am reading</a></h3>
@@ -105,7 +105,7 @@ layout: default
         <!--Github Link-->
         <article>
             <span class="image">
-                {% cloudinary default images/thumb_github2.jpg alt="Github Card Background image" %}
+                {% cloudinary thumb images/thumb_github2.jpg alt="Github Card Background image" %}
 
         </span>
             <header class="major">

@@ -100,11 +100,42 @@ https://habd.as/pagespeed-100-with-jekyll-s3-and-cloudfront/
 
 ## Get HTTPS
 
-This one almost comes out of the box with Firebase. You just need to
+This one almost comes out of the box with Firebase. You just need to verify your DNS ownership of the custom domain and Google gets you a letsencrypt HTTPS certificate. Nice.
 
-{% cloudinary default images/posts/2017-11-03/connect_domain.png alt="Connect domain screenshot" %}
+{% cloudinary default /images/posts/2017-11-03/connect_domain.png alt="Connect domain screenshot" %}
+
 
 ## Get Caching of ressources
+
+A quick DuckDuckGo-Stackoverflow-Copy-Paste: Take the snippet below and add it to your `firebase.json`
+
+```json
+"headers": [ {
+  "source" : "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+  "headers" : [ {
+    "key" : "Access-Control-Allow-Origin",
+    "value" : "*"
+  } ]
+}, {
+  "source" : "**/*.@(js|css)",
+  "headers" : [ {
+    "key" : "Cache-Control",
+    "value" : "max-age=604800"
+  } ]
+}, {
+  "source" : "**/*.@(jpg|jpeg|gif|png)",
+  "headers" : [ {
+    "key" : "Cache-Control",
+    "value" : "max-age=604800"
+  } ]
+}, {
+  "source" : "404.html",
+  "headers" : [ {
+    "key" : "Cache-Control",
+    "value" : "max-age=300"
+  } ]
+} ]
+```
 
 ## Do something for my page's SEO
 https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md

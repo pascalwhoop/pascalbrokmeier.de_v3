@@ -8,14 +8,14 @@ mathjax: false
 tags: jekyll technology blog
 ---
 
-Where I was:
+**Where I was:**
 
 -   Jekyll Blog hosted on Github Pages
 -   No HTTPS
 -   about 1.8MB page load
 -   PageSpeed Ranking of 61/100
 
-Where I am now:
+**Where I am now:**
 
 -   Jekyll Blog hosted with Firebase Hosting
 -   HTTPS
@@ -72,13 +72,16 @@ Now I used the new liquid tag for my main homepage (which sadly is riddled with 
 {% cloudinary default /images/posts/2017-11-03/before_cloudinary.png alt="Before load times" %}
 {% cloudinary default /images/posts/2017-11-03/after_cloudinary.png alt="After load times" %}
 
-## Minification and further speed improvements
-https://habd.as/pagespeed-100-with-jekyll-s3-and-cloudfront/
-
 ## Move to Firebase
 [Based on this post](https://chris.banes.me/2017/06/02/jekyll-firebase/) the steps are quiet simple. So I'll just summarize them in a quick checklist
 
 [ ] Install firebase cli with `npm install -g firebase-cli`
+
+> **In between benchmark with Google PageSpeed Tools: 86/100** Not bad.
+
+## Minification and further speed improvements
+https://habd.as/pagespeed-100-with-jekyll-s3-and-cloudfront/
+
 
 
 

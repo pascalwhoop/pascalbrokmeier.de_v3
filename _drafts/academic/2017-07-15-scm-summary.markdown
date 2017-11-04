@@ -19,7 +19,7 @@ This course was separated into two parts. Supply Chain Operations and Behavioral
 
 #### Bullwhip effect
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/20.jpg)
+{% cloudinary default /images/posts/2017-07-15/20.jpg alt="" %}
 
 The Bullwhip effect describes a phenomenon where small fluctuations in the end-customer demand lead to ever-increasing fluctuations of the demand down the supply chain. This is mainly caused by overreaction of individual supply chain participants to small fluctuations in demand.
 
@@ -88,7 +88,7 @@ Z(S^ * ) = (c_u+c_o)\cdot f_{N(0,1)}(z) \cdot \sigma
 
 ### Economic Order Quantity Model
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/23.jpg)
+{% cloudinary default /images/posts/2017-07-15/23.jpg alt="" %}
 
 #### Facts (Reproduction)
 -   assumes a constant demand
@@ -119,7 +119,7 @@ inventory holding cost + fixed order cost + variable order cost
 </div>
 ### Periodic Review Inventory Model
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/24.jpg)
+{% cloudinary default /images/posts/2017-07-15/24.jpg alt="" %}
 
 #### Facts (Reproduction)
 
@@ -169,7 +169,7 @@ z = F_ {LT+1}^{-1}\left(\frac{p}{p+h}\right)
 
 ### Continuous Review Inventory Model
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/21.jpg)
+{% cloudinary default /images/posts/2017-07-15/21.jpg alt="" %}
 
 #### Facts (Reproduction)
 
@@ -291,7 +291,7 @@ Finding the right price for different products with limited availability.
 
 -   Parameters used for fencing tactics are: Time, Location, Flexibility, Groups, Variants
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/25.jpg)
+{% cloudinary default /images/posts/2017-07-15/25.jpg alt="" %}
 
 -   with booking limits, if there are 10 spots available and 3 are allocated for the cheapest tier, once 3 bookings occur, independent of category, the lowest class is booked out.
 -   Protection Level: minimum amount of seats reserved for certain class
@@ -419,13 +419,13 @@ If one has to stock several parts, which parts to stock and how many of each par
 -   Dependencies between echelons (expected delay at upper echelons because of backordering)
 
 ### Strategic Safety Stock Placement in Multi-Echelon SC Networks
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/26.jpg)
+{% cloudinary default /images/posts/2017-07-15/26.jpg alt="" %}
 
 A big problem with a multi-tier production network is the large amount of decision variables that interact with each other and are interdependent, leading to a large and complex multidimensional problem with many constraints. One tries to find an optimal solution for the stock levels at each depot and the central warehouse to minimize overall costs while maintaining a certain service level.
 
 #### Serial structures
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/27.jpg)
+{% cloudinary default /images/posts/2017-07-15/27.jpg alt="" %}
 
 The overall idea is that each preceding stage has a promised service time. Stage j also promises its service time $S_j$ and while doing so tries to minimize its inventory
 
@@ -529,7 +529,7 @@ The human mind can be modeled as having two systems: The conscious, effortful sy
 
 **System 1: The conscious stream** follows rules and can adapt to new tasks. It takes control force of will to continually focus on a certain topic without switching to other topics of interest.
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/1.jpg)
+{% cloudinary default /images/posts/2017-07-15/1.jpg alt="" %}
 
 The three components of the conscious system describe the state in which the system is and why it needs to be "controlled". It requires physical, cognitive and emotional effort to steer and direct the _train of thought_.
 
@@ -609,7 +609,7 @@ _Literature_:
   - 50:50 chance of €1000 vs safe 500: ppl choose 500
   - same in negative: People prefer risk: Risk seeking in losses, aversion in gains
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/2.jpg)
+{% cloudinary default /images/posts/2017-07-15/2.jpg alt="" %}
 
 -   People are risk-averse in the gains and risk-seeking in the losses
 
@@ -629,7 +629,7 @@ People tend to overweight small probabilities and underweight large probabilitie
 
 ##### Allais paradox
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/3.jpg)
+{% cloudinary default /images/posts/2017-07-15/3.jpg alt="" %}
 
 People tend to choose 1A and 2B. But 1A is a "sure thing" while 2B is a gamble.
 
@@ -731,7 +731,7 @@ _Should be capable of explaning all of them_
     -   rejection rate is anti-proportinal to share-rate
 -   Trust game: On average, players are just compensated their investment → B not valuing the trust received by player A
     -   But: only "average" most people either give back more or less, few actually return investment only.
-    -   ![]({{site.url}}/images/posts/2017-07-15-scm-summary/5.jpg)
+    -   {% cloudinary default /images/posts/2017-07-15/5.jpg alt="" %}
 -   Trust and punishment game: Similar results have been seen for "fines for picking up your children late". After introduction of the fine, more people picked them up late as they saw it as a "fair payment" for their late arrival
 
 #### Intentions-based preferences (Reciprocity)
@@ -747,10 +747,10 @@ _Should be capable of explaning all of them_
 #### Setting
 ##### General Approach
 Kremer et al.: How do subjects detect a change of demand level
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/4.jpg)
+{% cloudinary default /images/posts/2017-07-15/4.jpg alt="" %}
 
 ##### Time-Series Modeling − Forecast Modeling
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/6.jpg)
+{% cloudinary default /images/posts/2017-07-15/6.jpg alt="" %}
 - model idea: Temporary shocks and permanent trends
 
 ##### Single exponential smoothing in time-series modeling
@@ -780,7 +780,7 @@ Hypothesis: Humans overreact on changes that are rationally likely caused by noi
 - Manufacturers need credible forecasting information from their retailers
     -   if the forecasts do not match real world expectations, large over/underproductions are the result
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/7.jpg)
+{% cloudinary default /images/posts/2017-07-15/7.jpg alt="" %}
 
 If the forwarded demand forecast $\hat{\xi}$ is not realistic (i.e. too large), the retailer minimizes his risk of incurring underage costs at the cost of expectable overage costs for the manufacturer.
 
@@ -788,13 +788,13 @@ If the forwarded demand forecast $\hat{\xi}$ is not realistic (i.e. too large), 
 
 #### Empirical data on forecast information sharing
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/8.jpg)
+{% cloudinary default /images/posts/2017-07-15/8.jpg alt="" %}
 
 -   retailers systematically overreport demand
 -   Manufacturers systematically discount forecasts by retailers
 -   result → non optimal supply chain but some correction automatically in place
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/9.jpg)
+{% cloudinary default /images/posts/2017-07-15/9.jpg alt="" %}
 
 -   low capacity cost reduces forecast inflation
 -   lowering uncertainty mediates inflation in high capacity cost environments
@@ -875,7 +875,7 @@ Authors: *(Schweitzer, Cachon 2000)*
 -   demand distribution is known-known
 -   no change in order sizes over time
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/11.jpg)
+{% cloudinary default /images/posts/2017-07-15/11.jpg alt="" %}
 
 -   people order too few for high profit and too many for low profit.
 -   people do not learn. Behavioral explanations such as risk aversion, risk-seeking, waste aversion, ... insufficient
@@ -926,7 +926,7 @@ An explanation can be the fact that the parties will still have to rely on each 
 
 ### Designing Incentive Schemes for Truthful Demand Information sharing
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/10.jpg)
+{% cloudinary default /images/posts/2017-07-15/10.jpg alt="" %}
 
 The goal is to compare different incentive systems for sales departments
 
@@ -1011,7 +1011,7 @@ Authors: *Becker-Peth, Katok, Thonemann (2013)*
 
 To get a better model, the authors include *anchoring, loss aversion and mental accounting* $\alpha, \beta$ and $\gamma$ in the model. They apply this both to the overall corpus of the subjects as well as calculate these variables for each individual to create a individual-based model. They then construct contracts that the model predicts will be more effective with the subjects while also coordinating the supply chain.
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/14.jpg)
+{% cloudinary default /images/posts/2017-07-15/14.jpg alt="" %}
 
 ### Social Preferences and Supply Chain Performance: An Experimental Study
 
@@ -1024,9 +1024,9 @@ Authors: *Loch Wu - 2008*
 #### Experiment
 The experiment is structured into 3 different conditions: **Control, Relationship and Status**. The control group is neutrally treated, the relationship group are pairs of 2 that are being introduced to each other before beginning the experiment and the status group is confronted with each others total profit after each round to spur competition.
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/15.jpg)
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/16.jpg)
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/17.jpg)
+{% cloudinary default /images/posts/2017-07-15/15.jpg alt="" %}
+{% cloudinary default /images/posts/2017-07-15/16.jpg alt="" %}
+{% cloudinary default /images/posts/2017-07-15/17.jpg alt="" %}
 
 It becomes clear that the relationship treatment is performing much better than the status treatment. Also, the bump in the first-mover graph shows the reaction of the supplier to its lowering profits and also the realization that he is taking an overproportional part of the margin.
 
@@ -1037,11 +1037,11 @@ It becomes clear that the relationship treatment is performing much better than 
 ### Fairness and Channel Coordination
 Authors: *Cui, Zhang - 2007*
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/18.jpg)
+{% cloudinary default /images/posts/2017-07-15/18.jpg alt="" %}
 
 -   the manufacturer is responsible for enabling a coordinated supply chain by offering a $w$ that leads the retailer to purchasing an amount $q$ that is optimal in relation to the demand $d$
 
-![]({{site.url}}/images/posts/2017-07-15-scm-summary/19.jpg)
+{% cloudinary default /images/posts/2017-07-15/19.jpg alt="" %}
 
 ## Appendix
 

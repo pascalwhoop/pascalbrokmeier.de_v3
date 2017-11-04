@@ -137,7 +137,18 @@ A quick DuckDuckGo-Stackoverflow-Copy-Paste: Take the snippet below and add it t
 } ]
 ```
 
+Performance Checkup:
+
+|  |  |
+| :------------- | :------------- |
+| Before without Cache | 1.1Mb |
+| Now without Cache | 529Kb |
+| Now with Cache | 3.5 Kb|
+
+The last result just includes the index.html. Everything else is cached (CSS, JS, img). Not bad. Let's keep going.
+
 ## Do something for my page's SEO
+The improvements in page performance should already have led to quiet a bit of SEO improvements for the future. Google punished bad performance so improving the speed will also help with SEO. But there is more we can do.
 https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 
 ## Bonus Points: A service worker

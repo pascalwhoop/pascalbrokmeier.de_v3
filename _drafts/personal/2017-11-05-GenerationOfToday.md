@@ -2,7 +2,7 @@
 title: Is it even worth getting up? Questions and challenges of a generation thats trapped between the past and the future
 author: Pascal Brokmeier
 layout: post
-thumb: true
+cover: true
 banner: false
 mathjax: false
 tags: society

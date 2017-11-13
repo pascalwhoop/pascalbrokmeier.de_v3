@@ -1,15 +1,18 @@
 ---
 layout: default
 ---
-<section id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    {% if page.banner %}
-    <div class="post-banner" style=" background-image: url('{{site.baseurl}}/images/posts/{{page.path | split: '/' | last | split: '.' | first}}/banner.jpg')" alt="">
-        {% if page.banner-credit %}
-        {% include photo-credit-unsplash.html %}
+<div class="banner">
+    {% if page.cover %}
+        {% assign post_date_data = page.date | date: "%Y-%m-%d" %}
+        {% assign cover_url = "/images/posts/" | append: post_date_data | append: '/cover.jpg'%}
+        {% cloudinary default {{cover_url}} alt="cover for post" %}
+        {% if page.cover-credit %}
+            {% include photo-credit-unsplash.html %}
         {% endif %}
-    </div>
     {% endif %}
+</div>
 
+<section id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="inner">
         <header class="major">
             <h1 itemprop="name headline">{{ page.title | escape }}</h1>

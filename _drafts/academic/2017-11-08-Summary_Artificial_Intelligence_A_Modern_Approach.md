@@ -2,7 +2,7 @@
 title: 'Summary: Artificial Intelligence, A Modern Approach'
 author: Pascal Brokmeier
 layout: post
-thumb: true
+cover: true
 banner: false
 mathjax: false
 tags: academic

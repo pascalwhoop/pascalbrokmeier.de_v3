@@ -19,9 +19,9 @@ layout: default
 			<section>
 				<a href="{{ post.url | relative_url }}" class="image">
 					{% assign post_date_data = post.date | date: "%Y-%m-%d" %}
-					{% assign thumb_url = "/images/posts/" | append: post_date_data | append: '/thumb.jpg'%}
-					{% if post.thumb %}
-					{% cloudinary default {{thumb_url}} alt="thumbnail for post" %}
+					{% assign cover_url = "/images/posts/" | append: post_date_data | append: '/cover.jpg'%}
+					{% if post.cover %}
+					{% cloudinary default {{cover_url}} alt="cover for post" %}
 					{% endif %}
 				</a>
 				<div class="content">

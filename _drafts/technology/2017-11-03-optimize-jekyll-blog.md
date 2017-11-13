@@ -2,7 +2,7 @@
 title: Optimizing a Jekyll Blog with minification, image optimisation and caching on Firebase Hosting
 author: Pascal Brokmeier
 layout: post
-thumb: true
+cover: true
 banner: false
 mathjax: false
 tags: jekyll technology blog

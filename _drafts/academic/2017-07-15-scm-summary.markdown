@@ -2,7 +2,7 @@
 title: UzK Operations Management Course Summary
 author: Pascal Brokmeier
 layout: post
-thumb: true
+cover: true
 banner: true
 mathjax: true
 tags: academic

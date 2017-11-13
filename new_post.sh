@@ -20,8 +20,7 @@ function createPost(){
 title: $TITLE
 author: Pascal Brokmeier
 layout: post
-thumb: true
-banner: false
+cover: true
 mathjax: false
 tags: $CATEGORY
 excerpt:

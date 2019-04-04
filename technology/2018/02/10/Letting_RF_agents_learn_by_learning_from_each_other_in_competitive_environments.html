@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Letting reinforcement learning based agents learn by learning from each other in competitive environments</title>
+  <meta name="description" content="Introducing post for my current master thesis about">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link rel="canonical" href="http://pascalbrokmeier.de">
+  <link rel="alternate" type="application/rss+xml" title="Homepage of Pascal Brokmeier" href="/feed.xml">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55919824-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-55919824-7');
+</script>
+
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Letting reinforcement learning based agents learn by learning from each other in competitive environments | Homepage of Pascal Brokmeier</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Letting reinforcement learning based agents learn by learning from each other in competitive environments" />
+<meta name="author" content="Pascal Brokmeier" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Introducing post for my current master thesis about" />
+<meta property="og:description" content="Introducing post for my current master thesis about" />
+<link rel="canonical" href="http://pascalbrokmeier.de/technology/2018/02/10/Letting_RF_agents_learn_by_learning_from_each_other_in_competitive_environments.html" />
+<meta property="og:url" content="http://pascalbrokmeier.de/technology/2018/02/10/Letting_RF_agents_learn_by_learning_from_each_other_in_competitive_environments.html" />
+<meta property="og:site_name" content="Homepage of Pascal Brokmeier" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-10T00:00:00+01:00" />
+<script type="application/ld+json">
+{"description":"Introducing post for my current master thesis about","@type":"BlogPosting","headline":"Letting reinforcement learning based agents learn by learning from each other in competitive environments","dateModified":"2018-02-10T00:00:00+01:00","datePublished":"2018-02-10T00:00:00+01:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pascalbrokmeier.de/technology/2018/02/10/Letting_RF_agents_learn_by_learning_from_each_other_in_competitive_environments.html"},"url":"http://pascalbrokmeier.de/technology/2018/02/10/Letting_RF_agents_learn_by_learning_from_each_other_in_competitive_environments.html","author":{"@type":"Person","name":"Pascal Brokmeier"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style media="screen">
+      #netlify-identity-widget{
+          z-index: 999;
+      }
+  </style>-->
+</head>
+
+
+  <body>
+      <!-- Header -->
+      <header id="header" class="reveal">
+    <a href="/index.html" class="logo"><strong>PB</strong></a>
+    <nav>
+        <a href="#menu">Menu</a>
+    </nav>
+</header>
+<!-- <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Homepage of Pascal Brokmeier</a>
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About me</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contact/">Get in contact</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/legal/">Impressum</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/portfolio/">Portfolio</a>
+            
+          
+            
+            
+            <a class="page-link" href="/posts/">Blog</a>
+            
+          
+            
+            
+            <a class="page-link" href="/readinglist/">Reading list</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header> -->
+
+      <div id="wrapper">
+
+          <!--  Menu  -->
+          <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts">Blog</a></li>
+            <!--<li><a href="portfolio">Portfolio</a></li>-->
+            <li><a href="/about">About me</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="https://unsplash.com/@pascalwhoop" target="_blank" class="">Photography</a></li>
+            <li><a href="https://github.com/pascalwhoop" target="_blank" class="">Github</a></li>
+            <li><a href="/admin">Login</a></li>
+        </ul>
+
+    </nav>
+
+
+          <section id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="banner">
+        
+        
+        
+        <img src="http://pascalbrokmeier.de/images/posts/2018-02-10/cover.jpg"   alt="cover for post" width="2000" height="996" crossorigin="anonymous" />
+        
+        <a style="border-bottom: 0; background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="http://unsplash.com/@davidmarcu?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Igor Ovsyannykov"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32"><title></title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">davidmarcu on unsplash.com</span></a>
+
+        
+        
+    </div>
+
+
+    <div class="inner">
+        <header class="major">
+            <h1 itemprop="name headline">Letting reinforcement learning based agents learn by learning from each other in competitive environments</h1>
+            <p class="post-meta">
+                <time datetime="2018-02-10T00:00:00+01:00" itemprop="datePublished">
+                    
+                    Feb 10, 2018
+                </time>
+                
+                • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Pascal Brokmeier</span></span>
+                
+            </p>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            <h3 id="the-introductory-posting-to-my-upcoming-master-thesis-about-reinforcement-learning-in-competitive-environments-with">The introductory posting to my upcoming master thesis about reinforcement learning in competitive environments with</h3>
+
+<p>In the last months I have researched mainly on the basics of AI research and the more precise technologies of reinforcement learning. This led me to my upcoming thesis topic, which tries to <strong>let agents learn not only through trial and error but also through observation of other agents</strong>. The motivation is embarrassingly simple: I don’t learn about AI by trying different paths in my state space. I take most of what others have developed and researched and basically imitate their behavior. Sometimes I stop reading and start experimenting. But it is certain that I could never learn to become as good with AI as with software development. (My previous field of expertise) by simply doing trial and error or by simply reading. It’s the mix that makes the most sense. The two amplify each other.</p>
+
+<h2 id="the-knowledge-illusion">The Knowledge Illusion</h2>
+
+<p><a href="https://duckduckgo.com/?q=sloman+the+knowledge+illusion">A great book by Sloman and Fernbach,</a> called *The Knowledge Illusion *inspired me to look at AI research from a different point of view. Whenever we talk about AI, we talk about a single unit. The only exception was <a href="https://duckduckgo.com/?q=life+3.0+max+tegmark">Max Tegmark in Life 3.0,</a> but he talked about multiple AGI’s being developed at *roughly the same time. *However, everyone assumes that if we as humans will create AGI, artificial **general **intelligence, we will create one instance of it. Sloman and Fernbach argue however, that humans are not intelligent the way we are because of our individual achievements but because we are a society of intelligent agents. Hence, we are as intelligent as we are today, because we evolved together, as a community of agents. My hypothesis therefore started to slowly form:</p>
+
+<p><strong>Artificially intelligent agents must not necessarily be intelligent on their own but might very well just develop a higher level of intelligence if they get to interact with each other in a manner similar to the way humans interact.</strong></p>
+
+<h2 id="current-state-of-research"><strong>Current state of research</strong></h2>
+
+<p>Current AI research mostly trains its agents as if they were single children without friends. When we train an agent, we put them in an environment (often without other agents, sometimes also <a href="https://arxiv.org/abs/1710.03748">with other agents</a>) and do cooperative or competitive plays. There’s work on trying to anticipate other agents moves and there is <a href="https://arxiv.org/pdf/1709.04326.pdf">work trying to reach Nash Equilibriums</a>. There is also stuff like “<a href="https://arxiv.org/abs/1703.07326">One-Shot Imitation Learning</a>” and the <a href="https://ai.stanford.edu/%7Eang/papers/icml04-apprentice.pdf">famous Helicopter flying RF agent by Andrew NG</a> which learned from pros like an apprentice. But it doesn’t seem to be an idiom that is omnipresent. It’s a “you can try this once” but not a “agents <em>need</em> to be trained in a social setting”. Yet humans need social interaction to have any chance at developing a healthy, working intellect.</p>
+
+<p>I want to try and let agents <em>observe</em> each other by comparing their performance and when one agent performs much better than the one that is trying to learn, it uses some actions of that agent as a set of input/output labeled examples of “how it is done”.</p>
+
+<p>Let’s compare this to how humans learn: Children watch each other while they play and imitate each others behavior. They also imitate their parents and learn from the results of their newly adopted actions. Children do this less for serious reasons but mostly in a form of play. But the results are the same: Children learn rapidly in their first few years and while it is not simply because they imitate their surroundings, it is surely a mix of the constant trial and error as well as having hundreds of role models surrounding them.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*ZNBTsP4GTVy2vjOQn-c01w.gif" alt="He’s falling, but surely does better than an agent that just started learning." /></p>
+
+<p>So, why not let reinforcement agents in AI research do the same? If there are other agents <em>like them</em>, let’s observe their performance and if they turn out to be better than our agents, imitating some of their actions might not be such a bad move. This is obviously supervised learning by the book but because the examples stem from another agent acting in an environment autonomously, it’s easy to get them. If I am an agent that is trying to run but I am just started out, instead of trying hundreds of thousands of times to get up and move somehow without ever knowing what the hell I am doing, watching an agent that can already run and trying to imitate him might be a smart move. This even occurs in aforementioned paper called “Emergent Complexity via Multi-Agent Competition”. They need to *retrain *their agents to learn running and walking again before they can start playing football. Previous agents already learned this behavior but these needed to relearn it all from scratch. It’s like reinventing the wheel. And it’s time for some sort of AI agent school where they teach each other some tricks so they don’t all have to do the same all over again.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2560/1*VPTpCKBCm8uvW3Km3OXXHA.jpeg" alt="" /></p>
+
+<h3 id="so-lets-dig-into-the-tech"><strong>So let’s dig into the tech</strong>:</h3>
+
+<p>My agent is a “normal” deep RF learning agent that tries to reach the same goal as another agent. They are in a competitive setting, be that running somewhere, <a href="http://powertac.org/">trading electricity in a wholesale market</a> or whatever. The agent does the usual learning, for example using <a href="https://arxiv.org/abs/1707.06347">PPO</a> or vanilla policy gradient optimisation. But this is being alternated with a situation where my agent watches the other agent’s state-action pairs and compares its performance against that of the agent.</p>
+
+<h2 id="here-is-where-i-am-stuck"><strong>Here is where I am stuck</strong></h2>
+
+<p>Let’s say we have an agent A, let’s call him Chuck Norris, short Norris. And we have agent B, the learning one that is trying to learn both as a deep RF agent and by stealing ideas from others. Let’s call B Bob. Both are in a <a href="https://en.wikipedia.org/wiki/Partially_observable_Markov_decision_process">POMDP</a>.</p>
+
+<p>To learn from Norris, Bob needs</p>
+
+<ul>
+  <li>State s</li>
+  <li>Resulting action a</li>
+  <li>Resulting State s’</li>
+  <li>Resulting Utility U(s’)</li>
+</ul>
+
+<p>Now it can feed the state into it’s own policy function and see if the utility is better/worse than that of Norris. <strong>Now the …darn… moment</strong>: It’s a POMDP! Meaning we have neither the state transition probability of an action nor do we have the assurance that the new state we observe is without noise.</p>
+
+<p>What does this mean? It means, we don’t know if the resulting state s’ came to be because of the action a or because of some other factor that we aren’t aware of. Maybe the probability of state s’ is 0.3 and if we do this same action 100 times, only 30 out of those 100 samples would actually result in state s’. It also means that we don’t know for sure if state s’ is actually the one that Norris ended up in. It could be, that we just <em>believe *that Chuck is in s’, but it’s actually the state *right next to it.</em></p>
+
+<p>These problems are common to us humans as well. If you compare yourself to someone who won in the lottery, it might seem tempting to say: “Look, he won the lottery, his state s’ has a much higher utility, I should do as he does”. But the other guy might be a complete dimwit, merely having been lucky to win a game that is designed to be a loosing game. Also, you might not be able to put yourself into the same situation as him, because the situation has passed. You can’t imagine you were in his shoes and then check the resulting utility, because the lottery has already been closed.</p>
+
+<h2 id="two-solution-approaches">Two solution approaches</h2>
+
+<h3 id="1-you-are-in-control-of-the-environment">1. You are in control of the environment</h3>
+
+<p>Going back to AI research: Let’s say you want to train Bob to walk up to a car and drive it into another city and you have Norris who can already walk. Your agent Bob however, can’t even walk, let alone drive. Instead of making him learn to walk by himself, you can let him watch Norris walk around like a pro.</p>
+
+<p>Simply get the Norris code and the NN weights, toss him in the environment and give Bob the ability to “observe” him. But how do you let him observe the other guy? You don’t need to. Bob doesn’t need to actively observe, you need to merely decide if Bob should learn from Norris. How can you decide that? By letting Bob and Norris try on their own for a while while recording the environment states. Then you flip their positions and see how they fair in *each others shoes, *meaning how they do if they start at each others starting state.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/3722/1*AT4pEvctmlParP1aux9JhQ.jpeg" alt="Bob’s got no clue what he’s doing. In the second room, the roles are switched, but Norris goes straight for the goal again." /></p>
+
+<p>Now you can see, Norris seems to be better at his job, so Bob should learn from him. To let Bob learn from Norris in a supervised learning approach, collect samples from Norris actions in various situations and use supervised learning methods to train Bob to do the same. This won’t let him drive the car but at least he gets a jump-start in the walking skillset.</p>
+
+<h3 id="2-you-are-not-in-control-of-the-environment">2. You are not in control of the environment</h3>
+
+<p>The previous case assumes you have full control over the environment. But often enough, agents act in an environment that is not under your control. Maybe you want to learn Norris’ skills without you being capable of controlling Norris or the states he is in. An example is the stock market. Norris could kick ass in the stock trading but that doesn’t mean his policy is better than yours.</p>
+
+<p>If you can fully observe the environment, things get a little easier. You are now in an MDP, so you know what Norris saw before he made his choices. Assuming the future is like the past, if you observe 1000 actions (so many, to ensure we aren’t just copying a lucky idiot) performed by Norris and you plug his prior states into Bobs policy function, you can compare how Bob would have performed in his place. If he continuously outperforms Bob, he seems to have a better policy than Bob, so it can’t hurt to let Bob imitate Norris for a while with some cycles of back-propagation applied to Bobs NN.</p>
+
+<h3 id="when-all-approaches-fail">When all approaches fail</h3>
+
+<p>If you cannot fully grasp the state Norris was in before he performed an action, it’s not really possible to compare your performance to his. But then it can be argued you cannot really *observe *Norris and that is the same problem we humans face. If I can’t observe how someone performs, I obviously can’t compare myself with them.</p>
+
+<p>There are two situations however, that actually need to be avoided</p>
+
+<ol>
+  <li>
+    <p>Above, I talked about the stock market. Now, while normal people can trade at the stock-market without significantly changing the market through their actions, Jeff Bezos selling all of his Amazon stocks at once has a significant effect on the environment. If Bob has $1000 in stocks and tries to see if Bezos is a good person to imitate, he still cannot learn from Bezos. This is because, *even if Bob knew what to do in Bezos states and therefore if his policy was as successful as that of Bezos, his reality is a different one. *This is a situation where the other agent, while having the same goal (making money) is not a suitable role model, because he’s moving around in states, Bob will never even reach. So trying to learn from Bezos current trading options is not a smart move. Kids don’t learn walking by watching videos of Usain Bolt, and agents need to learn from agents which are better than them but not playing in a different league.</p>
+  </li>
+  <li>
+    <p>If collecting state-action pairs from other agents is an expensive endeavour, it might not be possible to regularly collect enough of this data to compare Bob to Norris and then evaluate whether to learn from Norris. We need a large amount of pairs however, if the <script type="math/tex">P(s’\vert s,a)</script>, meaning the probability of reaching s’ when performing a in s is not guaranteed. This is because otherwise, we might imitate someone who was merely lucky and who’s policy is not guaranteed to be better than ours.</p>
+  </li>
+</ol>
+
+<h2 id="the-bottom-line">The bottom line</h2>
+
+<p>I believe, the approach of letting agents learn from each other is an important one. There is already research that struggles with needing to retrain their agents for skills that other agents have already demonstrated, because they changed the architecture of their agents or because they used a different kind of neural network for the policy function. We cannot simply “copy a skill” from one agent to another, just as we cannot do so for humans, because their inner workings might be different. But we can let them observe each other and let them learn from each other.</p>
+
+<p>A model therefore needs to be developed that can:</p>
+
+<ol>
+  <li>
+    <p>let agents determine if other agents are better than them and if so imitate them</p>
+  </li>
+  <li>
+    <p>Let agents learn by themselves and through imitation by alternating between classic reinforcement learning and supervised learning methods</p>
+  </li>
+</ol>
+
+<p>In the future, it might also be interesting to teach agents to “teach”, meaning to purposely perform actions in a sequence that lets other agents observe and learn from them in an easier way. Such a “teaching agent” which already possesses the skill to walk could have a utility function that is dependent on the learning velocity of its students. The faster the students learn, the better does the teacher. Hence, it will try to perform the skill of walking in a way that let’s his students learn quickly.</p>
+
+        </div>
+    </div>
+
+</section>
+
+
+      </div>
+
+      <footer id="footer">
+    <div class="inner">
+        <h3>Homepage of Pascal Brokmeier</h3>
+        <p>Check out my about page for more, read my blog or watch me code on YouTube or just take a picture of mine for your wallpaper. I share everything for free and really enjoy good conversations about meaningful topics. Let me know if you have something to talk about.
+</p>
+        <ul class="icons">
+
+            
+            <li><a href="mailto:public@pascalbrokmeier.de" class="icon alt fa-envelope"></a></li>
+            
+            
+            <li><a href="https://twitter.com/PascalBrokmeier" class="icon alt fa-twitter" rel="me"><span class="label">Twitter</span></a>
+            </li>
+            
+            
+            <li><a href="https://github.com/pascalwhoop" class="icon alt fa-github" rel="me"><span class="label">GitHub</span></a>
+            </li>
+            
+            <!--
+            <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            -->
+
+        </ul>
+        <ul class="copyright">
+            <li><span class="copyleft">&copy;</span>
+                
+                Homepage of Pascal Brokmeier
+                
+            </li>
+            <li>Design: some of <a href="https://html5up.net">HTML5 UP</a> adopted by me</li>
+            <li><a href="/sitemap.xml">Sitemap</a></li>
+            <li><a href="/legal">Legal</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="/assets/js/jquery.scrolly.min.js"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/articles.js"></script>
+<!--[if lte IE 8]>
+<script  src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+
+  </body>
+
+</html>

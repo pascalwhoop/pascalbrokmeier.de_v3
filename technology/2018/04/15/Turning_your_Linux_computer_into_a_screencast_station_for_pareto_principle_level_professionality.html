@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Turning your Linux computer into a screencast station for pareto principle level professionality</title>
+  <meta name="description" content="A tour of my linux screencast setup to exhibit how to quickly turn a computer into a screencast studio for high quality online screencasts">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+  <link rel="canonical" href="http://pascalbrokmeier.de">
+  <link rel="alternate" type="application/rss+xml" title="Homepage of Pascal Brokmeier" href="/feed.xml">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55919824-7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-55919824-7');
+</script>
+
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Turning your Linux computer into a screencast station for pareto principle level professionality | Homepage of Pascal Brokmeier</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Turning your Linux computer into a screencast station for pareto principle level professionality" />
+<meta name="author" content="Pascal Brokmeier" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A tour of my linux screencast setup to exhibit how to quickly turn a computer into a screencast studio for high quality online screencasts" />
+<meta property="og:description" content="A tour of my linux screencast setup to exhibit how to quickly turn a computer into a screencast studio for high quality online screencasts" />
+<link rel="canonical" href="http://pascalbrokmeier.de/technology/2018/04/15/Turning_your_Linux_computer_into_a_screencast_station_for_pareto_principle_level_professionality.html" />
+<meta property="og:url" content="http://pascalbrokmeier.de/technology/2018/04/15/Turning_your_Linux_computer_into_a_screencast_station_for_pareto_principle_level_professionality.html" />
+<meta property="og:site_name" content="Homepage of Pascal Brokmeier" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-04-15T00:00:00+02:00" />
+<script type="application/ld+json">
+{"description":"A tour of my linux screencast setup to exhibit how to quickly turn a computer into a screencast studio for high quality online screencasts","@type":"BlogPosting","headline":"Turning your Linux computer into a screencast station for pareto principle level professionality","dateModified":"2018-04-15T00:00:00+02:00","datePublished":"2018-04-15T00:00:00+02:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://pascalbrokmeier.de/technology/2018/04/15/Turning_your_Linux_computer_into_a_screencast_station_for_pareto_principle_level_professionality.html"},"url":"http://pascalbrokmeier.de/technology/2018/04/15/Turning_your_Linux_computer_into_a_screencast_station_for_pareto_principle_level_professionality.html","author":{"@type":"Person","name":"Pascal Brokmeier"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!--<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <style media="screen">
+      #netlify-identity-widget{
+          z-index: 999;
+      }
+  </style>-->
+</head>
+
+
+  <body>
+      <!-- Header -->
+      <header id="header" class="reveal">
+    <a href="/index.html" class="logo"><strong>PB</strong></a>
+    <nav>
+        <a href="#menu">Menu</a>
+    </nav>
+</header>
+<!-- <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Homepage of Pascal Brokmeier</a>
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About me</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contact/">Get in contact</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/legal/">Impressum</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/portfolio/">Portfolio</a>
+            
+          
+            
+            
+            <a class="page-link" href="/posts/">Blog</a>
+            
+          
+            
+            
+            <a class="page-link" href="/readinglist/">Reading list</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header> -->
+
+      <div id="wrapper">
+
+          <!--  Menu  -->
+          <!-- Menu -->
+    <nav id="menu">
+        <ul class="links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts">Blog</a></li>
+            <!--<li><a href="portfolio">Portfolio</a></li>-->
+            <li><a href="/about">About me</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="https://unsplash.com/@pascalwhoop" target="_blank" class="">Photography</a></li>
+            <li><a href="https://github.com/pascalwhoop" target="_blank" class="">Github</a></li>
+            <li><a href="/admin">Login</a></li>
+        </ul>
+
+    </nav>
+
+
+          <section id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="banner">
+        
+        
+        
+        <img src="http://pascalbrokmeier.de/images/posts/2018-04-15/cover.jpg"   alt="cover for post" width="2000" height="1333" crossorigin="anonymous" />
+        
+        
+    </div>
+
+
+    <div class="inner">
+        <header class="major">
+            <h1 itemprop="name headline">Turning your Linux computer into a screencast station for pareto principle level professionality</h1>
+            <p class="post-meta">
+                <time datetime="2018-04-15T00:00:00+02:00" itemprop="datePublished">
+                    
+                    Apr 15, 2018
+                </time>
+                
+                • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Pascal Brokmeier</span></span>
+                
+            </p>
+        </header>
+
+        <div class="post-content" itemprop="articleBody">
+            <p><em>(See video tour at the bottom of the post or <a href="https://www.youtube.com/watch?v=WVnf_AXz3S0&amp;feature=youtu.be">here</a>)</em></p>
+
+<p>So I recently decided to record some of my coding sessions and put them on the internet. Why? Well, firstly it’s a good way to show what I can (and can’t) do. If I apply somewhere for a Data Scientist or Software Engineering position I can show what’s to expect from me. But of course it also serves the purpose of focus, as you tend to think your actions through when you are <em>on record</em>. So while recording yourself, you tend to explain exactly what you do and that helps in itself to generate better results (see <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">ruber duck debugging</a>).</p>
+
+<p>Many YouTube personalities have crazy incomes and equally crazy equipment. Others (the long tail of the distribution) have barely any income and most of them tend to just do a quick tutorial or tips and tricks video with their webcam. Both worlds have advantages and disadvantages: The top tier streamers are a goal not worth aiming for. If you’re rational you don’t expect to become the 0.01%, especially not by doing tutorials on Linux and AI like me. But you can still try and get some quality into your videos to make them more enjoyable. So here are three core steps for doing so:</p>
+
+<h2 id="hardware">Hardware</h2>
+
+<h3 id="1-get-a-good-microphone">1. Get a good microphone</h3>
+
+<p>This doesn’t necessarily mean expensive. I just mean good. I mean better than your laptop microphone and I mean better than your phones. I got myself the <a href="https://www.aukey.com/products/usb-condenser-microphone-mi-u1">Aukey MI-U1</a> which ran me around €60 and it feels and sounds solid. It’s a USB microphone so no connecting to studio equipment but for me it’s perfect. It’s a condenser and offers several controls. But I won’t repeat the specs page, here is what you should aim for:</p>
+
+<ul>
+  <li>Adjustable output on mic → makes it easy to adjust volume without fiddling with system settings</li>
+</ul>
+
+<p>That’s it. Lowcut filter? Do it in the Software. -10dB, sure nice but again, software. Unless you tend to really yell a lot. If your grandpa still has an old microphone in his office, ask him if you can take it. Get an adaptor for the thing and plug it into your Mic input. It’s probably even better, microphones have been good for the last 40 years, they’ve just gotten a lot cheaper since China happened.</p>
+
+<h3 id="2-add-a-microphone-arm-for-added-space">2. Add a microphone arm for added space</h3>
+
+<p>When you take the standard microphone setup, it’s directly in front of you and you’ve got a cable running under your arm behind the keyboard and down the back. That’s both annoying and not ideal because that way the mic is very close to the keyboard. With a microphone arm, it’s much more variable to position and it’s about €16 to buy one of those. Plus the whole thing starts to feel really professional.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/5000/1*BhXoWEBY8QwM61K7mzkZ2g.jpeg" alt="entry condenser mic with pop protection" /><em>entry condenser mic with pop protection</em></p>
+
+<h3 id="3-get-a-tripod-for-your-camera-phone">3. Get a tripod for your camera phone</h3>
+
+<p>Come on, everyone has a smartphone. They’ve got great cameras. Use it! If you’re an iPhone owner, sorry. I wouldn’t know how to stream the cam recordings directly to the computer screen. But maybe you have a DSLR or even an old pocket camera lying around. Both will work as well but you can’t include the video stream directly inside the screen recording.</p>
+
+<p>On Android however, we have a nifty little app called <a href="https://play.google.com/store/apps/details?id=ronakpatel1311.camerastreamer">Camera Stream Wifi</a>. It accesses your phones camera and creates a little http server that you can navigate to in your browser. The result is a nice camera feed. Wrap that with <a href="https://www.npmjs.com/package/nativefier">nativefier</a> and you’ve got yourself a desktop app that uses your phones camera as a video source. I’ve got my window set to always on top, always visible so when I switch among desktops, I’m always in the bottom right corner of the video.</p>
+
+<p>I attached my camera to the lamp next to my desk. The tripod can wrap around the pole neatly and the phone is not rocked by any movements of the desk which helps with the video quality. Probably around €10–15</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/5000/1*xfC_XhDg6O3znrTZcnPLXA.jpeg" alt="simple tripod with wrapping arms" /><em>simple tripod with wrapping arms</em></p>
+
+<h2 id="software">Software</h2>
+
+<p>Wait you said 3 steps. Yes, well you can order all three things on Amazon right? That’s 1 step ;-)</p>
+
+<p>Step 2: Get some software. I use:</p>
+
+<ul>
+  <li>
+    <p>**Audacity for audio editing: **Removing noise, increasing the bass a bit for a fuller sounding voice (which can compensate for not being really close to the mic, which leads to loss of low hertz frequencies) and normalizing the whole track to -2dB. You can also run the whole thing in one “Chain” and probably that will even work from the terminal. So maybe it’s all scriptable so you’d only have to run a shell script on your file.</p>
+  </li>
+  <li>
+    <p><strong>SimpleScreenRecorder:</strong> To record the screen I use this. It allows for setting of a hotkey so I can quickly start and pause the recording. The whole thing is created as a single file or split at each pause, you can choose. There are surely more advanced versions but I like it. Simple, light, self-explanatory.</p>
+  </li>
+  <li>
+    <p><strong>ffmpeg:</strong> I let SimpleScreenRecorder record the audio. That way it pauses both audio and video when I pause. I don’t intend to cut my video after the fact but just do them in one go with occasional pauses. ffmpeg allows to quickly split audio from video, edit it in audacity and merge them again</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg -i video.mp4 -c copy -an video_out.mp4 audio_out.mp3
+#edit in audacity
+ffmpeg -i video_out.mp4 -i audio_edited.mp3 -c copy upload.mp4
+</code></pre></div></div>
+
+<p>For the lazy here is the apt-get for the tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install simplescreenrecorder audacity
+</code></pre></div></div>
+
+<h3 id="configure-simplescreenrecorder">Configure SimpleScreenRecorder</h3>
+
+<p>The thing works straight out of the box. But I like less FPS. I’m doing coding, <strong>most of the screen doesn’t move so there is no need for high FPS</strong>. Sure, if you do 3D things or anything where movement is a key factor, don’t go so low. I’m just trying to save bandwidth both on my upload and on the people that stream this stuff on their phones.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/2000/1*g0XoYBHNayPRcKAYPk9-Aw.png" alt="10 fps are enough for screencasts I believe. Jack them up to 30 or 60 if you feel like it" /><em>10 fps are enough for screencasts I believe. Jack them up to 30 or 60 if you feel like it</em></p>
+
+<h3 id="mac-and-windows">Mac and Windows</h3>
+
+<p>On the Mac you can just use Quicktime Player to do screen recordings. But there are also other alternatives out there, free and paid. On Windows I have no clue, I haven’t touched those in almost 10 years now. A quick search brought up <a href="https://getsharex.com/">sharex</a> which looks and sounds legit. Give it a shot.</p>
+
+<h2 id="prepare-a-short-story-and-record">Prepare a short story and record</h2>
+
+<p>Take a notebook, write down your path on a piece of paper and go with that. A small script, however short it is helps to keep the whole story as it’s supposed to be. My first few recordings are completely free and I just uploaded one of them, because I was too embarrassed to upload the rest. Sure you can just record yourself do whatever but if you try to create a short video that teaches people something as efficiently as possible instead of just showing what you do, then make a script. After that, you’re good to go</p>
+
+<div class="video">
+<iframe src="https://www.youtube.com/embed/WVnf_AXz3S0" frameborder="0" allowfullscreen=""></iframe>
+</div>
+
+
+        </div>
+    </div>
+
+</section>
+
+
+      </div>
+
+      <footer id="footer">
+    <div class="inner">
+        <h3>Homepage of Pascal Brokmeier</h3>
+        <p>Check out my about page for more, read my blog or watch me code on YouTube or just take a picture of mine for your wallpaper. I share everything for free and really enjoy good conversations about meaningful topics. Let me know if you have something to talk about.
+</p>
+        <ul class="icons">
+
+            
+            <li><a href="mailto:public@pascalbrokmeier.de" class="icon alt fa-envelope"></a></li>
+            
+            
+            <li><a href="https://twitter.com/PascalBrokmeier" class="icon alt fa-twitter" rel="me"><span class="label">Twitter</span></a>
+            </li>
+            
+            
+            <li><a href="https://github.com/pascalwhoop" class="icon alt fa-github" rel="me"><span class="label">GitHub</span></a>
+            </li>
+            
+            <!--
+            <li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            -->
+
+        </ul>
+        <ul class="copyright">
+            <li><span class="copyleft">&copy;</span>
+                
+                Homepage of Pascal Brokmeier
+                
+            </li>
+            <li>Design: some of <a href="https://html5up.net">HTML5 UP</a> adopted by me</li>
+            <li><a href="/sitemap.xml">Sitemap</a></li>
+            <li><a href="/legal">Legal</a></li>
+        </ul>
+    </div>
+</footer>
+
+<script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="/assets/js/jquery.scrolly.min.js"></script>
+<script src="/assets/js/jquery.scrollex.min.js"></script>
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/articles.js"></script>
+<!--[if lte IE 8]>
+<script  src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+
+
+
+  </body>
+
+</html>

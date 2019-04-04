@@ -1,0 +1,57 @@
+==================================================================
+https://keybase.io/pascalwhoop
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://pascalbrokmeier.de
+  * I am pascalwhoop (https://keybase.io/pascalwhoop) on keybase.
+  * I have a public key ASA15_CobRaZonY8-AU_TJ-jrvDzoGdf1v9uoSt3xgtGuQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012035e7f0a86d1699a2763cf8053f4c9fa3aef0f3a0675fd6ff6ea12b77c60b46b90a",
+      "host": "keybase.io",
+      "kid": "012035e7f0a86d1699a2763cf8053f4c9fa3aef0f3a0675fd6ff6ea12b77c60b46b90a",
+      "uid": "31140a8f428e34ddc7d8e2bfc45b3d19",
+      "username": "pascalwhoop"
+    },
+    "merkle_root": {
+      "ctime": 1524080923,
+      "hash":
+"9ad0abd0687556c501d0060c123329c689603afc69be55bea422b914231c9840ef26d55d50fef323e175b4b7cc53942260c112d4c9746bde93752cb2745e4d2f",
+      "hash_meta": "78c8c81df039766c36af6cf48482cc5ae0c006d4a3235fcd8963826860418290",
+      "seqno": 2409399
+    },
+    "service": {
+      "entropy": "Csf9U3SsWtNjSLOn9IFZSflh",
+      "hostname": "pascalbrokmeier.de",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.47"
+  },
+  "ctime": 1524080947,
+  "expire_in": 504576000,
+  "prev": "b07ab1a511e50c2af2dd4f201279d9a9632034da7012dba27f17f2394ab85b15",
+  "seqno": 8,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgNefwqG0WmaJ2PPgFP0yfo67w86BnX9b/bqErd8YLRrkKp3BheWxvYWTESpcCCMQgsHqxpRHlDCry3U8gEnnZqWMgNNpwEtuifxfyOUq4WxXEIGkJf3IZYuzy9ooBLlnq5phrroCkPdZx1Sj0aB9BUuKxAgHCo3NpZ8RA98P4rT0lnHKmA86mdRJjwO0dWanq/t//PQjIOKS29lJWf7Iro0Q1Omdu3/4EJZmTvUwS7tkDvqeVpfmisPfVBqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJgKyIm0JNu0aJ6lUqAkUDvLGM5/Kf53EV4xZQR98FG4o3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/pascalwhoop
+
+==================================================================

@@ -7,10 +7,11 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      //for PWA's
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'Homepage of Pascal Brokmeier',
-        short_name: 'portfolio',
+        short_name: 'PB',
         start_url: '/',
         background_color: '#212121',
         theme_color: '#212121',
@@ -20,6 +21,7 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
+    'gatsby-source-filesystem',
     {
       resolve: `gatsby-source-airtable`,
       options: {

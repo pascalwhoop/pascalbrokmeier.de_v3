@@ -1,39 +1,34 @@
-# gatsby-starter-forty
+# Pascal Brokmeier Homepage v3
 
-**This is a starter for Gatsby.js V2.**
+This page is based on a few key technologies:
+- GraphQL for pulling in data from a number of sources
+- Gatsby.js for building an awesome website based on ReactJS (which I learned to use in '19 and kinda like)
+- Airtable data for a number of pages that I use to express myself with
+  - pulling in this data via GraphQL during build
+- cloudinary asset optimization for images
+- whatever comes out of the box of the original at [codebushi](https://github.com/codebushi/gatsby-starter-forty)
 
-**The older V1 version of this starter can be found on the v1 branch**
 
-Gatsby.js V2 starter based on the Forty site template, designed by HTML5 UP. Check out https://codebushi.com/gatsby-starters/ for more Gatsby starters and templates.
+## Data driven pages
 
-## Preview
+- reading list / podcast list
+- CV
+- experience
+- Contact methods
+- Blog posts (collection across publishing sites!)
+    - supports linking to a number of publishing places
+    - pulls banner image in via cloudinary
 
-https://gatsby-forty.surge.sh
+# TODO
+- create cloudinary component with easy interface
+- migrate blog posts
+- generic post list based on internal and external posts
+  - posts on medium
+  - posts on personal blog
+  - posts on dataminded.be
+  - posts on cattlecrew?
+- convert current posts into markdown driven by gatsby with [this](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
+- reading list driven through airtable data
+- monthly "tech" | "client"(legal?) | country graph
 
-## Installation
-
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-<br/>
-`gatsby new gatsby-starter-forty https://github.com/codebushi/gatsby-starter-forty`
-
-Run `gatsby develop` in the terminal to start the dev site.
-
-## CSS Grid
-
-The grid on this site was replaced with a custom version, built using CSS Grid. It's a very simple 12 column grid that is disabled on mobile. To start using the grid, wrap the desired items with `grid-wrapper`. Items inside the `grid-wrapper` use the class `col-` followed by a number, which should add up to 12.
-
-Here is an example of using the grid, for a 3 column layout:
-
-```
-<div className="grid-wrapper">
-    <div className="col-4">
-        <p>Content Here</p>
-    </div>
-    <div className="col-4">
-        <p>Content Here</p>
-    </div>
-    <div className="col-4">
-        <p>Content Here</p>
-    </div>
-</div>
-```
+# DONE

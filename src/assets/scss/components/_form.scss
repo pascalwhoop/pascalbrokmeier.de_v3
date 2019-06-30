@@ -7,7 +7,7 @@
 /* Form */
 
 	form {
-		margin: 0 0 _size(element-margin) 0;
+		margin: _size(element-margin) 0 ;
 
 		.field {
 			margin: 0 0 (_size(element-margin) * 1) 0;

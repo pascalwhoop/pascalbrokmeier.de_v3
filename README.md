@@ -29,6 +29,7 @@ This page is based on a few key technologies:
   - posts on cattlecrew?
 - convert current posts into markdown driven by gatsby with [this](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
 - reading list driven through airtable data
+    - podcasts based on pocketcasts API
 - monthly "tech" | "client"(legal?) | country graph
 
 # DONE

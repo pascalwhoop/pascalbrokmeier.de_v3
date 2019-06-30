@@ -1,11 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: "Homepage of Pascal Brokmeier",
-    author: "Pascal Brokmeier",
-    description: "My personal homepage based on gatsby (starter used) and graphql"
+    title: 'Homepage of Pascal Brokmeier',
+    author: 'Pascal Brokmeier',
+    description:
+      'My personal homepage based on gatsby (starter used) and graphql',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-catch-links', //gives it a single page like feel
     {
       //for PWA's
       resolve: `gatsby-plugin-manifest`,
@@ -21,7 +23,57 @@ module.exports = {
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
-    'gatsby-source-filesystem',
+    // Image handling
+    'gatsby-image',
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/assets/images`,
+      },
+    },
+    //markdown posts
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        // CommonMark mode (default: true)
+        commonmark: true,
+        // Footnotes mode (default: true)
+        footnotes: true,
+        // Pedantic mode (default: true)
+        pedantic: true,
+        // GitHub Flavored Markdown mode (default: true)
+        gfm: true,
+        // Plugins configs
+        plugins: [],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/posts/`,
+      },
+    },
+    //data file handling
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/texts/`,
+      },
+    },
+    //data sources
     {
       resolve: `gatsby-source-airtable`,
       options: {
@@ -35,14 +87,22 @@ module.exports = {
             //mapping: { `CASE_SENSITIVE_COLUMN_NAME`: `VALUE_FORMAT` }, // optional, e.g. "text/markdown", "fileNode"
             //tableLinks: [`CASE`, `SENSITIVE`, `COLUMN`, `NAMES`] // optional, for deep linking to records across tables.
           },
+          {
+            baseId: `appZH6SOgZyZ0TWrY`,
+            tableName: `Projects`,
+          },
+          {
+            baseId: `appZH6SOgZyZ0TWrY`,
+            tableName: `Positions`,
+          },
           //{
           //  baseId: `YOUR_AIRTABLE_BASE_ID`,
           //  tableName: `YOUR_TABLE_NAME`,
           //  tableView: `YOUR_TABLE_VIEW_NAME` // optional
           //  // can leave off queryName, mapping or tableLinks if not needed
           //}
-        ]
-      }
-    }
+        ],
+      },
+    },
   ],
 }

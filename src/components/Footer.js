@@ -1,20 +1,36 @@
 import React from 'react'
+import { StaticQuery } from 'gatsby'
+import {faIconMapper} from '../functions/icons'
+const Footer = ({ data }) => {
+  let contactInfo = data.allDataYaml.edges[0].node.owner.contact
 
-const Footer = (props) => (
+  return (
     <footer id="footer">
-        <div className="inner">
-            <ul className="icons">
-                <li><a href="#" className="icon alt fa-twitter"><span className="label">Twitter</span></a></li>
-                <li><a href="#" className="icon alt fa-facebook"><span className="label">Facebook</span></a></li>
-                <li><a href="#" className="icon alt fa-instagram"><span className="label">Instagram</span></a></li>
-                <li><a href="#" className="icon alt fa-github"><span className="label">GitHub</span></a></li>
-                <li><a href="#" className="icon alt fa-linkedin"><span className="label">LinkedIn</span></a></li>
-            </ul>
-            <ul className="copyright">
-                <li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-            </ul>
-        </div>
+      <div className="inner">
+        <ul className="icons">
+          {contactInfo.map((item, index) => {
+            return (<li key={index}>
+              <a href={item.url} className="icon alt">
+                {faIconMapper(item.name)}
+              </a>
+            </li>)
+          })}
+        </ul>
+      </div>
     </footer>
-)
+  )
+}
 
-export default Footer
+//binds the query to the component. a bit tedious but OK
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query FooterData {
+        allDataYaml {
+          ...ContactData
+        }
+      }
+    `}
+    render={data => <Footer data={data} {...props} />}
+  ></StaticQuery>
+)

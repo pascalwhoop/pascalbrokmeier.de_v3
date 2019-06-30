@@ -37,7 +37,7 @@ class HomeIndex extends React.Component {
       {
           title: "Readinglist",
           text: "Need some new inspiration for books, podcasts, articles etc? Look no further!",
-          url: "/readinglist",
+          url: "/reading",
           image: pic03
       },
       {

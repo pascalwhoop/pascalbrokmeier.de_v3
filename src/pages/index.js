@@ -86,23 +86,6 @@ class HomeIndex extends React.Component {
             </article>
           ))}
           </section>
-         <section id="two">
-            <div className="inner">
-              <header className="major">
-                <h2>Homepage of Pascal Brokmeier</h2>
-              </header>
-              <p>
-                  Check out my about page for more, read my blog or watch me code on YouTube or just take a picture of mine for your wallpaper. I share everything for free and really enjoy good conversations about meaningful topics. Let me know if you have something to talk about.
-              </p>
-              <ul className="actions">
-                <li>
-                  <Link to="/landing" className="button next">
-                    Get Started
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </section>
         </div>
       </Layout>
     )

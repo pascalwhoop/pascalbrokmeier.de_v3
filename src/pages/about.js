@@ -4,7 +4,6 @@ import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { faIconMapper } from '../functions/icons'
-import Container from '../components/Container'
 import ContactForm from '../components/Contact'
 
 class Contact extends React.Component {
@@ -23,23 +22,31 @@ class Contact extends React.Component {
     ageElem.innerHTML = now.getMonth() < 3 ? --age : age
   }
 
-  render()  {
+  render() {
     return (
-      <Container>
-        <div className="inner" id="contactPage">
-          <h1>About me</h1>
-          <div
-            //should contain a "#age" field that we hook into
-            dangerouslySetInnerHTML={{
-              __html: this.props.data.allMarkdownRemark.edges[0].node.html,
-            }}
-          ></div>
-  
-          <ContactForm></ContactForm>
-        </div>
-        {/* picture */}
-        {/* CV Timeline */}
-      </Container>
+      <div>
+        <Layout>
+          <Helmet>
+            <title>PB</title>
+            <meta name="description" content="About me" />
+          </Helmet>
+
+          <div id="main">
+            <div className="inner">
+              <h1>About me</h1>
+              <div
+                //should contain a "#age" field that we hook into
+                dangerouslySetInnerHTML={{
+                  __html: this.props.data.allMarkdownRemark.edges[0].node.html,
+                }}
+              ></div>
+              {/* picture */}
+              {/* CV Timeline */}
+              <ContactForm></ContactForm>
+            </div>
+          </div>
+        </Layout>
+      </div>
     )
   }
 }

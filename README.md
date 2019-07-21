@@ -19,8 +19,11 @@ This page is based on a few key technologies:
     - supports linking to a number of publishing places
     - pulls banner image in via cloudinary
 
-# TODO
-- create cloudinary component with easy interface
+## TODO
+- build with Google Cloud Build and host on GCS
+    - nearline
+    - define everything with terraform
+    - [see tutorial](https://cloud.google.com/community/tutorials/automated-publishing-cloud-build)
 - migrate blog posts
 - generic post list based on internal and external posts
   - posts on medium
@@ -31,5 +34,12 @@ This page is based on a few key technologies:
 - reading list driven through airtable data
     - podcasts based on pocketcasts API
 - monthly "tech" | "client"(legal?) | country graph
+- https://visjs.org/examples/timeline/items/backgroundAreas.html
+- http://uber.github.io/react-vis/examples/showcases/plots more viz
 
-# DONE
+### DONE
+
+
+### NOT DOING: 
+
+- create cloudinary component with easy interface

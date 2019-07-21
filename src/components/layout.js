@@ -7,6 +7,9 @@ import Menu from './Menu'
 import Contact from './Contact'
 import Footer from './Footer'
 
+/**
+ * Contains mostly logic for the top bar and stuff
+ */
 class Layout extends React.Component {
     constructor(props) {
         super(props)

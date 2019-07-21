@@ -3,7 +3,6 @@ import Layout from '../components/layout'
 
 const ContactForm = ({ data, props }) => (
   <section id="contact">
-    <div className="inner">
       <div>
         <form
           method="post"
@@ -33,7 +32,6 @@ const ContactForm = ({ data, props }) => (
           <input id="gotcha" type="text" name="_gotcha" />
         </form>
       </div>
-    </div>
   </section>
 )
 

@@ -16,6 +16,7 @@ class Contact extends React.Component {
   }
 
   buildPosts(data) {
+    //build medium source
     let mediumPosts = data.allMediumPost.edges.map(({ node }) => ({
       title: node.title,
       url: `https://medium.com/@${node.author.name}/${node.uniqueSlug}`,
@@ -25,9 +26,22 @@ class Contact extends React.Component {
         : '',
       tags: node.tags,
       sourceName: 'medium.com',
+      type: 'medium',
+      date: new Date(node.firstPublishedAt)
+    }))
+    //build local sources
+    let localPosts = data.allMarkdownRemark.edges.map(({node}) => ({
+      title: node.frontmatter.title,
+      url: node.fields.slug,
+      excerpt: node.frontmatter.excerpt,
+      imgUrl: "",
+      tags: node.frontmatter.tags,
+      sourceName: 'pascalbrokmeier.de',
+      type: 'local',
+      date: new Date(node.frontmatter.date)
     }))
 
-    let allPosts = mediumPosts.concat([])
+    let allPosts = [].concat(mediumPosts).concat(localPosts).sort((a,b) => b.date-a.date)
     return allPosts.map((post, index) => (
       <section key={index}>
         <a href={post.url} className="image" target="_blank">
@@ -55,14 +69,25 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div>
         <Layout>
           <Helmet>
             <title>PB</title>
             <meta name="description" content="Blogposts" />
           </Helmet>
 
-          <BannerLanding />
+          <section id="banner" className="style2">
+            <div className="inner">
+              <header className="major">
+                <h1>Blog</h1>
+              </header>
+              <div className="content">
+                <p>
+                  A collection of various blog posts on Medium, my personal page and other publications. 
+                  <br />
+                </p>
+              </div>
+            </div>
+          </section>
           <div id="main">
             <div className="inner">
               <div className="spotlights">
@@ -71,7 +96,6 @@ class Contact extends React.Component {
             </div>
           </div>
         </Layout>
-      </div>
     )
   }
 }
@@ -83,21 +107,6 @@ export default Contact
 //uses fragment from Contact component
 export const query = graphql`
   query BlogQuery {
-    allMarkdownRemark {
-      edges {
-        node {
-          frontmatter {
-            id
-            title
-          }
-          timeToRead
-          wordCount {
-            words
-          }
-          excerpt
-        }
-      }
-    }
     allMediumPost {
       edges {
         node {
@@ -110,6 +119,7 @@ export const query = graphql`
           author {
             name
           }
+          firstPublishedAt
           virtuals {
             previewImage {
               imageId
@@ -122,5 +132,19 @@ export const query = graphql`
         }
       }
     }
+    allMarkdownRemark {
+    edges {
+      node {
+        frontmatter {
+          title
+          excerpt
+          date
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
   }
 `

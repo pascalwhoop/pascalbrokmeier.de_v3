@@ -37,7 +37,7 @@ class Contact extends React.Component {
               <div
                 //should contain a "#age" field that we hook into
                 dangerouslySetInnerHTML={{
-                  __html: this.props.data.allMarkdownRemark.edges[0].node.html,
+                  __html: this.props.data.markdownRemark.internal.content,
                 }}
               ></div>
               {/* picture */}
@@ -56,20 +56,12 @@ export default Contact
 //uses fragment from Contact component
 export const query = graphql`
   query AboutQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { id: { eq: "aboutme-snippet" } } }
-    ) {
-      edges {
-        node {
+    markdownRemark( frontmatter: { id: { eq: "aboutme-snippet" } })
+    {
           id
-          fileAbsolutePath
-          html
-          frontmatter {
-            title
-            id
+          internal{
+            content
           }
-        }
-      }
     }
     allDataYaml {
       edges {

@@ -74,13 +74,13 @@ module.exports = {
       },
     },
     //data sources
-    {
-      resolve: `gatsby-source-medium`,
-      options: {
-        username: `@pascal.brokmeier`,
-        limit: 200,
-      },
-    },
+//    {
+//      resolve: `gatsby-source-medium`,
+//      options: {
+//        username: `@pascal.brokmeier`,
+//        limit: 200,
+//      },
+//    },
     {
       resolve: `gatsby-source-airtable`,
       options: {

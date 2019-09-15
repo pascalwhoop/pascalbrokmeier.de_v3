@@ -17,18 +17,21 @@ class Contact extends React.Component {
 
   buildPosts(data) {
     //build medium source
-    let mediumPosts = data.allMediumPost.edges.map(({ node }) => ({
-      title: node.title,
-      url: `https://medium.com/@${node.author.name}/${node.uniqueSlug}`,
-      excerpt: node.content.subtitle,
-      imgUrl: node.virtuals.previewImage.imageId
-        ? `https://miro.medium.com/fit/c/700/540/${node.virtuals.previewImage.imageId}`
-        : '',
-      tags: node.tags,
-      sourceName: 'medium.com',
-      type: 'medium',
-      date: new Date(node.firstPublishedAt)
-    }))
+    //bug 
+    // https://github.com/gatsbyjs/gatsby/issues/17335
+    let mediumPosts = [ ];
+    //let mediumPosts = data.allMediumPost.edges.map(({ node }) => ({
+    //  title: node.title,
+    //  url: `https://medium.com/@${node.author.name}/${node.uniqueSlug}`,
+    //  excerpt: node.content.subtitle,
+    //  imgUrl: node.virtuals.previewImage.imageId
+    //    ? `https://miro.medium.com/fit/c/700/540/${node.virtuals.previewImage.imageId}`
+    //    : '',
+    //  tags: node.tags,
+    //  sourceName: 'medium.com',
+    //  type: 'medium',
+    //  date: new Date(node.firstPublishedAt)
+    //}))
     //build local sources
     let localPosts = data.allMarkdownRemark.edges.map(({node}) => ({
       title: node.frontmatter.title,
@@ -104,47 +107,65 @@ export default Contact
 // url for cover art images
 //https://miro.medium.com/fit/c/700/210/0*Wv7TRtDOt1jDLVPO.jpg
 
-//uses fragment from Contact component
 export const query = graphql`
-  query BlogQuery {
-    allMediumPost {
-      edges {
-        node {
-          title
-          content {
-            subtitle
-          }
-          type
-          uniqueSlug
-          author {
-            name
-          }
-          firstPublishedAt
-          virtuals {
-            previewImage {
-              imageId
-            }
-            tags {
-              name
-              postCount
-            }
-          }
-        }
-      }
-    }
-    allMarkdownRemark {
-    edges {
-      node {
-        frontmatter {
-          title
-          excerpt
-          date
-        }
-        fields {
-          slug
-        }
-      }
-    }
-  }
-  }
-`
+   query BlogQuery {
+     allMarkdownRemark {
+     edges {
+       node {
+         frontmatter {
+           title
+           excerpt
+           date
+         }
+         fields {
+           slug
+         }
+       }
+     }
+   }
+   }
+ `
+ //uses fragment from Contact component
+// export const query = graphql`
+//   query BlogQuery {
+//     allMediumPost {
+//       edges {
+//         node {
+//           title
+//           content {
+//             subtitle
+//           }
+//           type
+//           uniqueSlug
+//           author {
+//             name
+//           }
+//           firstPublishedAt
+//           virtuals {
+//             previewImage {
+//               imageId
+//             }
+//             tags {
+//               name
+//               postCount
+//             }
+//           }
+//         }
+//       }
+//     }
+//     allMarkdownRemark {
+//     edges {
+//       node {
+//         frontmatter {
+//           title
+//           excerpt
+//           date
+//         }
+//         fields {
+//           slug
+//         }
+//       }
+//     }
+//   }
+//   }
+// `

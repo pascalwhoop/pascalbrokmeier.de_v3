@@ -71,8 +71,8 @@ There are several nice ways to get sexy image positioning going but I refer you 
 
 Now I used the new liquid tag for my main homepage (which sadly is riddled with images, but that is what I chose). Here are the results
 
-{% cloudinary default /images/posts/2017-11-03/before_cloudinary.png alt="Before load times" %}
-{% cloudinary default /images/posts/2017-11-03/after_cloudinary.png alt="After load times" %}
+![](./before_cloudinary.png )
+![](./after_cloudinary.png )
 
 To quickly add the snippet with Atom, I build a custom snippet that you can add to your snippets.cson
 
@@ -103,7 +103,7 @@ https://habd.as/pagespeed-100-with-jekyll-s3-and-cloudfront/
 
 This one almost comes out of the box with Firebase. You just need to verify your DNS ownership of the custom domain and Google gets you a letsencrypt HTTPS certificate. Nice.
 
-{% cloudinary default /images/posts/2017-11-03/connect_domain.png alt="Connect domain screenshot" %}
+![](./connect_domain.png )
 
 
 ## Get Caching of ressources

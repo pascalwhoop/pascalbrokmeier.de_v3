@@ -51,7 +51,7 @@ peculiar. Especially for a person that cannot speak German, it must be troubling
 without having contact to the outside world. On the other hand I still want to believe that a police force will not just
 take someone and throw them into prison for no reason. 
 
-{% cloudinary default /images/posts/2018-09-10/DSC_7065.jpg alt="" %}
+![](./DSC_7065.jpg )
 
 I let myself fall back and started talking to the police. I was told they saw attacks with Molotov cocktails and stones
 in the past weeks. I assume these attacks must be reported somewhere, especially since the police carries large cameras
@@ -62,7 +62,7 @@ Sunday. There was no comment on the burned bus that was holding materials for th
 which was most likely burned down by someone, unless it (ironically a former fire-truck) suffered spontaneous
 self-combustion. An investigation is pending.
 
-{% cloudinary default /images/posts/2018-09-10/DSC_7070.jpg alt="" %}
+![](./DSC_7070.jpg )
 {% cloudinary default /images/posts/2018-09-10/DSC_7071.jpg alt="" %}
 
 Something else I noticed: when the procession reached the camp on the outskirts of the forest, one face-mask wearing
@@ -71,7 +71,7 @@ guess, when wearing face masks during a demonstration, you walk a fine line ([li
 law](https://dejure.org/gesetze/VersG/17a.html)). Once he moved away, they let him go. Another figure has been standing
 on the outskirts of the demonstration, watching the whole process from far away. 
 
-{% cloudinary default /images/posts/2018-09-10/DSC_7072.jpg alt="" %} 
+![](./DSC_7072.jpg )
 
 The official part was over and therefore the police left. I took my bike and walked towards the camp, assuming that
 while I don't look *like one of them* I also don't have to worry to be mistaken with a police officer. The mood in the
@@ -118,7 +118,7 @@ It was a nice talk and although we just kept uncovering more and more reasons fo
 such talks, also between both opposing fronts, were more common. 
 
 
-{% cloudinary default /images/posts/2018-09-10/DSC_7075.jpg alt="" %}
+![](./DSC_7075.jpg )
 
 
 ## Conclusion
@@ -143,6 +143,6 @@ the panels all over the hills. But its again theirs, and if solar panels end up 
 would defend them just as they defend the coal today. 
 
 
-{% cloudinary default /images/posts/2018-09-10/DSC_7058.jpg alt="" %} 
+![](./DSC_7058.jpg )
 
 

@@ -23,7 +23,7 @@ distributed, with many suppliers and many consumers being able to store energy a
 simulates such a scenario simulating a grid market dynamics of a small city. It simulates 3 core
 markets: Tariff, wholesale and balancing. 
 
-{% cloudinary default /images/posts/2018-05-09/powertac_overview.png alt="" %}
+![](./powertac_overview.png )
 
 ## Tariff market
 The first market simulates the creation and adoption of tariffs in a end-user centered market.Brokers, the main actors

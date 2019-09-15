@@ -76,7 +76,7 @@ People that sneeze at the sight of html need to get a point-type-click-publish w
 
 The first one is the absolutely lightweight one but it requires everyone who wants to perform an edit to login with their Github account or create one if they don't have one. The second one is definately simpler to setup, especially if you also would like guests to submit stories that you can then verify and publish if you please.
 
-{% cloudinary default /images/posts/2017-11-11/pull-request-example.png alt="Pull Request example with netlify CMS" %}
+![](./pull-request-example.png )
 
 For publishing you can either use the Github Website to merge the auto-created PR or you can use the `/admin` interface which was also used to create the post.
 

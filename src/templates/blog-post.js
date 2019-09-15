@@ -5,6 +5,15 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/SEO'
 
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }};
+function addMathjax() {
+  var s = document.createElement( 'script' );
+  console.log("adding mathjax!!!")
+  s.setAttribute( 'src', "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js");
+  document.body.appendChild( s );
+}
+
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
@@ -17,15 +26,16 @@ class BlogPostTemplate extends React.Component {
       <Layout>
         <SEO title={post.frontmatter.title} description={post.excerpt} />
 
-        <div class="main">
+        <div className="main">
           <Img fluid={cover}></Img>
           <div className="inner">
             <h1> {post.frontmatter.title} </h1>
             <p> {post.frontmatter.date} </p>
 
-            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div dangerouslySetInnerHTML={{ __html: post.html }} className="post"/>
           </div>
         </div>
+      {post.frontmatter.mathjax ? addMathjax() : null}
       </Layout>
     )
   }
@@ -47,11 +57,12 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        mathjax
         date(formatString: "MMMM DD, YYYY")
         cover {
           publicURL
           childImageSharp {
-            fluid(maxWidth: 800) {
+            fluid(maxWidth: 1600) {
               ...GatsbyImageSharpFluid
             }
           }

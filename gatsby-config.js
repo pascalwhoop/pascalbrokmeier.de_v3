@@ -47,7 +47,7 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
-        plugins: ['gatsby-remark-images', 'gatsby-remark-prismjs'],
+        plugins: ['gatsby-remark-images', 'gatsby-remark-prismjs', 'gatsby-remark-mathjax'],
       },
     },
     {
@@ -59,6 +59,7 @@ module.exports = {
     },
     //data file handling
     `gatsby-transformer-yaml`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

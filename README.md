@@ -33,8 +33,9 @@ This page is based on a few key technologies:
     - [ ] posts on dataminded.be
     - [ ] posts on cattlecrew?
 - convert current posts into markdown driven by gatsby with [this](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
-- reading list driven through airtable data
-    - podcasts based on pocketcasts API
+- [ ] reading list driven through goodreads API
+- [x] reading list driven through airtable data
+- [ ]  podcasts based on pocketcasts API
 - monthly "tech" | "client"(legal?) | country graph
 - https://visjs.org/examples/timeline/items/backgroundAreas.html
 - http://uber.github.io/react-vis/examples/showcases/plots more viz
@@ -45,3 +46,17 @@ This page is based on a few key technologies:
 ### NOT DOING: 
 
 - create cloudinary component with easy interface
+
+## hacking medium posts back
+
+1. get posts with 
+   ```
+   https://medium.com/@pascal.brokmeier/latest?format=json&limit=200
+   ```
+2. save as file
+3. run jq on it
+    ```
+    echo "[" > src/data/medium_posts.json
+    cat src/data/medium_posts_backup.json | jq ".payload.references.Post | to_entries[] | .value" >> src/data/medium_posts.json
+    echo "]" >> src/data/medium_posts.json
+    ```

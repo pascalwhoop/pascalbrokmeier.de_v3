@@ -20,7 +20,7 @@ This course was separated into two parts. Supply Chain Operations and Behavioral
 
 #### Bullwhip effect
 
-{% cloudinary default /images/posts/2017-07-15/20.jpg alt="" %}
+![](./20.jpg )
 
 The Bullwhip effect describes a phenomenon where small fluctuations in the end-customer demand lead to ever-increasing fluctuations of the demand down the supply chain. This is mainly caused by overreaction of individual supply chain participants to small fluctuations in demand.
 
@@ -36,9 +36,9 @@ The effect can be mediated by automated sharing of demand data across the supply
 
 **Bullwhip factor**
 
-\\[
+$$
 BF(LT,T) \approx 1 + \frac{2(LT+1)}{T}+ \frac{2(LT+1)^ 2}{T ^2} \mid LT:\text{lead time}, T:\text{forecasting error periods}
-\\]
+$$
 
 </div>
 
@@ -49,7 +49,7 @@ BF(LT,T) \approx 1 + \frac{2(LT+1)}{T}+ \frac{2(LT+1)^ 2}{T ^2} \mid LT:\text{le
 
 -   placing orders before demand is known
 -   overage and underage costs apply
-    -   overage → \\(w-bb\\) or \\(w-v\\) (buyback / salavage)
+    -   overage → $w-bb$ or $w-v$ (buyback / salavage)
     -   underage → lost sale opportunities
 
 
@@ -58,28 +58,28 @@ BF(LT,T) \approx 1 + \frac{2(LT+1)}{T}+ \frac{2(LT+1)^ 2}{T ^2} \mid LT:\text{le
 
 | variable              | description                       |
 | :-------------        | :-------------                    |
-| \\(c_o, c_u\\)            | overage cost, underage cost       |
-| \\(p_y\\)                 | probability that demand will be y |
-| \\(c\\)                   | unit order cost                   |
-| \\(S\\)                   | order Quantity                    |
+| $c_o, c_u$            | overage cost, underage cost       |
+| $p_y$                 | probability that demand will be y |
+| $c$                   | unit order cost                   |
+| $S$                   | order Quantity                    |
 
 **Critical Ratio**
-\\[F(S)=\frac{c_u}{c_u+c_o}=CR\\]
+$$F(S)=\frac{c_u}{c_u+c_o}=CR$$
 
 **Optimal order quantity**
-\\[S^* = F^{-1}\left(\frac{c_u}{c_u+c_o}\right)\\]
+$$S^* = F^{-1}\left(\frac{c_u}{c_u+c_o}\right)$$
 **In case of normally distributed demand**
-\\[S^* = \mu + z\sigma \mid z=F^{-1}\left(\frac{c_u}{c_u+c_o}\right)\\]
+$$S^* = \mu + z\sigma \mid z=F^{-1}\left(\frac{c_u}{c_u+c_o}\right)$$
 
 **Optimal expected cost**
 
-\\[
+$$
 Z(S^ * ) = (c_u+c_o)\cdot f_{N(0,1)}(z) \cdot \sigma
-\\]
+$$
 **Optimal expected profit**
-\\[
+$$
 \Pi(S^* ) = (r-c)\mu-Z(S^ * )
-\\]
+$$
 
 </div>
 
@@ -89,7 +89,7 @@ Z(S^ * ) = (c_u+c_o)\cdot f_{N(0,1)}(z) \cdot \sigma
 
 ### Economic Order Quantity Model
 
-{% cloudinary default /images/posts/2017-07-15/23.jpg alt="" %}
+![](./23.jpg )
 
 #### Facts (Reproduction)
 -   assumes a constant demand
@@ -103,24 +103,24 @@ Z(S^ * ) = (c_u+c_o)\cdot f_{N(0,1)}(z) \cdot \sigma
 
 | variable       | description                          |
 | :------------- | :-------------                       |
-| \\(\mu\\)      | demand rate p period                 |
-| \\(K\\)        | fixed order cost                     |
-| \\(c\\)        | variable order cost(unit/order)      |
-| \\(h\\)        | inventory holding cost (unit/period) |
-| \\(x\\)        | order quantity                       |
+| $\mu$      | demand rate p period                 |
+| $K$        | fixed order cost                     |
+| $c$        | variable order cost(unit/order)      |
+| $h$        | inventory holding cost (unit/period) |
+| $x$        | order quantity                       |
 
 **optimal order quantity**
-\\[ x^* = \sqrt{\frac{2K\mu}{h}} \\]
+$$ x^* = \sqrt{\frac{2K\mu}{h}} $$
 
 **total cost per period**
 inventory holding cost + fixed order cost + variable order cost
-\\[Z(x) = h\frac{x}{2} + K\frac{\mu}{x} + c\mu\\]
+$$Z(x) = h\frac{x}{2} + K\frac{\mu}{x} + c\mu$$
 
 
 </div>
 ### Periodic Review Inventory Model
 
-{% cloudinary default /images/posts/2017-07-15/24.jpg alt="" %}
+![](./24.jpg)
 
 #### Facts (Reproduction)
 
@@ -130,47 +130,47 @@ inventory holding cost + fixed order cost + variable order cost
 
 **Process of each session is:**
 
-1. Observe inventory level \\(I_t\\)
-2. Observe open orders \\(O_t\\)
-3. Compute inventory position \\(IP_t\\)
-4. Place order \\(x_t = S– IP_t\\)
-5. Receive shipment \\(x_{t-LT}\\)
-6. Fill demand \\(y_t\\)
+1. Observe inventory level $I_t$
+2. Observe open orders $O_t$
+3. Compute inventory position $IP_t$
+4. Place order $x_t = S– IP_t$
+5. Receive shipment $x_{t-LT}$
+6. Fill demand $y_t$
 
 #### Formulas (Application)
 <div class="important-math-wrapper" markdown="1">
 
 | variable              | description                       |
 | :-------------        | :-------------                    |
-| \\(f(y)\\)                | Density function of demand y      |
-| \\(F(y)\\)                | Distribution function of demand y |
-| \\(c\\)                   | Unit cost (0.50 €/unit)           |
-| \\(h\\)                   | Unit inventory holding cost       |
-| \\(p\\)                   | Unit backorder penalty cost       |
-| \\(r\\)                   | Unit revenue                      |
-| \\(LT\\)                  | Lead time                         |
-| \\(a\\)                   | almost b                          |
+| $f(y)$                | Density function of demand y      |
+| $F(y)$                | Distribution function of demand y |
+| $c$                   | Unit cost (0.50 €/unit)           |
+| $h$                   | Unit inventory holding cost       |
+| $p$                   | Unit backorder penalty cost       |
+| $r$                   | Unit revenue                      |
+| $LT$                  | Lead time                         |
+| $a$                   | almost b                          |
 
 **Optimal order-up-to level**
-As in the other cases, we use the standard formula \\(\mu+z\sigma\\) with the parameter of this model as seen below
-\\[ S^* =  \mu +z\sigma_ {LT+1} \mid
+As in the other cases, we use the standard formula $\mu+z\sigma$ with the parameter of this model as seen below
+$$ S^* =  \mu +z\sigma_ {LT+1} \mid
 z = F_ {LT+1}^{-1}\left(\frac{p}{p+h}\right)
-\\]
+$$
 
 **To calculate LT+1 is used**
 
-\\[ \sigma_{LT+R} = \sigma \sqrt{LT+R} \mid R=\text{review period}\\]
+$$ \sigma_{LT+R} = \sigma \sqrt{LT+R} \mid R=\text{review period}$$
 
 **To calculate expected costs of optimal solution**
 
-\\[ Z(S^* ) = (h+p)\cdot f_{N(0,1)}(z)\cdot \sigma_{LT+1}\\]
+$$ Z(S^* ) = (h+p)\cdot f_{N(0,1)}(z)\cdot \sigma_{LT+1}$$
 
 
 </div>
 
 ### Continuous Review Inventory Model
 
-{% cloudinary default /images/posts/2017-07-15/21.jpg alt="" %}
+![](./21.jpg )
 
 #### Facts (Reproduction)
 
@@ -179,27 +179,27 @@ z = F_ {LT+1}^{-1}\left(\frac{p}{p+h}\right)
 
 | variable              | description                       |
 | :-------------        | :-------------                    |
-| \\(\mu\\)            | mean demand                            |
-| \\(\sigma\\)         | standard deviation of demand           |
-| \\(h\\)               | inventory holding cost                |
-|   \\(p\\)             |   unit backorder penalty              |
-| \\(K\\)               | fixed order cost                      |
-| \\(LT\\)              | lead time |
-|   \\(r\\)             | reorder point (number not time)       |
-| \\(x\\)               | order quantity (often also \\(q\\))       |
+| $\mu$            | mean demand                            |
+| $\sigma$         | standard deviation of demand           |
+| $h$               | inventory holding cost                |
+|   $p$             |   unit backorder penalty              |
+| $K$               | fixed order cost                      |
+| $LT$              | lead time |
+|   $r$             | reorder point (number not time)       |
+| $x$               | order quantity (often also $q$)       |
 
 
 **expected inventory**
-\\[ E[\text{inventory}]\approx r-\sigma_{LT} + \frac{x}{2} \\]
+$$ E[\text{inventory}]\approx r-\sigma_{LT} + \frac{x}{2} $$
 
 **Expected costs**
 *Here, the first describes the holding cost, the second term the expected penalty cost and the third the order cost/period.*
 
-\\[ Z(x,r) \approx
+$$ Z(x,r) \approx
 h \left(r-\mu_{LT}+\frac{x}{2}\right)+
 p\frac{\mu}{x}L\left(\frac{r-\mu_{LT}}{\sigma_{LT}}\right)+
 K \frac{\mu}{x}
-\\]
+$$
 
 
 
@@ -208,39 +208,45 @@ K \frac{\mu}{x}
 
 ### Service Levels
 
--   **\\(\alpha\\)-service level**: probability that **all demand in an order cycle** is met must be at least
-    \\(\alpha\\)
+-   **$\alpha$-service level**: probability that **all demand in an order cycle** is met must be at least
+    $\alpha$
     -   to calculate the alpha service level, we need to look at the reorder point. If the reorder point is below the expected demand for the lead time plus a safety factor (which is dependent on the ɑ-level), we need to reorder. The reorder amount can still be determined using the iterative solution
--   **\\(\beta\\)-service level**: expected fraction that is filled in an order cycle must be at least \\(\beta\\)
-    -   the β-service level calculations are similar to those of the ɑ. The reorder amount is again determined by the approaches of the continuous review model. The reorder point is similar as with ɑ-level, however we use the inverse loss function instead and the parameter is dependent on \\(\sigma\\) and \\(x^*\\).
+-   **$\beta$-service level**: expected fraction that is filled in an order cycle must be at least $\beta$
+    -   the β-service level calculations are similar to those of the ɑ. The reorder amount is again determined by the approaches of the continuous review model. The reorder point is similar as with ɑ-level, however we use the inverse loss function instead and the parameter is dependent on $\sigma$ and $x^*$.
 
 #### Formulas (Application)
 
 <div class="important-math-wrapper" markdown="1">
 
 **ɑ-Service level**
+
 Optimal order quantity
-\\[x^* = \sqrt{\frac{2\mu K}{h}}\\]
+
+$$x^* = \sqrt{\frac{2\mu K}{h}}$$
+
 Optimal reorder point
-\\[r^* = F_{LT}^{-1}(\alpha) = \mu_ {LT}+z\sigma_{LT}\\]
+
+$$r^* = F_{LT}^{-1}(\alpha) = \mu_ {LT}+z\sigma_{LT}$$
+
 
 **β-Service level**
 
 Optimal order quantity is the same as with ɑ-Service
-Optimal reorder point
-\\[
-r^* =
-\mu_{LT} +
-L^{-1}\left(\frac{(1-\beta)\mu }{\sigma_ {LT}}\right) \sigma_{LT} \\]
 
-\\[
+Optimal reorder point
+
+$$
+r^* = \mu_{LT} + L^{-1}\left(\frac{(1-\beta)\mu }{\sigma_ {LT}}\right) \sigma_{LT} 
+$$
+
+$$
 \beta \approx  \frac{\mu-L\left(\frac{S^* - \mu_{LT+1}}{\sigma_{LT+1}}\right)}{\mu}
-\\]
+$$
 
 **Expected backorder levels**
-\\[
+$$
 E(O-S) ^+=\sum_{y=S} ^{\infty}(y-S)p_y
-\\]
+$$
 
 
 </div>
@@ -265,18 +271,18 @@ Generally there are two approaches
 
 | variable              | description                       |
 | :-------------        | :-------------                    |
-| \\(\hat{y_t}\\)            |    forecasting for period t       |
-| \\(\epsilon_t\\)      | forecast error (\\(e_t^2\\) for squared err)    |
-| \\(M\\)            | number of data points for forecast error |
-| \\(N\\)               | Degrees of freedom (1 for moving average, 2 for DES)|
+| $\hat{y_t}$            |    forecasting for period t       |
+| $\epsilon_t$      | forecast error ($e_t^2$ for squared err)    |
+| $M$            | number of data points for forecast error |
+| $N$               | Degrees of freedom (1 for moving average, 2 for DES)|
 
 **exponential smoothing**
 
 standard deviation of demand
 
-\\[
+$$
 \hat{\mu}_ t = \sqrt{\frac{1}{M-N} \sum_ {k=t-M} ^{t-1}{\epsilon_k ^2}}
-\\]
+$$
 
 </div>
 
@@ -293,7 +299,7 @@ Finding the right price for different products with limited availability.
 
 -   Parameters used for fencing tactics are: Time, Location, Flexibility, Groups, Variants
 
-{% cloudinary default /images/posts/2017-07-15/25.jpg alt="" %}
+![](./25.jpg )
 
 -   with booking limits, if there are 10 spots available and 3 are allocated for the cheapest tier, once 3 bookings occur, independent of category, the lowest class is booked out.
 -   Protection Level: minimum amount of seats reserved for certain class
@@ -313,15 +319,15 @@ Approach: Set reserved amount for high priced booking class to 0. Now iterate ov
 
 | variable              | description                       |
 | :-------------        | :-------------                    |
-| \\(C\\)                   |    capacity                       |
-| \\(r_i\\)                 |   revenue for class i             |
-| \\(B_i\\)                 | bookings for class i              |
-| \\(G_i\\)                 | protection level for class i      |
+| $C$                   |    capacity                       |
+| $r_i$                 |   revenue for class i             |
+| $B_i$                 | bookings for class i              |
+| $G_i$                 | protection level for class i      |
 
 
-\\[
+$$
     G_1^*  = C-B_2^* = F_1^{-1}\left(1-\frac{r_2}{r_1}\right)
- \\]
+ $$
 
 </div>
 
@@ -332,14 +338,14 @@ This approach can obviously also be used for several classes. For each class, th
 **Protection levels for n classes**
 
 1. Calculate protection levels for each class against k+1 class
-\\[
+$$
     G_{k+1,I}  = F_1^{-1}\left(1-\frac{r_{k+1}}{r_I}\right)
- \\]
+ $$
 2. Aggregate protection levels for each class: Protection level of high class is sum of all protection levels in the classes below.
 3. Calculate booking limits
-\\[
+$$
     B_k = C - G_{k-1}
- \\]
+ $$
 </div>
 
 This approach can obviously also be used for several classes. For each class, the previous classes need to be solved first. So with four classes high -- medium -- low -- trash, first we calculate the protection amount for the high class, then for the medium etc. until we have a set of nested protection amounts for each class.
@@ -349,14 +355,14 @@ This approach can obviously also be used for several classes. For each class, th
 **Protection levels for n classes**
 
 1. Calculate protection levels for each class against k+1 class
-\\[
+$$
     G_{k+1,I}  = F_1^{-1}\left(1-\frac{r_{k+1}}{r_I}\right)
- \\]
+ $$
 2. Aggregate protection levels for each class: Protection level of high class is sum of all protection levels in the classes below.
 3. Calculate booking limits
-\\[
+$$
     B_k = C - G_{k-1}
- \\]
+ $$
 </div>
 
 #### Overbooking
@@ -367,24 +373,24 @@ This approach can obviously also be used for several classes. For each class, th
 
 | variable              | description                       |
 | :-------------        | :-------------                    |
-| \\(C\\)                   |    capacity                       |
-| \\(B\\)                   |   booking limits                  |
-| \\(r\\)                   | price of one unit sold            |
-| \\(p\\)                   | cost of paying for overbooked customer      |
-| \\(x\\)                   | number of no-shows                |
-| \\(y\\)                   | demand                            |
-| \\(f(x)\\)                 | density function of no-shows      |
+| $C$                   |    capacity                       |
+| $B$                   |   booking limits                  |
+| $r$                   | price of one unit sold            |
+| $p$                   | cost of paying for overbooked customer      |
+| $x$                   | number of no-shows                |
+| $y$                   | demand                            |
+| $f(x)$                 | density function of no-shows      |
 
 
-\\[
+$$
     B^*  = C+F^{-1}\left(\frac{r}{p}\right)
- \\]
+ $$
 
  and for ɸ-distributions
 
- \\[
+ $$
     B^* = C + \mu_ x + F_ {0,1}^{-1}\left(\frac{r}{p}\right)\sigma_ x
- \\]
+ $$
 
 </div>
 
@@ -401,17 +407,17 @@ Reducing prices for products that are nearing their end-of-life and will soon st
 If one has to stock several parts, which parts to stock and how many of each part for a given budget to minimize expected backorders
 <div class="important-math-wrapper" markdown="1">
 
--   \\(h(S)\\) = expected backorder level
--   \\(c_i\\) = cost for part i
+-   $h(S)$ = expected backorder level
+-   $c_i$ = cost for part i
 
 ```
-1.  Set \\(S_i = 0 \forall i=1,...,N\\)
+1.  Set $S_i = 0 \forall i=1,...,N$
 2.  Compute marginal utility/cost change per part (i.e. one more of each => increase in costs)
-    -   \\(m_i = \frac{h_i(S_i)-h_i(S_i+1)}{c_i} \forall i\\)
+    -   $m_i = \frac{h_i(S_i)-h_i(S_i+1)}{c_i} \forall i$
 3.  Kick those out whose cost would go over budget
-4. select \\(max\{m_i\}\forall i \in N\\)
-5. Increase chosen max utility increasing \\(S_i\\) by 1
-6. if \\(\sum c_iS_i \leq b\\) and not all kicked out jump to (3) else END
+4. select $max\{m_i\}\forall i \in N$
+5. Increase chosen max utility increasing $S_i$ by 1
+6. if $\sum c_iS_i \leq b$ and not all kicked out jump to (3) else END
 ```
 
 </div>
@@ -421,30 +427,30 @@ If one has to stock several parts, which parts to stock and how many of each par
 -   Dependencies between echelons (expected delay at upper echelons because of backordering)
 
 ### Strategic Safety Stock Placement in Multi-Echelon SC Networks
-{% cloudinary default /images/posts/2017-07-15/26.jpg alt="" %}
+![](./26.jpg )
 
 A big problem with a multi-tier production network is the large amount of decision variables that interact with each other and are interdependent, leading to a large and complex multidimensional problem with many constraints. One tries to find an optimal solution for the stock levels at each depot and the central warehouse to minimize overall costs while maintaining a certain service level.
 
 #### Serial structures
 
-{% cloudinary default /images/posts/2017-07-15/27.jpg alt="" %}
+![](./27.jpg )
 
-The overall idea is that each preceding stage has a promised service time. Stage j also promises its service time \\(S_j\\) and while doing so tries to minimize its inventory
+The overall idea is that each preceding stage has a promised service time. Stage j also promises its service time $S_j$ and while doing so tries to minimize its inventory
 
 
 | variable              | description                       |
 | :-------------        | :-------------                    |
-| \\(I_j(t)\\)              |   Inventory level at end of period t |
-| \\(B_j\\)                 | Base-stock level of stage j       |
-| \\(d_j(a, b)\\)           | Demand of periods \\(d_j(a)\\) + ... + \\(d_j(b)\\) |
-| \\(S_{j-1}\\)             | Inbound guaranteed service time  |
-| \\(S_j\\)                 | outbound guaranteed service time |
-| \\(T_j\\)                 | Processing time of stage j        |
+| $I_j(t)$              |   Inventory level at end of period t |
+| $B_j$                 | Base-stock level of stage j       |
+| $d_j(a, b)$           | Demand of periods $d_j(a)$ + ... + $d_j(b)$ |
+| $S_{j-1}$             | Inbound guaranteed service time  |
+| $S_j$                 | outbound guaranteed service time |
+| $T_j$                 | Processing time of stage j        |
 
 Observations:
--   \\(\downarrow S_{j-1} \implies \downarrow B_j\\)
--   \\(\uparrow d_j(a,b) \implies \uparrow B_j\\)
--   \\(\uparrow T_j \implies \uparrow S_j\\)
+-   $\downarrow S_{j-1} \implies \downarrow B_j$
+-   $\uparrow d_j(a,b) \implies \uparrow B_j$
+-   $\uparrow T_j \implies \uparrow S_j$
 
 #### Arbitrary structures
 -   Use of dynamic programming to solve complex systems
@@ -482,23 +488,22 @@ TODO
 -   COC: 30% → 0.005357 / week
 
 
-\\[
+$$
 r^* =
 \mu_ {LT} +
 L^{-1}\left(\frac{(1-\beta)\mu }{\sigma_ {LT}}\right) \sigma_ {LT}
-\\]
+$$
 
-\\[
+$$
 r^* =
-31887 +
-L^{-1}\left(\frac{(1-0.98)31887 }{7335}\right) 7335
-\\]
+31887 + L^{-1}\left(\frac{(1-0.98)31887 }{7335}\right) 7335
+$$
 
-\\[
+$$
 r^* =
 31887 +
 0.98 \cdot 7335 \approx 39075
-\\]
+$$
 
 
 
@@ -531,7 +536,7 @@ The human mind can be modeled as having two systems: The conscious, effortful sy
 
 **System 1: The conscious stream** follows rules and can adapt to new tasks. It takes control force of will to continually focus on a certain topic without switching to other topics of interest.
 
-{% cloudinary default /images/posts/2017-07-15/1.jpg alt="" %}
+![](./1.jpg )
 
 The three components of the conscious system describe the state in which the system is and why it needs to be "controlled". It requires physical, cognitive and emotional effort to steer and direct the _train of thought_.
 
@@ -611,7 +616,7 @@ _Literature_:
   - 50:50 chance of €1000 vs safe 500: ppl choose 500
   - same in negative: People prefer risk: Risk seeking in losses, aversion in gains
 
-{% cloudinary default /images/posts/2017-07-15/2.jpg alt="" %}
+![](./2.jpg )
 
 -   People are risk-averse in the gains and risk-seeking in the losses
 
@@ -631,7 +636,7 @@ People tend to overweight small probabilities and underweight large probabilitie
 
 ##### Allais paradox
 
-{% cloudinary default /images/posts/2017-07-15/3.jpg alt="" %}
+![](./3.jpg )
 
 People tend to choose 1A and 2B. But 1A is a "sure thing" while 2B is a gamble.
 
@@ -700,7 +705,7 @@ Improvement strategies usually include statistics based estimates (scrum velocit
 
 ##### Bolton-Ockenfels model
 
-- Individuals include in their utility function \\(U_i = U_i(x_i, s_i)\\) both their received value as well as their "fair share", having a maximum in \\(\frac{1}{n}\\), i.e. in the perfect share of the total number of people to share with.
+- Individuals include in their utility function $U_i = U_i(x_i, s_i)$ both their received value as well as their "fair share", having a maximum in $\frac{1}{n}$, i.e. in the perfect share of the total number of people to share with.
 
 
 #### Fairness Games
@@ -733,7 +738,7 @@ _Should be capable of explaning all of them_
     -   rejection rate is anti-proportinal to share-rate
 -   Trust game: On average, players are just compensated their investment → B not valuing the trust received by player A
     -   But: only "average" most people either give back more or less, few actually return investment only.
-    -   {% cloudinary default /images/posts/2017-07-15/5.jpg alt="" %}
+![](./5.jpg )
 -   Trust and punishment game: Similar results have been seen for "fines for picking up your children late". After introduction of the fine, more people picked them up late as they saw it as a "fair payment" for their late arrival
 
 #### Intentions-based preferences (Reciprocity)
@@ -749,21 +754,21 @@ _Should be capable of explaning all of them_
 #### Setting
 ##### General Approach
 Kremer et al.: How do subjects detect a change of demand level
-{% cloudinary default /images/posts/2017-07-15/4.jpg alt="" %}
+![](./4.jpg )
 
 ##### Time-Series Modeling − Forecast Modeling
-{% cloudinary default /images/posts/2017-07-15/6.jpg alt="" %}
+![](./6.jpg )
 - model idea: Temporary shocks and permanent trends
 
 ##### Single exponential smoothing in time-series modeling
-- Forecast formula: \\(F_{t+1} = \alpha D_t + (1 - \alpha)F_t = F_t + \alpha(D_t - F_t)\\)
-    -   \\(D_t\\) describes the demand in t
-- optimal \\(\alpha\\) expressed through change-to-noise ratio \\(W = \frac{c^2}{n^2}\\)
+- Forecast formula: $F_{t+1} = \alpha D_t + (1 - \alpha)F_t = F_t + \alpha(D_t - F_t)$
+    -   $D_t$ describes the demand in t
+- optimal $\alpha$ expressed through change-to-noise ratio $W = \frac{c^2}{n^2}$
 
-- \\(a^*(W) = \frac{2}{a+\sqrt{1+ 4\div w}}\\)  <!--*-->
-    -   optimal \\(\alpha\\)
+- $a^*(W) = \frac{2}{a+\sqrt{1+ 4\div w}}$  <!--*-->
+    -   optimal $\alpha$
     -   large c → small sqrt → small dividend → large ɑ
-    -   larger \\(W\\) → more weight on recent demand figures
+    -   larger $W$ → more weight on recent demand figures
 
 #### Experiment
 
@@ -782,21 +787,21 @@ Hypothesis: Humans overreact on changes that are rationally likely caused by noi
 - Manufacturers need credible forecasting information from their retailers
     -   if the forecasts do not match real world expectations, large over/underproductions are the result
 
-{% cloudinary default /images/posts/2017-07-15/7.jpg alt="" %}
+![](./7.jpg )
 
-If the forwarded demand forecast \\(\hat{\xi}\\) is not realistic (i.e. too large), the retailer minimizes his risk of incurring underage costs at the cost of expectable overage costs for the manufacturer.
+If the forwarded demand forecast $\hat{\xi}$ is not realistic (i.e. too large), the retailer minimizes his risk of incurring underage costs at the cost of expectable overage costs for the manufacturer.
 
--   sending \\(\hat{\xi}\\) is costless, non-binding and called *cheap-talk*
+-   sending $\hat{\xi}$ is costless, non-binding and called *cheap-talk*
 
 #### Empirical data on forecast information sharing
 
-{% cloudinary default /images/posts/2017-07-15/8.jpg alt="" %}
+![](./8.jpg )
 
 -   retailers systematically overreport demand
 -   Manufacturers systematically discount forecasts by retailers
 -   result → non optimal supply chain but some correction automatically in place
 
-{% cloudinary default /images/posts/2017-07-15/9.jpg alt="" %}
+![](./9.jpg )
 
 -   low capacity cost reduces forecast inflation
 -   lowering uncertainty mediates inflation in high capacity cost environments
@@ -842,7 +847,7 @@ If the forwarded demand forecast \\(\hat{\xi}\\) is not realistic (i.e. too larg
 ### Decision Bias in the Newsvendor Problem with a Known Demand Distribution
 Authors: *(Schweitzer, Cachon 2000)*
 
--   \\(q_n\\): Optimal risk-neutral order quantity
+-   $q_n$: Optimal risk-neutral order quantity
 
 #### Question: Why do decisions deviate from profit maximisation?
 
@@ -851,7 +856,7 @@ Authors: *(Schweitzer, Cachon 2000)*
 
 #### Types of decision makers
 
--   risk neutral: \\(q_t = q_n \forall \text{rounds} t\\)
+-   risk neutral: $q_t = q_n \forall \text{rounds} t$
     -   utility = expected profit
 -   risk averse and risk seeking: classic concave/convex curves
 -   prospect theory aligned:
@@ -859,15 +864,15 @@ Authors: *(Schweitzer, Cachon 2000)*
     -   if only losses are possible: over-ordering
 -   waste-averse: A Decision maker dislikes salvaging excess Inventory
     -   avoids over-ordering
-    -   \\(q_t \leq q_n\\)
+    -   $q_t \leq q_n$
 -   stockout-averse: Dislikes loosing potential sales
-    -   \\(q_t \geq q_n\\)
+    -   $q_t \geq q_n$
 -   underestimated opportunity costs
     -   underestimates value of foregone sales
     -   similar to waste-averse, but different motivation.
 -   minimizing ex-post inventory error
-    -   \\(q_t \leq q_n\\) for high profit products
-    -   \\(q_t \geq q_n\\) for low profit products
+    -   $q_t \leq q_n$ for high profit products
+    -   $q_t \geq q_n$ for low profit products
     -   irrational: High profit products are worth over-ordering as few sales can compensate several unsold orders
     -   probably due to anchoring to mean demand
 
@@ -877,7 +882,7 @@ Authors: *(Schweitzer, Cachon 2000)*
 -   demand distribution is known-known
 -   no change in order sizes over time
 
-{% cloudinary default /images/posts/2017-07-15/11.jpg alt="" %}
+![](./11.jpg )
 
 -   people order too few for high profit and too many for low profit.
 -   people do not learn. Behavioral explanations such as risk aversion, risk-seeking, waste aversion, ... insufficient
@@ -928,7 +933,7 @@ An explanation can be the fact that the parties will still have to rely on each 
 
 ### Designing Incentive Schemes for Truthful Demand Information sharing
 
-{% cloudinary default /images/posts/2017-07-15/10.jpg alt="" %}
+![](./10.jpg )
 
 The goal is to compare different incentive systems for sales departments
 
@@ -966,8 +971,8 @@ A conclusion for organizations is the inhibiting of inappropriate responses to s
 
 |  | Fixed fee not charged | Fixed fee charged |
 | :------------- | :------------- | :---------- |
-| \\(|p| = 1\\) | Linear-price contract | Two-part tariff (Quantity Discount)|
-| \\(|p| \gt 1\\) | Block tariff | Three-part tariff |
+| $|p| = 1$ | Linear-price contract | Two-part tariff (Quantity Discount)|
+| $|p| \gt 1$ | Block tariff | Three-part tariff |
 
 -   two part tariff(TPT): significant coordination expected
 -   three part tariff: no coordination improvements over two p expected
@@ -976,20 +981,20 @@ A conclusion for organizations is the inhibiting of inappropriate responses to s
 
 | Fixed fee | integrated costs |
 | :------------- | :------------- |
-| \\(qw + F\\) | \\(q(\frac{F}{q} + w)\\) |
-| \\(qw + F \leftrightarrow q(\frac{F}{q} + w)\\)||
+| $qw + F$ | $q(\frac{F}{q} + w)$ |
+| $qw + F \leftrightarrow q(\frac{F}{q} + w)$||
 
-Obviously, the two contracts are of equivalent mathematical value. However, the fixed fee is considered an "extra cost" and triggers loss aversion. In a mathematical sense, the manufacturer would sell his items at retail price \\(w=c\\), assuming both \\(c, p\\) are common knowledge in the supply chain. He would then correct this lack of profit by setting a fixed fee \\(F = \frac{d*c}{2}\\), so half the total profit of the overall supply chain profit. This would, theoretically, lead to the retailer ordering an optimal amount and giving half of its expected profit to the supplier.
+Obviously, the two contracts are of equivalent mathematical value. However, the fixed fee is considered an "extra cost" and triggers loss aversion. In a mathematical sense, the manufacturer would sell his items at retail price $w=c$, assuming both $c, p$ are common knowledge in the supply chain. He would then correct this lack of profit by setting a fixed fee $F = \frac{d*c}{2}$, so half the total profit of the overall supply chain profit. This would, theoretically, lead to the retailer ordering an optimal amount and giving half of its expected profit to the supplier.
 
 #### Results
 
-The optimal channel efficiency (\\(\epsilon\\)) was never reached. The two-part tariffs actually performed worse than the linear-price contracts (LP) in the overall average. The quantity discount (QT) did improve channel efficiency. It is interesting however, that for if the retailer accepted (A) the contract, the channel efficiency was much higher for both coordinating contracts, that is, the supply chain was successfully coordinated, if the retailer accepted the contracting terms.
+The optimal channel efficiency ($\epsilon$) was never reached. The two-part tariffs actually performed worse than the linear-price contracts (LP) in the overall average. The quantity discount (QT) did improve channel efficiency. It is interesting however, that for if the retailer accepted (A) the contract, the channel efficiency was much higher for both coordinating contracts, that is, the supply chain was successfully coordinated, if the retailer accepted the contracting terms.
 
-\\(\epsilon(LP) = 72.95\\)
-\\(\epsilon(TPT) = 69.51\\)
-\\(\epsilon(QD) = 76.37\\)
-\\(\epsilon(LP \mid A) = 77.85\\)
-\\(\epsilon(LP \mid TPT) = 93.62\\)
+$\epsilon(LP) = 72.95$
+$\epsilon(TPT) = 69.51$
+$\epsilon(QD) = 76.37$
+$\epsilon(LP \mid A) = 77.85$
+$\epsilon(LP \mid TPT) = 93.62$
 
 It clearly shows, once the retailer accepts the contract, TPT is much more successful at coordinating the supply chain. The authors also showed that compressing the fix payment, that is hiding the fix payment in the wholesale price, reduces the loss aversion and improves channel coordination.
 
@@ -1011,9 +1016,9 @@ Authors: *Becker-Peth, Katok, Thonemann (2013)*
 
 -   **Research Question**: How to get contracts designed in a way that the subjects consider behave optimally, i.e. they are coordinating the supply chain
 
-To get a better model, the authors include *anchoring, loss aversion and mental accounting* \\(\alpha, \beta\\) and \\(\gamma\\) in the model. They apply this both to the overall corpus of the subjects as well as calculate these variables for each individual to create a individual-based model. They then construct contracts that the model predicts will be more effective with the subjects while also coordinating the supply chain.
+To get a better model, the authors include *anchoring, loss aversion and mental accounting* $\alpha, \beta$ and $\gamma$ in the model. They apply this both to the overall corpus of the subjects as well as calculate these variables for each individual to create a individual-based model. They then construct contracts that the model predicts will be more effective with the subjects while also coordinating the supply chain.
 
-{% cloudinary default /images/posts/2017-07-15/14.jpg alt="" %}
+![](./14.jpg )
 
 ### Social Preferences and Supply Chain Performance: An Experimental Study
 
@@ -1026,9 +1031,9 @@ Authors: *Loch Wu - 2008*
 #### Experiment
 The experiment is structured into 3 different conditions: **Control, Relationship and Status**. The control group is neutrally treated, the relationship group are pairs of 2 that are being introduced to each other before beginning the experiment and the status group is confronted with each others total profit after each round to spur competition.
 
-{% cloudinary default /images/posts/2017-07-15/15.jpg alt="" %}
-{% cloudinary default /images/posts/2017-07-15/16.jpg alt="" %}
-{% cloudinary default /images/posts/2017-07-15/17.jpg alt="" %}
+![](./15.jpg )
+![](./16.jpg )
+![](./17.jpg )
 
 It becomes clear that the relationship treatment is performing much better than the status treatment. Also, the bump in the first-mover graph shows the reaction of the supplier to its lowering profits and also the realization that he is taking an overproportional part of the margin.
 
@@ -1039,11 +1044,11 @@ It becomes clear that the relationship treatment is performing much better than 
 ### Fairness and Channel Coordination
 Authors: *Cui, Zhang - 2007*
 
-{% cloudinary default /images/posts/2017-07-15/18.jpg alt="" %}
+![](./18.jpg )
 
--   the manufacturer is responsible for enabling a coordinated supply chain by offering a \\(w\\) that leads the retailer to purchasing an amount \\(q\\) that is optimal in relation to the demand \\(d\\)
+-   the manufacturer is responsible for enabling a coordinated supply chain by offering a $w$ that leads the retailer to purchasing an amount $q$ that is optimal in relation to the demand $d$
 
-{% cloudinary default /images/posts/2017-07-15/19.jpg alt="" %}
+![](./19.jpg )
 
 ## Appendix
 
@@ -1051,8 +1056,8 @@ Authors: *Cui, Zhang - 2007*
 
 | Variable              | description                    | environments  |
 | :-------------        | :-------------                 | :-----------  |
-| \\(q\\)                   | Order Quantity                    | newsvendor |
-| \\(w\\)                   | wholesale price per item          | wholesale contract |
+| $q$                   | Order Quantity                    | newsvendor |
+| $w$                   | wholesale price per item          | wholesale contract |
 
 
 ### Names+Years
@@ -1110,5 +1115,3 @@ Authors: *Cui, Zhang - 2007*
     -   A Wilcoxon signed-rank test is a nonparametric test that can be used to determine whether two dependent samples were selected from populations having the same distribution.
 -   **Double marginalization**: The effect of two distinct decision makers trying to optimize their individual margins without regarding the fact that their decisions also effect the other decision makers decision.
 
-\\(\alpha\\)
-<!--TODO remove-->

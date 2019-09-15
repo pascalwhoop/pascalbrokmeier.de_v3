@@ -67,7 +67,7 @@ correlated, those that are left behind are less educated and lacking a competiti
 equality. Formerly, people moved *into the city*, but now we move *to the best city*. That causes system dynamics that
 may lead to large populations without any ability to compete with other cities. Examples? Look at Detroit, look at Greece. 
 
-{% cloudinary default /images/posts/2018-04-16/detroit.jpg  alt="cover for post" %}
+![](./detroit.jpg  )
 *Photo in Detroit by [Jorge Flores](https://unsplash.com/@j6flores) on Unsplash*
 
 Me and people like me, those that take pride in their mobility, open mindedness and skill set, we are a major factor of

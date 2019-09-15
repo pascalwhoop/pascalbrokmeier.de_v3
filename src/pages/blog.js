@@ -6,6 +6,7 @@ import BannerLanding from '../components/BannerLanding'
 import Layout from '../components/layout'
 import { faIconMapper } from '../functions/icons'
 import ContactForm from '../components/Contact'
+import Img from "gatsby-image"
 
 class Post {
   constructor(title, subtitle, url, coverUrl) {}
@@ -13,13 +14,30 @@ class Post {
 class Contact extends React.Component {
   constructor(props) {
     super(props)
+    this.renderImage.bind(this)
+    this.buildPosts.bind(this)
   }
 
   buildPosts(data) {
     //build medium source
     //bug 
     // https://github.com/gatsbyjs/gatsby/issues/17335
-    let mediumPosts = [ ];
+    //TODO replace with original once bug is fixed
+    let mediumPosts = data.dataJson.values.map((node) => ({
+      title: node.title,
+      url: `https://medium.com/@pascalbrokmeier/${node.uniqueSlug}`,
+      excerpt: node.virtuals.subtitle,
+      imageData: {
+        local: false,
+        src : node.virtuals.previewImage.imageId
+        ? `https://miro.medium.com/fit/c/700/540/${node.virtuals.previewImage.imageId}`
+        : '',
+      },
+      tags: node.tags,
+      sourceName: 'medium.com',
+      type: 'medium',
+      date: new Date(node.firstPublishedAt)
+    }));
     //let mediumPosts = data.allMediumPost.edges.map(({ node }) => ({
     //  title: node.title,
     //  url: `https://medium.com/@${node.author.name}/${node.uniqueSlug}`,
@@ -33,11 +51,15 @@ class Contact extends React.Component {
     //  date: new Date(node.firstPublishedAt)
     //}))
     //build local sources
-    let localPosts = data.allMarkdownRemark.edges.map(({node}) => ({
+    var localPosts = data.allMarkdownRemark.edges.filter(({node}) => (node && node.frontmatter && node.frontmatter.title));
+    localPosts = localPosts.map(({node}) => ({
       title: node.frontmatter.title,
       url: node.fields.slug,
       excerpt: node.frontmatter.excerpt,
-      imgUrl: "",
+      imageData: {
+        local: true,
+        data: node.frontmatter.cover
+      },
       tags: node.frontmatter.tags,
       sourceName: 'pascalbrokmeier.de',
       type: 'local',
@@ -49,7 +71,7 @@ class Contact extends React.Component {
       <section key={index}>
         <a href={post.url} className="image" target="_blank">
           {/* <div className="post-image" style={{backgroundImage: `url:(${post.imgUrl})`}}></div> */}
-          <img src={post.imgUrl} alt="" />
+          {this.renderImage(post.imageData)}
         </a>
         <div className="content">
           <div className="inner">
@@ -68,6 +90,26 @@ class Contact extends React.Component {
         </div>
       </section>
     ))
+  }
+
+  renderImage(imgData){
+    if (imgData.local){
+      const cis = imgData.data.childImageSharp
+      let props = 
+      {
+        ...cis,
+        style: {
+          ...(cis.style || {}),
+          maxWidth: cis.fluid.presentationWidth,
+          margin: "0 auto",
+          height: "100%"
+        }
+      }
+      console.log(imgData)
+      return <Img {...props}></Img>
+    }
+    else return <img src={imgData.src}></img>
+
   }
 
   render() {
@@ -116,6 +158,16 @@ export const query = graphql`
            title
            excerpt
            date
+           cover {
+             publicURL
+             childImageSharp {
+               fluid(maxWidth:1200){
+                 ...GatsbyImageSharpFluid
+                 presentationWidth
+               }
+             }
+        }
+
          }
          fields {
            slug
@@ -123,7 +175,37 @@ export const query = graphql`
        }
      }
    }
-   }
+     dataJson {
+    values {
+      title
+      mediumUrl
+      id
+      createdAt
+      firstPublishedAt
+      previewContent {
+        isFullContent
+        subtitle
+      }
+      virtuals {
+        previewImage {
+          originalWidth
+          originalHeight
+          width
+          height
+          imageId
+        }
+        subtitle
+        tags {
+          name
+        }
+        wordCount
+        readingTime
+      }
+      slug
+      uniqueSlug
+    }
+  }
+  }
  `
  //uses fragment from Contact component
 // export const query = graphql`

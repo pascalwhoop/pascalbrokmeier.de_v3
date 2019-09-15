@@ -34,5 +34,5 @@ now cd into the new folder and run the executable `lightroom-web`. Log in with y
 should work right out of the box! Below is a screenshot of me running lightroom to edit a picture inside of my
 i3-gaps-wm.
 
-{% cloudinary default /images/posts/2018-05-30/ss.jpg alt="Screenshot of Lightroom running on i3" %}
+![](./ss.jpg )
 

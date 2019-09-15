@@ -6,15 +6,17 @@ const Reading = ({ data }) => {
 
     console.log(data)
 	return (<Layout>
+        {JSON.stringify(data.allAirtable)}
         TABLE BELOW
 		<table>
             <tbody>
 			{data.allAirtable.edges.map(({ node }, index)=> {
 				return (
 					<tr key={index}>
-						<td>{node.data.Name}</td>
-						<td>{node.data.Author}</td>
-						<td>{node.data.Goodreads_URL}</td>
+						<td>{node.data.name}</td>
+						<td>{node.data.author}</td>
+						{/* <td>{node.data.more_url}</td> */}
+            <td><img src={node.data.image_url} alt=""/></td>
 					</tr>
 				)
             })}

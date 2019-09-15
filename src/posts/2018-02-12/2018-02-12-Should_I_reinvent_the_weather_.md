@@ -50,7 +50,7 @@ TARGETS = [
     #... len(TARGETS) = 24
 ]
 ```
-{% cloudinary default /images/posts/2018-02-08/targets.png alt="" %}
+![](./targets.png )
 
 ```
 #main moved above for ease of top-down readability.
@@ -265,7 +265,7 @@ Since I just want xml in the end, I'll skip the whole DB round-trip and <!-- TOD
 
 The new implementation can download all data for 2000-today from the server, extract it and turn 3 years of weather reports into 3 years worth of forecast data based on the forecast generation approach in under a minute. That's a LOT better than before. Why? Well it's all in-memory and doesn't do any I/O ops. The forecasts seem alright, as the graphic below shows
 
-{% cloudinary default /images/posts/2018-02-12/simulations.png alt="" %}
+![](./simulations.png )
 
 All forecasts are along the lines of the actual weather but with some error up and down the spectrum, with the errors getting bigger as time progresses. This algorithm is directly taken from the previous implementation so it's not my work. But it seems to provide a decent forecast with some logarithmic error distribution.
 

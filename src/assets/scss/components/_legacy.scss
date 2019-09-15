@@ -1,0 +1,22 @@
+.important-math-wrapper {
+  //margin-left: 40px;
+  //margin-right: 40px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid _palette(border-bg);
+  background-color: #4b4a66;
+  padding: 10px;
+
+  table {
+    margin: auto;
+  }
+
+  pre {
+    text-align: left;
+  }
+
+  ul li,
+  ol li {
+    list-style-position: inside;
+  }
+}

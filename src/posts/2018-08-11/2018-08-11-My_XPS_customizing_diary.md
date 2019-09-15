@@ -77,7 +77,7 @@ on black.
     applications
 
 
-{% cloudinary default /images/posts/2018-08-11/darklight.gif alt="" %}
+![](./darklight.gif )
 
 Now it's OK to have the brightness low inside and also being able to quickly switch to a bright theme on the road. When
 using other tools, the scripts may be extended to incorporate JetBrains tools etc to direkt them to change their themes.
@@ -234,20 +234,20 @@ So, this is the result of all of this:
 A *distraction free* writing environment using `Goyo` in vim combined with a full-screen terminal and some transparency
 settings using `compton`.
 
-{% cloudinary default /images/posts/2018-08-11/1.png alt="" %}
+![](./1.png )
 
 A 2 side split pane for two side by side applications
 
-{% cloudinary default /images/posts/2018-08-11/2.png alt="" %}
+![](./2.png )
 
 Using rofi to switch between open windows or open new applications
 
-{% cloudinary default /images/posts/2018-08-11/3.png alt="" %}
+![](./3.png )
 
 My favorite: transparent terminals help to work with a small screen when looking up something on stackoverflow and
 typing it into the terminal afterwards
 
-{% cloudinary default /images/posts/2018-08-11/4.png alt="" %}
+![](./4.png )
 
 ## Locking on lid close or button press
 
@@ -259,7 +259,7 @@ power button and `i3exit suspend` when closing the lid. I know that this is a li
 acpi event to my WM. But I am happy with it for now. I could alternatively rely on `slock` and call `systemctl suspend`
 but I like the look of the blurred i3exit. 
 
-{% cloudinary default /images/posts/2018-08-11/5.jpg alt="" %}
+![](./5.jpg )
 
 ## Others
 

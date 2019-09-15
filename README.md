@@ -25,11 +25,13 @@ This page is based on a few key technologies:
     - define everything with terraform
     - [see tutorial](https://cloud.google.com/community/tutorials/automated-publishing-cloud-build)
 - migrate blog posts
-- generic post list based on internal and external posts
-  - posts on medium
-  - posts on personal blog
-  - posts on dataminded.be
-  - posts on cattlecrew?
+    - [x] migrate markdown
+    - [ ] migrate images
+    - [ ] migrate cloudinary tags
+    - [x] migrate medium
+    - [ ] open local pages in local window, external posts in new links
+    - [ ] posts on dataminded.be
+    - [ ] posts on cattlecrew?
 - convert current posts into markdown driven by gatsby with [this](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
 - reading list driven through airtable data
     - podcasts based on pocketcasts API

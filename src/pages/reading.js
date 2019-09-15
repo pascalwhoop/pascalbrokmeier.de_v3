@@ -33,9 +33,10 @@ query Bookshelf {
     edges {
       node {
         data {
-          Author
-          Goodreads_URL
-          Name
+          author
+          more_url
+          image_url
+          name
         }
       }
     }

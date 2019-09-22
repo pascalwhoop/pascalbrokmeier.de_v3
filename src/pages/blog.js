@@ -81,7 +81,7 @@ class Contact extends React.Component {
             <p>{post.excerpt}</p>
             <ul className="actions">
               <li>
-                <a href={post.url} className="button" target="_blank">
+                <a href={post.url} className="button" target={post.sourceName == "pascalbrokmeier.de" ? "" : "_blank"}>
                   Read on {post.sourceName}
                 </a>
               </li>

@@ -26,19 +26,20 @@ This page is based on a few key technologies:
     - [see tutorial](https://cloud.google.com/community/tutorials/automated-publishing-cloud-build)
 - migrate blog posts
     - [x] migrate markdown
-    - [ ] migrate images
-    - [ ] migrate cloudinary tags
+    - [x] migrate images
+    - [x] migrate cloudinary tags
     - [x] migrate medium
-    - [ ] open local pages in local window, external posts in new links
-    - [ ] posts on dataminded.be
-    - [ ] posts on cattlecrew?
+    - [x] open local pages in local window, external posts in new links
+    - [x] posts on dataminded.be
+    - [!] posts on cattlecrew?
 - convert current posts into markdown driven by gatsby with [this](https://www.gatsbyjs.org/docs/adding-markdown-pages/)
 - [ ] reading list driven through goodreads API
 - [x] reading list driven through airtable data
 - [ ]  podcasts based on pocketcasts API
-- monthly "tech" | "client"(legal?) | country graph
-- https://visjs.org/examples/timeline/items/backgroundAreas.html
-- http://uber.github.io/react-vis/examples/showcases/plots more viz
+- [ ] about me
+  - monthly "tech" | "client"(legal?) | country graph
+  - https://visjs.org/examples/timeline/items/backgroundAreas.html
+  - http://uber.github.io/react-vis/examples/showcases/plots more viz
 
 ### DONE
 

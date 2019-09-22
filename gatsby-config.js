@@ -101,6 +101,10 @@ module.exports = {
           },
           {
             baseId: `appZH6SOgZyZ0TWrY`,
+            tableName: `Education`,
+          },
+          {
+            baseId: `appZH6SOgZyZ0TWrY`,
             tableName: `Positions`,
           },
           //{

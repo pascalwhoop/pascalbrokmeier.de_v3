@@ -24,6 +24,7 @@
     "gatsby-transformer-remark": "^2.5.0",
     "gatsby-transformer-sharp": "^2.2.0",
     "gatsby-transformer-yaml": "^2.2.0",
+    "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "prismjs": "^1.16.0",
     "prop-types": "^15.7.2",

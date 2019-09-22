@@ -17,7 +17,6 @@ const Contact = ({ props, data }) => {
         <div className="inner" id="contactPage">
           <h1>Contact</h1>
           <p>Choose any of the contact methods below or use the form</p>
-          <section id="contactButtons">
             {data.allDataYaml.edges[0].node.owner.contact.map((item, index) => {
               return (
                 <a href={item.url} className="button">
@@ -27,8 +26,6 @@ const Contact = ({ props, data }) => {
                 </a>
               )
             })}
-          </section>
-
           <ContactForm></ContactForm>
         </div>
       </div>

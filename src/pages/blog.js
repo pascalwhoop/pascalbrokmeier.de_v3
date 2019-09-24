@@ -6,7 +6,7 @@ import BannerLanding from '../components/BannerLanding'
 import Layout from '../components/layout'
 import { faIconMapper } from '../functions/icons'
 import ContactForm from '../components/Contact'
-import Img from "gatsby-image"
+import Img from 'gatsby-image'
 
 class Post {
   constructor(title, subtitle, url, coverUrl) {}
@@ -20,24 +20,24 @@ class Contact extends React.Component {
 
   buildPosts(data) {
     //build medium source
-    //bug 
+    //bug
     // https://github.com/gatsbyjs/gatsby/issues/17335
     //TODO replace with original once bug is fixed
-    let mediumPosts = data.dataJson.values.map((node) => ({
+    let mediumPosts = data.dataJson.values.map(node => ({
       title: node.title,
       url: `https://medium.com/@pascalbrokmeier/${node.uniqueSlug}`,
       excerpt: node.virtuals.subtitle,
       imageData: {
         local: false,
-        src : node.virtuals.previewImage.imageId
-        ? `https://miro.medium.com/fit/c/700/540/${node.virtuals.previewImage.imageId}`
-        : '',
+        src: node.virtuals.previewImage.imageId
+          ? `https://miro.medium.com/fit/c/700/540/${node.virtuals.previewImage.imageId}`
+          : '',
       },
       tags: node.tags,
       sourceName: 'medium.com',
       type: 'medium',
-      date: new Date(node.firstPublishedAt)
-    }));
+      date: new Date(node.firstPublishedAt),
+    }))
     //let mediumPosts = data.allMediumPost.edges.map(({ node }) => ({
     //  title: node.title,
     //  url: `https://medium.com/@${node.author.name}/${node.uniqueSlug}`,
@@ -51,22 +51,27 @@ class Contact extends React.Component {
     //  date: new Date(node.firstPublishedAt)
     //}))
     //build local sources
-    var localPosts = data.allMarkdownRemark.edges.filter(({node}) => (node && node.frontmatter && node.frontmatter.title));
-    localPosts = localPosts.map(({node}) => ({
+    var localPosts = data.allMarkdownRemark.edges.filter(
+      ({ node }) => node && node.frontmatter && node.frontmatter.title
+    )
+    localPosts = localPosts.map(({ node }) => ({
       title: node.frontmatter.title,
       url: node.fields.slug,
       excerpt: node.frontmatter.excerpt,
       imageData: {
         local: true,
-        data: node.frontmatter.cover
+        data: node.frontmatter.cover,
       },
       tags: node.frontmatter.tags,
       sourceName: 'pascalbrokmeier.de',
       type: 'local',
-      date: new Date(node.frontmatter.date)
+      date: new Date(node.frontmatter.date),
     }))
 
-    let allPosts = [].concat(mediumPosts).concat(localPosts).sort((a,b) => b.date-a.date)
+    let allPosts = []
+      .concat(mediumPosts)
+      .concat(localPosts)
+      .sort((a, b) => b.date - a.date)
     return allPosts.map((post, index) => (
       <section key={index}>
         <a href={post.url} className="image" target="_blank">
@@ -81,7 +86,13 @@ class Contact extends React.Component {
             <p>{post.excerpt}</p>
             <ul className="actions">
               <li>
-                <a href={post.url} className="button" target={post.sourceName == "pascalbrokmeier.de" ? "" : "_blank"}>
+                <a
+                  href={post.url}
+                  className="button"
+                  target={
+                    post.sourceName == 'pascalbrokmeier.de' ? '' : '_blank'
+                  }
+                >
                   Read on {post.sourceName}
                 </a>
               </li>
@@ -92,55 +103,51 @@ class Contact extends React.Component {
     ))
   }
 
-  renderImage(imgData){
-    if (imgData.local){
+  renderImage(imgData) {
+    if (imgData.local) {
       const cis = imgData.data.childImageSharp
-      let props = 
-      {
+      let props = {
         ...cis,
         style: {
           ...(cis.style || {}),
           maxWidth: cis.fluid.presentationWidth,
-          margin: "0 auto",
-          height: "100%"
-        }
+          margin: '0 auto',
+          height: '100%',
+        },
       }
       console.log(imgData)
       return <Img {...props}></Img>
-    }
-    else return <img src={imgData.src}></img>
-
+    } else return <img src={imgData.src}></img>
   }
 
   render() {
     return (
-        <Layout>
-          <Helmet>
-            <title>PB</title>
-            <meta name="description" content="Blogposts" />
-          </Helmet>
+      <Layout>
+        <Helmet>
+          <title>PB</title>
+          <meta name="description" content="Blogposts" />
+        </Helmet>
 
-          <section id="banner" className="style2">
-            <div className="inner">
-              <header className="major">
-                <h1>Blog</h1>
-              </header>
-              <div className="content">
-                <p>
-                  A collection of various blog posts on Medium, my personal page and other publications. 
-                  <br />
-                </p>
-              </div>
-            </div>
-          </section>
-          <div id="main">
-            <div className="inner">
-              <div className="spotlights">
-                {this.buildPosts(this.props.data)}
-              </div>
+        <section id="banner" className="style2">
+          <div className="inner">
+            <header className="major">
+              <h1>Blog</h1>
+            </header>
+            <div className="content">
+              <p>
+                A collection of various blog posts on Medium, my personal page
+                and other publications.
+                <br />
+              </p>
             </div>
           </div>
-        </Layout>
+        </section>
+        <div id="main">
+          <div className="inner">
+            <div className="spotlights">{this.buildPosts(this.props.data)}</div>
+          </div>
+        </div>
+      </Layout>
     )
   }
 }
@@ -150,64 +157,63 @@ export default Contact
 //https://miro.medium.com/fit/c/700/210/0*Wv7TRtDOt1jDLVPO.jpg
 
 export const query = graphql`
-   query BlogQuery {
-     allMarkdownRemark {
-     edges {
-       node {
-         frontmatter {
-           title
-           excerpt
-           date
-           cover {
-             publicURL
-             childImageSharp {
-               fluid(maxWidth:1200){
-                 ...GatsbyImageSharpFluid
-                 presentationWidth
-               }
-             }
+  query BlogQuery {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            excerpt
+            date
+            cover {
+              publicURL
+              childImageSharp {
+                fluid(maxWidth: 1200) {
+                  ...GatsbyImageSharpFluid
+                  presentationWidth
+                }
+              }
+            }
+          }
+          fields {
+            slug
+          }
         }
-
-         }
-         fields {
-           slug
-         }
-       }
-     }
-   }
-     dataJson {
-    values {
-      title
-      mediumUrl
-      id
-      createdAt
-      firstPublishedAt
-      previewContent {
-        isFullContent
-        subtitle
       }
-      virtuals {
-        previewImage {
-          originalWidth
-          originalHeight
-          width
-          height
-          imageId
+    }
+    dataJson {
+      values {
+        title
+        mediumUrl
+        id
+        createdAt
+        firstPublishedAt
+        previewContent {
+          isFullContent
+          subtitle
         }
-        subtitle
-        tags {
-          name
+        virtuals {
+          previewImage {
+            originalWidth
+            originalHeight
+            width
+            height
+            imageId
+          }
+          subtitle
+          tags {
+            name
+          }
+          wordCount
+          readingTime
         }
-        wordCount
-        readingTime
+        slug
+        uniqueSlug
       }
-      slug
-      uniqueSlug
     }
   }
-  }
- `
- //uses fragment from Contact component
+`
+//uses fragment from Contact component
 // export const query = graphql`
 //   query BlogQuery {
 //     allMediumPost {

@@ -1,8 +1,35 @@
 #about {
+  .top {
+    @include vendor('align-items', 'top');
+    @include vendor('display', 'flex');
+    @include padding(0, 0, (2em, 0, 0, 0));
+    flex-direction: row-reverse;
+
+    .text {
+      flex: 2;
+    }
+    .cv-portrait {
+      padding: 0 20px 0 20px;
+      flex: 1;
+      max-width: 100%;
+      width: 400px;
+      //float:right;
+      display: block;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    @include breakpoint(small) {
+      display: block;
+    }
+  }
+
   table {
     tr {
       border: none;
-      background-color:inherit;
+      background-color: inherit;
     }
     td {
       padding-left: 0;

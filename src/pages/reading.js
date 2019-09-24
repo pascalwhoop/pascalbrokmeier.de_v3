@@ -1,47 +1,46 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import Helmet from 'react-helmet'
 
 const Reading = ({ data }) => {
+  console.log(data)
+  return (
+    <Layout>
+      <Helmet>
+        <title>PB</title>
+        <meta name="description" content="Readinglist" />
+      </Helmet>
 
-    console.log(data)
-	return (<Layout>
-        {JSON.stringify(data.allAirtable)}
-        TABLE BELOW
-		<table>
-            <tbody>
-			{data.allAirtable.edges.map(({ node }, index)=> {
-				return (
-					<tr key={index}>
-						<td>{node.data.name}</td>
-						<td>{node.data.author}</td>
-						{/* <td>{node.data.more_url}</td> */}
-            <td><img src={node.data.image_url} alt=""/></td>
-					</tr>
-				)
-            })}
-</tbody>
-		</table>
-        TABLE ABOVE
-	</Layout>
-    )
+      <div className="main">
+        <div className="inner">
+        <h1>Reading list</h1>
+          Check my <a
+            href="https://www.goodreads.com/user/show/101578711-pascal-brokmeier"
+            target="_blank"
+          > goodreads profile
+          </a> for now. Still working on the integration of their API for a nice table here.
+        </div>
+      </div>
+    </Layout>
+  )
 }
 
 export default Reading
 
 export const query = graphql`
-query Bookshelf {
-  allAirtable(filter: {table: {eq: "Bookshelf"}}) {
-    edges {
-      node {
-        data {
-          author
-          more_url
-          image_url
-          name
+  query Bookshelf {
+    allAirtable(filter: { table: { eq: "Bookshelf" } }) {
+      edges {
+        node {
+          data {
+            author
+            more_url
+            image_url
+            name
+          }
         }
       }
     }
   }
-}
 `

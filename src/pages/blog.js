@@ -72,6 +72,7 @@ class Contact extends React.Component {
       .concat(mediumPosts)
       .concat(localPosts)
       .sort((a, b) => b.date - a.date)
+
     return allPosts.map((post, index) => (
       <section key={index}>
         <a href={post.url} className="image" target="_blank">
@@ -104,7 +105,7 @@ class Contact extends React.Component {
   }
 
   renderImage(imgData) {
-    if (imgData.local) {
+    if (imgData.local && imgData.data ) {
       const cis = imgData.data.childImageSharp
       let props = {
         ...cis,
@@ -115,7 +116,6 @@ class Contact extends React.Component {
           height: '100%',
         },
       }
-      console.log(imgData)
       return <Img {...props}></Img>
     } else return <img src={imgData.src}></img>
   }

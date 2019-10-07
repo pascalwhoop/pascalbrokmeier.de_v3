@@ -39,7 +39,9 @@ class Contact extends React.Component {
             <div className="inner" id="about">
               <h1>About me</h1>
               <div className="top">
-                <div className="cv-portrait"></div>
+                <div className="cv-portrait">
+                <Img fluid={this.props.data.allImageSharp.edges[0].node.fluid}></Img>
+                </div>
                 <div
                   className="text"
                   //should contain a "#age" field that we hook into
@@ -48,7 +50,6 @@ class Contact extends React.Component {
                   }}
                 ></div>
                 {/* picture */}
-                <Img {...this.props.data.allImageSharp.edges[0].node.fluid}></Img>
               </div>
               {/* CV Timeline */}
               {this.renderExperience()}
@@ -75,15 +76,15 @@ class Contact extends React.Component {
 
     return (
       <div>
-        {positions.map(position => (
-          <div>
+        {positions.map((position, i) => (
+          <div key={i}>
             <pre>{}</pre>
           </div>
         ))}
-        <table border="0" cellspacing="0" cellpadding="0">
+        <table border="0" cellSpacing="0" cellPadding="0">
           <tbody>
             <tr>
-              <td colspan="2">
+              <td colSpan="2">
                 <h2>
                   <a>
                     <span></span>
@@ -92,8 +93,8 @@ class Contact extends React.Component {
                 </h2>
               </td>
             </tr>
-            {positions.map(p => (
-              <tr>
+            {positions.map((p, i) => (
+              <tr key={i}>
                 <td>
                   <span>
                     {p.Start ? moment(p.Start).format(DATE_FORMAT) : ''}
@@ -105,18 +106,18 @@ class Contact extends React.Component {
                   </span>
                 </td>
                 <td>
-                  <p class="cv-institution">
+                  <p className="cv-institution">
                     <a href={p.URL} target="_blank">
                       {p.Company_Name}
                     </a>
                   </p>
-                  <p class="cv-role">{p.Role}</p>
-                  <p class="cv-activities">{p.Description}</p>
+                  <p className="cv-role">{p.Role}</p>
+                  <p className="cv-activities">{p.Description}</p>
                 </td>
               </tr>
             ))}
             <tr>
-              <td colspan="2">
+              <td colSpan="2">
                 <h2>
                   <a>
                     <span></span>
@@ -125,8 +126,8 @@ class Contact extends React.Component {
                 </h2>
               </td>
             </tr>
-            {education.map(p => (
-              <tr>
+            {education.map((p,i) => (
+              <tr key={i}>
                 <td>
                   <span>
                     {p.Start ? moment(p.Start).format(DATE_FORMAT) : ''}
@@ -138,19 +139,19 @@ class Contact extends React.Component {
                   </span>
                 </td>
                 <td>
-                  <p class="cv-institution">
+                  <p className="cv-institution">
                     <a href={p.URL} target="_blank">
                       {p.University_Name}
                     </a>
                   </p>
-                  <p class="cv-role">{p.Degree_Title}</p>
-                  <p class="cv-activities">{p.Description}</p>
+                  <p className="cv-role">{p.Degree_Title}</p>
+                  <p className="cv-activities">{p.Description}</p>
                 </td>
               </tr>
             ))}
 
             <tr>
-              <td colspan="2">
+              <td colSpan="2">
                 <h2>
                   <a>
                     <span></span>
@@ -166,8 +167,8 @@ class Contact extends React.Component {
                 </p>
               </td>
               <td>
-                <p class="cv-institution">Erasmus Student Network Germany</p>
-                <p class="cv-role">
+                <p className="cv-institution">Erasmus Student Network Germany</p>
+                <p className="cv-role">
                   <span>National Board member and Partnership Manager</span>
                 </p>
               </td>
@@ -179,7 +180,7 @@ class Contact extends React.Component {
                 </p>
               </td>
               <td>
-                <p class="cv-institution">Erasmus Student Network Köln</p>
+                <p className="cv-institution">Erasmus Student Network Köln</p>
                 <p>
                   <span>
                     Supporting international students in Cologne, organising
@@ -196,7 +197,7 @@ class Contact extends React.Component {
                 </p>
               </td>
               <td>
-                <p class="cv-institution">Opitz Consulting GmbH</p>
+                <p className="cv-institution">Opitz Consulting GmbH</p>
                 <p>
                   <span>
                     Internal IT department support. Focus on Powershell
@@ -206,12 +207,12 @@ class Contact extends React.Component {
               </td>
             </tr>
             <tr>
-              <td colspan="2">
+              <td colSpan="2">
                 <p></p>
               </td>
             </tr>
             <tr>
-              <td colspan="2">
+              <td colSpan="2">
                 <h2>
                   <a>
                     <span></span>
@@ -245,6 +246,9 @@ class Contact extends React.Component {
                 </p>
               </td>
               <td>
+                <p>
+                  <span><a href="https://www.credential.net/8rwu69kd?key=9b0feadbff00c9d715f4d191a567aaa04b284607f682760f2a0999457f24c81c">Google Cloud Professional Cloud Architect - August 2019</a></span>
+                </p>
                 <p>
                   <span>Oracle ADF Implementation Specialist - March 2012</span>
                 </p>
@@ -357,18 +361,14 @@ class Contact extends React.Component {
               </td>
               <td>
                 <p>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
+                  XXX
                 </p>
                 <p>
                   Angular, CSS3, Git(Hub), HTML5, Ionic, JavaScript, MacOS,
                   Python, TypeScript, Unix
                 </p>
                 <p>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                  XXO
                 </p>
                 <p>
                   Amazon AWS, Atom, BPM, Django, Docker, GRPC, IntelliJ, Java,
@@ -376,9 +376,7 @@ class Contact extends React.Component {
                   Redux, Scrum, vim
                 </p>
                 <p>
-                  <i class="fa fa-circle" aria-hidden="true"></i>
-                  <i class="fa fa-circle-thin" aria-hidden="true"></i>
-                  <i class="fa fa-circle-thin" aria-hidden="true"></i>
+                  XOO
                 </p>
                 <p>
                   .NET, Ansible, Azure, C#, Firebase, JavaEE, Kafka, Kotlin,
@@ -447,7 +445,7 @@ export const query = graphql`
         node {
           fluid {
             src
-                      ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid
           }
         }
       }

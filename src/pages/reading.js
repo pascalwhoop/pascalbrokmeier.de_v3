@@ -14,12 +14,11 @@ const Reading = ({ data }) => {
 
       <div className="main">
         <div className="inner">
-        <h1>Reading list</h1>
-          Check my <a
-            href="https://www.goodreads.com/user/show/101578711-pascal-brokmeier"
-            target="_blank"
-          > goodreads profile
-          </a> for now. Still working on the integration of their API for a nice table here.
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.markdownRemark.html,
+            }}
+          ></div>
         </div>
       </div>
     </Layout>
@@ -30,6 +29,10 @@ export default Reading
 
 export const query = graphql`
   query Bookshelf {
+    markdownRemark(frontmatter: { id: { eq: "readinglist" } }) {
+      id
+      html
+    }
     allAirtable(filter: { table: { eq: "Bookshelf" } }) {
       edges {
         node {

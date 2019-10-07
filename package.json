@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-forty-v2",
-  "description": "Gatsby Starter - Forty V2",
+  "name": "pascalbrokmeier.de",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Pascal Brokmeier",
   "dependencies": {
+    "firebase": "^6.6.2",
+    "firebase-tools": "^7.4.0",
     "gatsby": "^2.2.9",
     "gatsby-background-image": "^0.7.3",
     "gatsby-cli": "^2.7.6",
@@ -37,14 +38,15 @@
     "react-vertical-timeline-component": "^2.3.1"
   },
   "keywords": [
-    "gatsby"
+    "homepage"
   ],
   "license": "MIT",
   "scripts": {
     "build": "npm run gatsby build",
     "develop": "npm run gatsby develop",
+    "deploy" : "firebase deploy",
     "start": "npm run gatsby develop",
-    "format": "prettier --write '**/*.js'",
+    "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "gatsby": "node ./node_modules/gatsby-cli/lib/index.js $@"
   },

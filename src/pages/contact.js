@@ -17,15 +17,15 @@ const Contact = ({ props, data }) => {
         <div className="inner" id="contactPage">
           <h1>Contact</h1>
           <p>Choose any of the contact methods below or use the form</p>
-            {data.allDataYaml.edges[0].node.owner.contact.map((item, index) => {
-              return (
+          <div className="contactButtons">
+            {data.allDataYaml.edges[0].node.owner.contact.map((item, index) => 
                 <a href={item.url} className="button">
                   <span>
                     {faIconMapper(item.name)} {item.name}
                   </span>
                 </a>
-              )
-            })}
+            )}
+            </div>
           <ContactForm></ContactForm>
         </div>
       </div>

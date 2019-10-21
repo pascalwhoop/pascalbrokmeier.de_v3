@@ -4,7 +4,6 @@ import Layout from '../components/layout'
 import Helmet from 'react-helmet'
 
 const Reading = ({ data }) => {
-  console.log(data)
   return (
     <Layout>
       <Helmet>

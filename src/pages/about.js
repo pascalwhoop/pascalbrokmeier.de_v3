@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import { faIconMapper } from '../functions/icons'
 import ContactForm from '../components/Contact'
 import moment from 'moment'
+import Timeline from '../components/timeline'
 import Img from 'gatsby-image'
 
 var DATE_FORMAT = 'MM/YY'
@@ -51,6 +52,7 @@ class Contact extends React.Component {
                 ></div>
                 {/* picture */}
               </div>
+              <Timeline positions={this.props.data.positions.edges} projects={this.props.data.projects.edges}></Timeline>
               {/* CV Timeline */}
               {this.renderExperience()}
               <ContactForm></ContactForm>
@@ -66,13 +68,14 @@ class Contact extends React.Component {
         ...node.data,
         Start: new Date(node.data.Start),
       }))
-      .sort((a, b) => a.Start < b.Start) // descending sort
+      .sort((a, b) => b.Start - a.Start) // descending sort
+      .filter(el => el.isWork)
     let education = this.props.data.education.edges
       .map(({ node }) => ({
         ...node.data,
         Start: new Date(node.data.Start),
       }))
-      .sort((a, b) => a.Start < b.Start)
+      .sort((a, b) => b.Start - a.Start)
 
     return (
       <div>
@@ -86,10 +89,7 @@ class Contact extends React.Component {
             <tr>
               <td colSpan="2">
                 <h2>
-                  <a>
-                    <span></span>
-                  </a>
-                  <span>Work experience: 2008 - today</span>
+                  Work experience: 2008 - today
                 </h2>
               </td>
             </tr>
@@ -410,6 +410,20 @@ export const query = graphql`
         }
       }
     }
+    projects: allAirtable(filter: { table: { eq: "Projects" } }) {
+      edges {
+        node {
+          data {
+            Start
+            End
+            Technologies
+            Client
+            Firm
+          }
+          recordId
+        }
+      }
+    }
     positions: allAirtable(filter: { table: { eq: "Positions" } }) {
       edges {
         node {
@@ -421,7 +435,9 @@ export const query = graphql`
             End
             Start
             Company_Name
+            isWork
           }
+          recordId
         }
       }
     }

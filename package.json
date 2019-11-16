@@ -36,7 +36,8 @@
     "react-dom": "^16.8.5",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.7.0",
-    "react-vertical-timeline-component": "^2.3.1"
+    "react-vertical-timeline-component": "^2.3.1",
+    "timelines-chart": "^2.8.4"
   },
   "keywords": [
     "homepage"
@@ -46,10 +47,11 @@
     "build": "npm run gatsby build",
     "develop": "npm run gatsby develop",
     "deploy": "firebase deploy",
-    "start": "npm run gatsby develop",
+    "start": "npm run gatsby develop ",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gatsby": "node ./node_modules/gatsby-cli/lib/index.js $@"
+    "gatsby": "node ./node_modules/gatsby-cli/lib/index.js $@ -H 0.0.0.0",
+    "fix-medium-plugin": "sed -i' ' 's/\\/latest//g' ./node_modules/gatsby-source-medium/gatsby-node.js"
   },
   "devDependencies": {
     "prettier": "^1.14.2"

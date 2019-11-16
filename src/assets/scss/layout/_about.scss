@@ -44,4 +44,20 @@
       margin: 0.5em 0 0.5em 0;
     }
   }
+
+  .timeline-container {
+    // background: white;
+    // padding: 2em;
+    overflow-x: auto
+
+  }
+  svg {
+    text {
+      fill: white;
+      // font-size: 15px;
+    }
+  }
+  .grp-axis{
+    display: none
+  }
 }

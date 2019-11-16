@@ -82,6 +82,9 @@ function Timeline({ projects, positions }) {
     chart
       .data(targetData)(el)
       .width(width)
+      .topMargin(50)
+      .maxHeight(800)
+      .maxLineHeight(15)
       .timeFormat('%x')
       .zQualitative(true)
       .sortChrono(false)

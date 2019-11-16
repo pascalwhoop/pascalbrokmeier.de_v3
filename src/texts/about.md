@@ -2,8 +2,8 @@
 id: aboutme-snippet
 ---
 I am a <span id="age"></span> years old techie from Cologne, Germany and I recently moved
-to Belgium, initially working for an ISS project at _Space Applications Services_ but now as a Data
-Engineer with Data Minded. Before, I worked 6 years in software consulting (part-time) and as a
+to Belgium, initially working for an ISS project at *Space Applications Services* but now as a Data
+Engineer and Google Cloud Specialist for *Data Minded*. Before, I worked 6 years in software consulting (part-time) and as a
 freelance software engineer in Germany and Australia. I have lived in 5 countries across
 three continents. That used to be something special but now I meet people every day who
 can only smile at that. The world has gotten small!

@@ -61,7 +61,7 @@ function Timeline({ projects, positions }) {
     // need to wrap it in a single group (to fit target)
     const results = [
       {
-        group: 'All',
+        group: '',
         data: allLabelsGrouped, //.sort((a,b) => a.data[0].timeRange - b.data[0].timeRange)
       },
     ]
@@ -85,6 +85,8 @@ function Timeline({ projects, positions }) {
       .timeFormat('%x')
       .zQualitative(true)
       .sortChrono(false)
+      .enableAnimations(false)
+      .leftMargin(0)
 
     setTimeout(() => {
       const c = containerRef.current

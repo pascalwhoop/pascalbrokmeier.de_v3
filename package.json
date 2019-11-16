@@ -44,13 +44,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run gatsby build",
-    "develop": "npm run gatsby develop",
+    "build": "npm run gatsby_build build",
     "deploy": "firebase deploy",
-    "start": "npm run gatsby develop ",
+    "start": "npm run gatsby_serve develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gatsby": "node ./node_modules/gatsby-cli/lib/index.js $@ -H 0.0.0.0",
+    "gatsby_build": "node ./node_modules/gatsby-cli/lib/index.js $@",
+    "gatsby_serve": "node ./node_modules/gatsby-cli/lib/index.js $@ -H 0.0.0.0",
     "fix-medium-plugin": "sed -i' ' 's/\\/latest//g' ./node_modules/gatsby-source-medium/gatsby-node.js"
   },
   "devDependencies": {

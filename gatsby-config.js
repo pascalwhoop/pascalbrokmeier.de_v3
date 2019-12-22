@@ -47,7 +47,12 @@ module.exports = {
         // GitHub Flavored Markdown mode (default: true)
         gfm: true,
         // Plugins configs
-        plugins: ['gatsby-remark-copy-linked-files', 'gatsby-remark-images', 'gatsby-remark-prismjs', 'gatsby-remark-mathjax'],
+        plugins: [
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-images',
+          'gatsby-remark-prismjs',
+          'gatsby-remark-mathjax',
+        ],
       },
     },
     {
@@ -75,18 +80,26 @@ module.exports = {
       },
     },
     //data sources
-//    {
-//      resolve: `gatsby-source-medium`,
-//      options: {
-//        username: `@pascal.brokmeier`,
-//        limit: 200,
-//      },
-//    },
+    //    {
+    //      resolve: `gatsby-source-medium`,
+    //      options: {
+    //        username: `@pascal.brokmeier`,
+    //        limit: 200,
+    //      },
+    //    },
+    {
+      resolve: 'gatsby-source-goodreads',
+      options: {
+        developerKey: process.env.GOODREADS_API_KEY,
+        goodReadsUserId: '101578711-pascal-brokmeier',
+        userShelf: 'to-read', //optional
+      },
+    },
     {
       resolve: `gatsby-source-airtable`,
       options: {
         // apiKey: `keyx4slyaU45SuA0b`, // may instead specify via env, see below
-        apiKey: process.env.AIRTABLE_API_KEY, 
+        apiKey: process.env.AIRTABLE_API_KEY,
         tables: [
           {
             baseId: `appZH6SOgZyZ0TWrY`,
@@ -120,7 +133,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-55919824-7",
+        trackingId: 'UA-55919824-7',
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         // Setting this parameter is optional

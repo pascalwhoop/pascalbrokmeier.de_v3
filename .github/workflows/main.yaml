@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Get yarn cache
       id: yarn-cache
-      run: echo "::set-output name=dir::$(pwd)"
+      run: echo "::set-output name=dir::$(yarn cache dir)"
     - uses: actions/setup-node@v1
     - uses: actions/cache@v1
       with:

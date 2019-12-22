@@ -1,3 +1,7 @@
+//load environment variables from .env file
+if(!process.env.GITHUB_ACTIONS){
+  require('dotenv').config()
+}
 module.exports = {
   siteMetadata: {
     title: 'Homepage of Pascal Brokmeier',
@@ -92,7 +96,7 @@ module.exports = {
       options: {
         developerKey: process.env.GOODREADS_API_KEY,
         goodReadsUserId: '101578711-pascal-brokmeier',
-        userShelf: 'to-read', //optional
+        userShelf: 'read', //optional
       },
     },
     {

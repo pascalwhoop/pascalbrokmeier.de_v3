@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Pascal Brokmeier",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "firebase": "^6.6.2",
     "firebase-tools": "^7.4.0",
     "gatsby": "^2.2.9",
@@ -39,6 +40,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.7.0",
     "react-vertical-timeline-component": "^2.3.1",
+    "react-word-limit": "^1.0.1",
     "timelines-chart": "^2.8.4"
   },
   "keywords": [

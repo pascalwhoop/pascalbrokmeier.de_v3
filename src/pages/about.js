@@ -247,6 +247,9 @@ class Contact extends React.Component {
               </td>
               <td>
                 <p>
+                  <span><a href="https://www.credential.net/59pxu14t?key=099e2dda586e4a3325f305170f664b6631526107e4414e2dbd65413910692951">Google Cloud Professional Data Engineer - November 2019</a></span>
+                </p>
+                <p>
                   <span><a href="https://www.credential.net/8rwu69kd?key=9b0feadbff00c9d715f4d191a567aaa04b284607f682760f2a0999457f24c81c">Google Cloud Professional Cloud Architect - August 2019</a></span>
                 </p>
                 <p>
@@ -350,37 +353,6 @@ class Contact extends React.Component {
                       Within Competitive Simulations (2018)
                     </a>
                   </span>
-                </p>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p>
-                  <span>Technologies</span>
-                </p>
-              </td>
-              <td>
-                <p>
-                  XXX
-                </p>
-                <p>
-                  Angular, CSS3, Git(Hub), HTML5, Ionic, JavaScript, MacOS,
-                  Python, TypeScript, Unix
-                </p>
-                <p>
-                  XXO
-                </p>
-                <p>
-                  Amazon AWS, Atom, BPM, Django, Docker, GRPC, IntelliJ, Java,
-                  Keras, Kubernetes, LaTeX, MongoDB, NoSQL, Protobuf, React,
-                  Redux, Scrum, vim
-                </p>
-                <p>
-                  XOO
-                </p>
-                <p>
-                  .NET, Ansible, Azure, C#, Firebase, JavaEE, Kafka, Kotlin,
-                  Objective-C, R, Scala, Spark, Spring, Tensorflow
                 </p>
               </td>
             </tr>

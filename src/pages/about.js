@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import { faIconMapper } from '../functions/icons'
 import ContactForm from '../components/Contact'
 import moment from 'moment'
+import Timeline from '../components/timeline'
 import Img from 'gatsby-image'
 
 var DATE_FORMAT = 'MM/YY'
@@ -51,6 +52,7 @@ class Contact extends React.Component {
                 ></div>
                 {/* picture */}
               </div>
+              <Timeline positions={this.props.data.positions.edges} projects={this.props.data.projects.edges}></Timeline>
               {/* CV Timeline */}
               {this.renderExperience()}
               <ContactForm></ContactForm>
@@ -66,13 +68,14 @@ class Contact extends React.Component {
         ...node.data,
         Start: new Date(node.data.Start),
       }))
-      .sort((a, b) => a.Start < b.Start) // descending sort
+      .sort((a, b) => b.Start - a.Start) // descending sort
+      .filter(el => el.isWork)
     let education = this.props.data.education.edges
       .map(({ node }) => ({
         ...node.data,
         Start: new Date(node.data.Start),
       }))
-      .sort((a, b) => a.Start < b.Start)
+      .sort((a, b) => b.Start - a.Start)
 
     return (
       <div>
@@ -86,10 +89,7 @@ class Contact extends React.Component {
             <tr>
               <td colSpan="2">
                 <h2>
-                  <a>
-                    <span></span>
-                  </a>
-                  <span>Work experience: 2008 - today</span>
+                  Work experience: 2008 - today
                 </h2>
               </td>
             </tr>
@@ -247,6 +247,9 @@ class Contact extends React.Component {
               </td>
               <td>
                 <p>
+                  <span><a href="https://www.credential.net/59pxu14t?key=099e2dda586e4a3325f305170f664b6631526107e4414e2dbd65413910692951">Google Cloud Professional Data Engineer - November 2019</a></span>
+                </p>
+                <p>
                   <span><a href="https://www.credential.net/8rwu69kd?key=9b0feadbff00c9d715f4d191a567aaa04b284607f682760f2a0999457f24c81c">Google Cloud Professional Cloud Architect - August 2019</a></span>
                 </p>
                 <p>
@@ -353,37 +356,6 @@ class Contact extends React.Component {
                 </p>
               </td>
             </tr>
-            <tr>
-              <td>
-                <p>
-                  <span>Technologies</span>
-                </p>
-              </td>
-              <td>
-                <p>
-                  XXX
-                </p>
-                <p>
-                  Angular, CSS3, Git(Hub), HTML5, Ionic, JavaScript, MacOS,
-                  Python, TypeScript, Unix
-                </p>
-                <p>
-                  XXO
-                </p>
-                <p>
-                  Amazon AWS, Atom, BPM, Django, Docker, GRPC, IntelliJ, Java,
-                  Keras, Kubernetes, LaTeX, MongoDB, NoSQL, Protobuf, React,
-                  Redux, Scrum, vim
-                </p>
-                <p>
-                  XOO
-                </p>
-                <p>
-                  .NET, Ansible, Azure, C#, Firebase, JavaEE, Kafka, Kotlin,
-                  Objective-C, R, Scala, Spark, Spring, Tensorflow
-                </p>
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -410,6 +382,20 @@ export const query = graphql`
         }
       }
     }
+    projects: allAirtable(filter: { table: { eq: "Projects" } }) {
+      edges {
+        node {
+          data {
+            Start
+            End
+            Technologies
+            Client
+            Firm
+          }
+          recordId
+        }
+      }
+    }
     positions: allAirtable(filter: { table: { eq: "Positions" } }) {
       edges {
         node {
@@ -421,7 +407,9 @@ export const query = graphql`
             End
             Start
             Company_Name
+            isWork
           }
+          recordId
         }
       }
     }

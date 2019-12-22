@@ -13,10 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
           edges {
             node {
               fields {
@@ -66,4 +63,23 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
+}
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  //fix for timelines-chart trying to access `window` which is not available on SSR
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /timelines-chart/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    })
+  }
+  actions.setWebpackConfig({
+    devtool: 'eval-source-map',
+  })
 }

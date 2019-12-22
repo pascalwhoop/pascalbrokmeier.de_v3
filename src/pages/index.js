@@ -83,7 +83,7 @@ class HomeIndex extends React.Component {
                   <h3>{section.title}</h3>
                   <p>{section.text}</p>
                 </header>
-                <Link to={section.url} className="link primary"></Link>
+                {section.url.startsWith("http") ? <a target="_blank" className="link primary" href={section.url}></a> : <Link to={section.url} className="link primary"></Link>}
               </article>
             ))}
           </section>

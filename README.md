@@ -37,12 +37,10 @@ This page is based on a few key technologies:
 - [x] reading list driven through airtable data
 - [ ]  podcasts based on pocketcasts API
 - [ ] about me
-  - monthly "tech" | "client"(legal?) | country graph
+  - [x] monthly "tech" | "client"(legal?) | country graph
+      - currently based on https://github.com/vasturiano/timelines-chart
   - https://visjs.org/examples/timeline/items/backgroundAreas.html
   - http://uber.github.io/react-vis/examples/showcases/plots more viz
-
-### DONE
-
 
 ### NOT DOING: 
 

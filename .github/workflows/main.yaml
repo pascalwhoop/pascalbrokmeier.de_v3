@@ -28,11 +28,6 @@ jobs:
       env: 
         AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_KEY }}
         GOODREADS_API_KEY: ${{ secrets.GOODREADS_API_KEY }}
-  deploy:
-    name: deploy
-    runs-on: ubuntu-latest
-      # deploy
-    steps:
     - name: Deploy to Firebase
       uses: lowply/deploy-firebase@v0.0.2
       env:

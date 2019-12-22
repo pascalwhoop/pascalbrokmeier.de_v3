@@ -2,8 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import Helmet from 'react-helmet'
-import WordLimit from 'react-word-limit';
-
+import WordLimit from 'react-word-limit'
 
 const Reading = ({ data }) => {
   const books = data.goodreadsShelf.reviews.sort(
@@ -20,30 +19,37 @@ const Reading = ({ data }) => {
         <div className="inner">
           <div>
             {/* <div className="grid-wrapper"> */}
-              {books.map(book => (
-                <div className="bookBlock" >
+            {/* <h2>Podcasts</h2> */}
+            <h2>Books</h2>
+            {books.map(book => (
+              <div className="bookBlock" key={book.book.bookID}>
                 {/* <div className="col-6" key={book.book.bookID}> */}
-                  <h3>{book.book.title}</h3>
-                  <div>
-                      <img src={book.book.imageUrl} alt="" className="bookCover" />
-                      <WordLimit limit={100}>
-                    <p className="bookDescription"
-                      dangerouslySetInnerHTML={{
-                        __html: book.book.description,
-                      }}
-                    ></p>
-                      </WordLimit>
+                <h4>{book.book.title}</h4>
+                <div>
+                  <div className="bookCover">
+                  <img src={book.book.imageUrl} alt="" />
                   </div>
+                  <WordLimit limit={100}>
+                    <div>
+                      <div
+                        className="bookDescription"
+                        dangerouslySetInnerHTML={{
+                          __html: book.book.description.substring(0, 500),
+                        }}
+                      ></div>
+                      <a
+                        href={book.book.link}
+                        target="_blank"
+                        className="button"
+                      >
+                        See more
+                      </a>
+                    </div>
+                  </WordLimit>
+                </div>
               </div>
-              ))}
-            {/*</div>*/}
-            <pre>{JSON.stringify(books, null, 4)}</pre>
+            ))}
           </div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: data.markdownRemark.html,
-            }}
-          ></div>
         </div>
       </div>
     </Layout>
@@ -69,10 +75,6 @@ export const query = graphql`
         dateUpdated
         rating
       }
-    }
-    markdownRemark(frontmatter: { id: { eq: "readinglist" } }) {
-      id
-      html
     }
   }
 `

@@ -188,10 +188,13 @@ hr {
 
 .bookBlock {
   display: inline-block;
-//   .bookDescription {
-    // -webkit-line-clamp: 5;
-    // display: -webkit-box;
-    // -webkit-box-orient: vertical;
-    // overflow: hidden;
-//   }
+  margin: 0 0 4em 0;
+
+  .bookDescription {
+    -webkit-line-clamp: 5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0 0 1em 0;
+  }
 }

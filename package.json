@@ -52,6 +52,7 @@
     "build": "npm run gatsby_build build",
     "upgrade-interactive": "npm-check --update",
     "deploy": "firebase deploy",
+    "firebase": "firebase $@",
     "start": "npm run gatsby_serve develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",

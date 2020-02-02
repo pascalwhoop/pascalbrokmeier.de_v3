@@ -8,6 +8,8 @@ This page is based on a few key technologies:
 - cloudinary asset optimization for images
 - whatever comes out of the box of the original at [codebushi](https://github.com/codebushi/gatsby-starter-forty)
 
+## Setup
+works with node v12 (see Dockerfile for working example)
 
 ## Data driven pages
 

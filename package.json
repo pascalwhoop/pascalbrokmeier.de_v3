@@ -53,6 +53,7 @@
     "upgrade-interactive": "npm-check --update",
     "deploy": "firebase deploy",
     "firebase": "firebase $@",
+    "source-map-explorer": "source-map-explorer $@",
     "start": "npm run gatsby_serve develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -61,7 +62,8 @@
     "fix-medium-plugin": "sed -i' ' 's/\\/latest//g' ./node_modules/gatsby-source-medium/gatsby-node.js"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "source-map-explorer": "^2.2.2"
   },
   "repository": {
     "type": "git",

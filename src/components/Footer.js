@@ -1,4 +1,5 @@
 import React from 'react'
+import {graphql} from 'gatsby'
 import { StaticQuery } from 'gatsby'
 import {faIconMapper} from '../functions/icons'
 const Footer = ({ data }) => {

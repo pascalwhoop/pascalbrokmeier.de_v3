@@ -45,7 +45,7 @@ function Timeline({ projects, positions }) {
           : []
         return techs
       })
-      .flat()
+      .reduce((acc, val) => acc.concat(val), []);
     // need to flatten all the labels together
     const uniqueLabels = _.uniq(preparedLabels.map(el => el.label))
     const allLabelsGrouped = uniqueLabels.map(l => {

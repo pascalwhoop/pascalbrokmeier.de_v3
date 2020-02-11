@@ -63,7 +63,7 @@ class Contact extends React.Component {
         data: node.frontmatter.cover,
       },
       tags: node.frontmatter.tags,
-      sourceName: 'pascalbrokmeier.de',
+      sourceName: 'here',
       type: 'local',
       date: new Date(node.frontmatter.date),
     }))
@@ -91,7 +91,7 @@ class Contact extends React.Component {
                   href={post.url}
                   className="button"
                   target={
-                    post.sourceName == 'pascalbrokmeier.de' ? '' : '_blank'
+                    post.sourceName == 'here' ? '' : '_blank'
                   }
                 >
                   Read on {post.sourceName}

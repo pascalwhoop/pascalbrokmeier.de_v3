@@ -39,15 +39,13 @@ Below is a set of commonly asked questions. Please feel free to grab all info th
 ##  Can you email me your CV?
 
 - No but I can give you a link. It is [here](https://pascalbrokmeier.de/about/)
+- Also, don't ask if I have a PDF version of it. I do but it's outdated and I don't update it. My website is my CV. If you client cannot deal with a web link, that's unfortunate.
 
-##  Do you have a PDF version of it? My clients prefer a file that I can send them. Are you sure you don't have this in word or as a PDF?
-
-- No. I'm not looking for jobs so I won't keep a PDF version up-to-date. If you client cannot deal with a web link, that's unfortunate.
 
 ##  When can we set up a call today?
 
 
-- I won't respond to "I have a (mysterious) position in mind, when can we call today" type of messages. Please only contact me for concrete projects. 
+- I won't respond to "I have a (mysterious) position in mind, when can we call today" type of messages. Please only contact me for concrete projects. If you give me concrete facts, the likelihood of me answering is much higher. See questions below.
 
 
 ##  Do you have any questions for me?
@@ -58,6 +56,7 @@ Yes!
 - What is the scope of the project? 
 - Who is driving the project? Does it have executive backing?
 - How big is the team?
+- Freelance or employment? Individual freelancers only or also through a/our consulting firm?
 - What technologies are required? Limit it to 3 so I know what is at the core of the activity
 - Why does the client need external expertise? 
 - How long is the current planning horizon? How many months will I be needed for if an agreement is found?

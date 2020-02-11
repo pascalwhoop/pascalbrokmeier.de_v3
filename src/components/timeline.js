@@ -45,6 +45,9 @@ function Timeline({ projects, positions }) {
           : []
         return techs
       })
+      //cannot use this because it's crashing on github actions build
+      //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+      //.flat()
       .reduce((acc, val) => acc.concat(val), []);
     // need to flatten all the labels together
     const uniqueLabels = _.uniq(preparedLabels.map(el => el.label))

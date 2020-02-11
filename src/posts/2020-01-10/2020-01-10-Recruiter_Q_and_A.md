@@ -13,6 +13,23 @@ excerpt: As recruiters often ask similar questions, here is a quick FAQ. Also a 
 
 Below is a set of commonly asked questions. Please feel free to grab all info that is usually asked for in the "first call" from my page as well as below. There are also questions for you below. If you still see a match after reading the text below, feel free to contact me directly. 
 
+
+## Looking for a junior/medior level Individual?
+
+I'm not open to such offers unfortunately. But I know a number of people who are looking
+for a position. They are mostly frontend / nodejs developers with an informal education
+but lots of spirit and eagerness to get down to business. I got to know them through
+[HackYourFuture Belgium](https://hackyourfuture.be/)
+
+- Ibrahim: https://www.linkedin.com/in/ibrahim-dogrusoz/
+- Mohanad: https://www.linkedin.com/in/mohanad-abdalradi/
+- Mesut: https://www.linkedin.com/in/mesut-efiloglu/
+- Aimal: https://www.linkedin.com/in/aimal-maarij/
+- Ramzi: https://www.linkedin.com/in/ramzysalem/
+- Hakan: https://www.linkedin.com/in/hakan-ergin-a6710854/
+- Fatma: https://www.linkedin.com/in/fatmas%C3%BCmer/
+- Saliha: https://www.linkedin.com/in/saliha-yaylaci/
+
 ---
 
 ##  Am I permitted to store PII data about you in our systems?

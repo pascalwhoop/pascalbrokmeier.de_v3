@@ -63,7 +63,6 @@ which was most likely burned down by someone, unless it (ironically a former fir
 self-combustion. An investigation is pending.
 
 ![](./DSC_7070.jpg )
-{% cloudinary default /images/posts/2018-09-10/DSC_7071.jpg alt="" %}
 
 Something else I noticed: when the procession reached the camp on the outskirts of the forest, one face-mask wearing
 resident of the camp apparently came too close to the demonstration and the police followed him for a little while. I

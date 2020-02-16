@@ -4,3 +4,8 @@
         max-width: 100%;
     }
 }
+
+pre[class*="language-"]{
+    //background: transparent
+    background: rgba(0,0,0,0.15)
+}

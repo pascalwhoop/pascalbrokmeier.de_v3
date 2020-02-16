@@ -8,9 +8,11 @@ import { faIconMapper } from '../functions/icons'
 import ContactForm from '../components/Contact'
 import Img from 'gatsby-image'
 
+
 class Post {
   constructor(title, subtitle, url, coverUrl) {}
 }
+
 class Contact extends React.Component {
   constructor(props) {
     super(props)
@@ -74,7 +76,7 @@ class Contact extends React.Component {
       .sort((a, b) => b.date - a.date)
 
     return allPosts.map((post, index) => (
-      <section key={index}>
+      <section key={index} >
         <a href={post.url} className="image" target="_blank">
           {/* <div className="post-image" style={{backgroundImage: `url:(${post.imgUrl})`}}></div> */}
           {this.renderImage(post.imageData)}

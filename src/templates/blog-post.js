@@ -10,6 +10,8 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const cover = post.frontmatter.cover.childImageSharp.fluid
+    }
+
 
     return (
       <Layout>

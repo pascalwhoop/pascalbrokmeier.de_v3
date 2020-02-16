@@ -21,14 +21,14 @@ for a position. They are mostly frontend / nodejs developers with an informal ed
 but lots of spirit and eagerness to get down to business. I got to know them through
 [HackYourFuture Belgium](https://hackyourfuture.be/)
 
-- Ibrahim: https://www.linkedin.com/in/ibrahim-dogrusoz/
-- Mohanad: https://www.linkedin.com/in/mohanad-abdalradi/
-- Mesut: https://www.linkedin.com/in/mesut-efiloglu/
-- Aimal: https://www.linkedin.com/in/aimal-maarij/
-- Ramzi: https://www.linkedin.com/in/ramzysalem/
-- Hakan: https://www.linkedin.com/in/hakan-ergin-a6710854/
-- Fatma: https://www.linkedin.com/in/fatmas%C3%BCmer/
-- Saliha: https://www.linkedin.com/in/saliha-yaylaci/
+- Ibrahim: [Linkedin](https://www.linkedin.com/in/ibrahim-dogrusoz/)
+- Mohanad: [Linkedin](https://www.linkedin.com/in/mohanad-abdalradi/)
+- Mesut:   [Linkedin](https://www.linkedin.com/in/mesut-efiloglu/)
+- Aimal:   [Linkedin](https://www.linkedin.com/in/aimal-maarij/)
+- Ramzi:   [Linkedin](https://www.linkedin.com/in/ramzysalem/)
+- Hakan:   [Linkedin](https://www.linkedin.com/in/hakan-ergin-a6710854/)
+- Fatma:   [Linkedin](https://www.linkedin.com/in/fatmas%C3%BCmer/)
+- Saliha:  [Linkedin](https://www.linkedin.com/in/saliha-yaylaci/)
 
 ---
 

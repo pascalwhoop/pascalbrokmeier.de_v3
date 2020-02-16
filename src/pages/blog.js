@@ -36,7 +36,7 @@ class Contact extends React.Component {
           : '',
       },
       tags: node.tags,
-      sourceName: 'medium.com',
+      sourceName: 'on medium.com',
       type: 'medium',
       date: new Date(node.firstPublishedAt),
     }))
@@ -96,7 +96,7 @@ class Contact extends React.Component {
                     post.sourceName == 'here' ? '' : '_blank'
                   }
                 >
-                  Read on {post.sourceName}
+                  Read {post.sourceName}
                 </a>
               </li>
             </ul>

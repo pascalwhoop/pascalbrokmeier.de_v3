@@ -1,0 +1,13 @@
+# Project dependencies
+.cache
+.env
+node_modules
+yarn-error.log
+package-lock.json
+
+# Build directory
+public/
+.DS_Store
+
+.firebaserc
+.firebase/

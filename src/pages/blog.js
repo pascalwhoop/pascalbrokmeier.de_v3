@@ -116,6 +116,7 @@ class Contact extends React.Component {
           maxWidth: cis.fluid.presentationWidth,
           margin: '0 auto',
           height: '100%',
+          objectFit: "contain",
         },
       }
       return <Img {...props}></Img>

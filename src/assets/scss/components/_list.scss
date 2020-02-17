@@ -5,6 +5,9 @@
 ///
 
 /* List */
+li > ul,ol{
+    margin: _size(element-margin)/4 0;
+}
 
 	ol {
 		list-style: decimal;

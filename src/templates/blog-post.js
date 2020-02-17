@@ -10,7 +10,6 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const cover = post.frontmatter.cover.childImageSharp.fluid
-    }
 
 
     return (
@@ -18,7 +17,7 @@ class BlogPostTemplate extends React.Component {
         <SEO title={post.frontmatter.title} description={post.excerpt} />
 
         <div className="main">
-          <Img fluid={cover}></Img>
+          <Img fluid={cover} style={{maxHeight: '400px'}}></Img>
           <div className="inner">
             <h1> {post.frontmatter.title} </h1>
             <p> {post.frontmatter.date} </p>

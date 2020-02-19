@@ -4,7 +4,7 @@ author: Pascal Brokmeier
 layout: post
 cover: ./cover.jpg
 cover-credit: 
-mathjax: false
+mathjax: true
 date: 2020-02-14
 categories: technology
 tags: google,gcp,pubsub,streaming,order,functions,appengine,terraform
@@ -12,29 +12,27 @@ excerpt: "Order in publish subscribe systems often isn't assured. But how bad is
 ---
 
 When talking to clients, the topic of message ordering came up a few times when talking
-about GCP Pub/Sub. When looking at the architecture, it becomes clear, Pub/Sub *can*
+about GCP Pub/Sub or event architecture cornerstones like it. 
+When looking at the architecture, it becomes clear, Pub/Sub *can*
 have ordering issues, since it contains N publishing forwarders and M subscribing
 forwarders, depending on the ingress and egress load. But that doesn't mean that
-messages will *always* be out of order. Many customers have messages come in at a rate
-of say 1 msg per second. Will it be out of order then? Or maybe at a rate of 10 msg/sec?
+messages will *always* be out of order. Often, messages may come in at a rate
+as low as 1 msg per second. Will it be out of order then? Or maybe at a rate of 10 msg/sec?
 Or 50? Of course this depends on many factors (such as message size and sender count /
 geographical location). But assuming we have 1 sender and 1 receiver, when will PubSub
-start showing out of order messages? 
+start showing out of order messages?
 
 ![pubsub architecture](./pubsub_arch3.png)
 
-
-To me, this sounds like a perfect question to run a little experiment
+To me, this sounds like a perfect question to run a little experiment.
 
 ## Experimental setup
 
-
-The high level concept is this:
-1. Every 2 hours, a cloud scheduler event triggers a cloud function
+1. Every hour, a cloud scheduler event triggers a cloud function
 2. the function sends messages to pubsub for 10 minutes sequentially with a pause
    interval of `[1sec;1/2th sec; 1/10th sec;... 1/100 sec]` 
    - each message contains a continuous counter
-   - a total of about 300k messages are sent in under 10 minutes
+   - a total of about up to 9000 msgs is sent per run
 3. Pub Sub push forwards these messages to an AppEngine deployment
 4. AppEngine keeps track  of the messages coming in and compares the previous message
    counter and the current messages' counter. If it isn't continuous, it logs an
@@ -67,7 +65,6 @@ $ tree -L 2 ./
 ├── generator
 │   ├── main.py
 │   ├── requirements.txt
-│   ├── script
 │   └── test_main.py
 ├── infra
 │   ├── account.json
@@ -79,17 +76,14 @@ $ tree -L 2 ./
 │   ├── pubsub.tf
 │   ├── redis.tf
 │   ├── scheduler.tf
-│   ├── script
 │   └── variables.tf
 ├── reader
 │   ├── app.yaml
 │   ├── main.py
 │   ├── requirements.txt
-│   ├── script
 │   ├── test_main.py
 │   └── test_request.json
 └── README.md
-
 ```
 
 Sidenote: GCP requires each API to be enabled before you can create resources. I created
@@ -172,6 +166,11 @@ importantly because I'm not currently in the mod of making fancy visuals), I mad
 a simple string to quickly visualize out of order events. So for an example of a 1/50th
 sec message flow, the following results can be observed:
 
+Note:
+- `I`: out of index
+- `O`: out of order (4 didn't follow 5)
+- `.`: All went well, right order, right index
+
 <!--
 https://en.wikipedia.org/wiki/Poisson_distribution
 --> 
@@ -202,22 +201,77 @@ https://en.wikipedia.org/wiki/Poisson_distribution
   "20200217-17:5.ooo": "5339",
   "20200217-17:5.total": "13645"
 }
-
 ```
 
+<!--
 > TODO: Svend gave me the idea to also log the "offset amount" for any message that isn't
 where it belongs. How far off from it's orignal place is it? If I log these values for
 all calls, I can make plot  density of this and give confidence intervals for windowing
 operations in downstream processes. Something like "at a 10m/sec interval, late messages are still
 caught with a window of 10s at a 99% probability 
+-->
+
+Of course I'm kidding! Here's the percentage of out of order / out of index messages
+depending on the rate of TX.
+
+![](./ooo_ooi_percentages.png)
+
+And here is a distribution "lateness" of messages. Lets just look at two cases, feel
+free to dig into the
+[notebook](https://github.com/pascalwhoop/pubsub-order-test/tree/master/results) for the
+details. The two plots below show 2 msg / sec vs 100 messages / sec.
+
+![](./bar_offsets_2ps.png)
+![](./bar_offsets_100ps.png)
+
+As you can see, everything as one would expect. The faster the messages come in, the
+bigger the percentage of out of order / index. The lateness is still pretty OK though,
+most are in their right position and about 10-15% of messages are out of place. Note
+that 15% out of order messages being off by 1 lead to 30% out of order messages (just
+consider the sequence `1,2,4,3,5` which has 1 late message but 3 our of order messages
+(4,3,5).
+
+It should also be noted that the size of the message has an impact on the average
+lateness as well as many other factors such as number of recipients, senders,
+geographical server locations, etc. If your business case depends strongly on the
+lateness, you should run a similar experiment with your unique case and infrastructure.
+Happy to help with that btw ;-)
+
+## Synthesis of things learned
+
+Order becomes increasingly hard to trust, the faster the messages come in. If the
+consumer is too slow in handling messages, timeouts and retries make it even harder.
+
+10 messages per second are still *mostly* in order. 50+ messages per sec on the other
+hand show plenty of out of ordering events. But most can be caught by waiting 2-3
+messages.
+
+100 msg/sec have ~10% messages late by 1 and 1% messages late by 2. There is a long tail
+of messages late by n. 
+
+One has to evaluate the individual use-case to decide how long to wait for missing
+messages before going ahead with the calculation with missing values. It really depends
+on the use-case but it's nice to see that the extend of the lack of order can be
+evaluated.
+
+PubSub does some awesome auto-scaling magic behind the scenes. The fact that I could be
+served by 100s of forwarders without knowing or worrying about it is pretty nice. 
+
+Terraform for GCP allows me to build what is essentially enterprise grade cloud native
+infrastructure in a weekend. I've used it plenty on AWS infrastructure but the
+components on GCP just feel "higher level" than AWS. But 400 errors from the Google API
+in Terraform are sometimes hard to debug without `TF_LOG=DEBUG` set and looking at the
+HTTP responses / Docs
+
+GCP API enabling as a first step is annoying and could(should) be made transparent.
+Ideally, an organization would take care of this at a project start level and this would
+be handled centrally. The GCP manager would enable the new project, assign the owner and
+enable all needed APIs for the team.
+
+Redis is a pretty cool technology, given that you cannot have state. However, the
+performance is still network I/O bound. Things like the atomic `getset` operator remind
+me of the computer science 1 & 2 lectures where [one tries to really optimize for
+performance](https://github.com/pascalwhoop/pubsub-order-test/blob/master/reader/main.py#L107). 
 
 
-## Conclusions
 
-- 10 messages per second are still *mostly* in order. 50 messages per sec on the other hand show plenty of out of ordering events
-- pub/sub does some awesome auto-scaling magic behind the scenes. The fact that I could be served by 100s of forwarders without knowing or worrying about it is pretty nice
-- terraform for GCP allows me to build what is essentially enterprise grade cloud native infrastructure in a weekend
-- GCP API enabling as a first step is annoying and could(should) be made transparent
-- redis is a pretty cool technology, given that you cannot have state. However, the performance is still network I/O bound
-- order becomes increasingly hard to trust, the faster the messages come in. If the consumer is too slow in handling messages, timeouts and retries make it even harder
-- 400 errors from the Google API in Terraform are sometimes hard to debug without `TF_LOG=DEBUG` set and looking at the HTTP responses / Docs

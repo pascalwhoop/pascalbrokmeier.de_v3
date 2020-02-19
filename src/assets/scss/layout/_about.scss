@@ -1,4 +1,11 @@
+
+
 #about {
+
+
+  .print-info{
+      display: none;
+  }
   .top {
     @include vendor('align-items', 'top');
     @include vendor('display', 'flex');
@@ -60,4 +67,40 @@
   // .grp-axis{
   //   display: none
   // }
+
+    // print style
 }
+
+@media print {
+    #header, #contact{
+        display: none;
+    }
+    body, #main{
+        background: none;
+    }
+    #about{
+      background-color: white;
+
+      .print-info{
+            display: block;
+        }
+  
+        //background: none;
+      h1,h2,h3,h4,h5,h6,p,pre,table,span, .tick{
+        color:black;
+      }
+  
+      table {
+        td {
+          &:nth-child(2) {
+            border-left: solid 1px black;
+          }
+        }
+      }
+      svg text{
+            color:black;
+            fill: black;
+      }
+    }
+}
+

@@ -8,6 +8,7 @@ import ContactForm from '../components/Contact'
 import moment from 'moment'
 import Timeline from '../components/timeline'
 import Img from 'gatsby-image'
+import * as QrCode from 'qrcode.react'
 
 var DATE_FORMAT = 'MM/YY'
 class Contact extends React.Component {
@@ -27,6 +28,7 @@ class Contact extends React.Component {
     ageElem.innerHTML = now.getMonth() < 3 ? --age : age
   }
 
+
   render() {
     return (
       <div>
@@ -39,6 +41,15 @@ class Contact extends React.Component {
           <div id="main">
             <div className="inner" id="about">
               <h1>About me</h1>
+
+              <div class="print-info">
+                <p>Note that this is a printout version of my CV and it may not render perfectly on a printout / pdf version. 
+                  For a well rendered version, visit <a href="https://pascalbrokmeier.de/about">https://pascalbrokmeier.de/about</a>
+                </p>
+                <br/>
+                <QrCode value="https://pascalbrokmeier.de/about" level="M"/>
+              </div>
+
               <div className="top">
                 <div className="cv-portrait">
                 <Img fluid={this.props.data.allImageSharp.edges[0].node.fluid}></Img>

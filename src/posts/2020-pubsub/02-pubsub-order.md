@@ -134,28 +134,19 @@ send them.
 ![](latency.png)
 
 ```python
-#r == redis instance
-db_total = r.incr  (total_key.format(id))
-db_last  = r.getset(last_key.format(id), msg_counter)
+def _handle_step(msg):
+    msg_counter = msg["counter"]
+    id = _id_key(msg["stage"])
 
-if db_last is None:
-    #first message -> skip
-    _log_hist(id)
-    return
-db_last = int(db_last)
+    #set new state values
+    max = _set_max(msg_counter, id)
+    db_total = r.incr(total_key.format(id))
+    db_last  = r.getset(last_key.format(id), msg_counter)
+    db_last = 0 if db_last is None else int(db_last)
 
-if  db_last +1 == msg_counter and db_total == msg_counter:
-    _log_hist(id)
-
-# not same number as what we received so far
-if msg_counter != db_total:
-    r.incr(ooi_key.format(id))
-
-# previous message was not -1 of current
-if db_last +1 != msg_counter:
-    r.incr(ooo_key.format(id))
-    _log_hist(id, "O")
-
+    # log simple hist view
+    _log_hist(id, db_total, db_last, msg_counter)
+    _log_offs(id, max, msg_counter)
 ```
 
 ## Results

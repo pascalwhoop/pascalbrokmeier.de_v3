@@ -77,9 +77,25 @@
     }
     body, #main{
         background: none;
+        font-size: 1.1em;
+    }
+    .timeline-container {
+        zoom: 0.6; 
+    }
+    h1,h2{
+        page-break-before: auto;
     }
     #about{
       background-color: white;
+
+
+      .top {
+          display: inherit;
+      }
+
+      .cv-portrait {
+          float: right;
+      }
 
       .print-info{
             display: block;

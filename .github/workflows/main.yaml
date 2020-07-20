@@ -1,9 +1,9 @@
 name: Build and Deploy
 on:
-  # every day
-  # schedule: 
-    # - cron: '0 0 * * *'
-  # or on push
+  #every day
+  schedule: 
+   - cron: '0 0 1 * *'
+  #or on push
   push:
     branches:
     - master

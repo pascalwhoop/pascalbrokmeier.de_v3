@@ -141,11 +141,13 @@ class Contact extends React.Component {
               <h1>Blog</h1>
             </header>
             <div className="content">
+              <div>
               <p>
                 A collection of various blog posts on Medium, my personal page
                 and other publications.
-                <br />
               </p>
+              <p>For a complete list of posts on medium, check <a target="_blank" href="https://medium.com/@pascal.brokmeier">medium.com</a></p>
+              </div>
             </div>
           </div>
         </section>

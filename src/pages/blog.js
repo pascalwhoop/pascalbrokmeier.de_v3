@@ -21,8 +21,8 @@ class Contact extends React.Component {
   }
 
   buildPosts(data) {
+    /*
     //build medium source
-    //bug
     // https://github.com/gatsbyjs/gatsby/issues/17335
     //TODO replace with original once bug is fixed
     let mediumPosts = data.dataJson.values.map(node => ({
@@ -40,18 +40,22 @@ class Contact extends React.Component {
       type: 'medium',
       date: new Date(node.firstPublishedAt),
     }))
-    //let mediumPosts = data.allMediumPost.edges.map(({ node }) => ({
-    //  title: node.title,
-    //  url: `https://medium.com/@${node.author.name}/${node.uniqueSlug}`,
-    //  excerpt: node.content.subtitle,
-    //  imgUrl: node.virtuals.previewImage.imageId
-    //    ? `https://miro.medium.com/fit/c/700/540/${node.virtuals.previewImage.imageId}`
-    //    : '',
-    //  tags: node.tags,
-    //  sourceName: 'medium.com',
-    //  type: 'medium',
-    //  date: new Date(node.firstPublishedAt)
-    //}))
+    */
+    let mediumPosts = data.allMediumPost.edges.map(({ node }) => ({
+      title: node.title,
+      url: `https://medium.com/@${node.author.name}/${node.uniqueSlug}`,
+      excerpt: node.content.subtitle,
+      imageData: {
+        local: false,
+        src: node.virtuals.previewImage.imageId
+            ? `https://miro.medium.com/fit/c/700/540/${node.virtuals.previewImage.imageId}`
+            : '',
+      },
+      tags: node.tags,
+      sourceName: 'medium.com',
+      type: 'medium',
+      date: new Date(node.firstPublishedAt)
+    }))
     //build local sources
     var localPosts = data.allMarkdownRemark.edges.filter(
       ({ node }) => node && node.frontmatter && node.frontmatter.title
@@ -159,6 +163,7 @@ export default Contact
 // url for cover art images
 //https://miro.medium.com/fit/c/700/210/0*Wv7TRtDOt1jDLVPO.jpg
 
+/*
 export const query = graphql`
   query BlogQuery {
     allMarkdownRemark {
@@ -216,47 +221,58 @@ export const query = graphql`
     }
   }
 `
+*/
 //uses fragment from Contact component
-// export const query = graphql`
-//   query BlogQuery {
-//     allMediumPost {
-//       edges {
-//         node {
-//           title
-//           content {
-//             subtitle
-//           }
-//           type
-//           uniqueSlug
-//           author {
-//             name
-//           }
-//           firstPublishedAt
-//           virtuals {
-//             previewImage {
-//               imageId
-//             }
-//             tags {
-//               name
-//               postCount
-//             }
-//           }
-//         }
-//       }
-//     }
-//     allMarkdownRemark {
-//     edges {
-//       node {
-//         frontmatter {
-//           title
-//           excerpt
-//           date
-//         }
-//         fields {
-//           slug
-//         }
-//       }
-//     }
-//   }
-//   }
-// `
+ export const query = graphql`
+query BlogQuery {
+  allMediumPost {
+    edges {
+      node {
+        title
+        content {
+          subtitle
+        }
+        type
+        uniqueSlug
+        author {
+          name
+        }
+        firstPublishedAt
+        virtuals {
+          previewImage {
+            imageId
+          }
+          tags {
+            name
+            postCount
+          }
+        }
+      }
+    }
+  }
+  allMarkdownRemark {
+    edges {
+        node {
+         frontmatter {
+           title
+           excerpt
+           date
+           cover {
+             publicURL
+             childImageSharp {
+               fluid(maxWidth: 1200) {
+                 ...GatsbyImageSharpFluid
+                 presentationWidth
+               }
+             }
+           }
+         }
+         fields {
+           slug
+         }
+       }
+
+    }
+  }
+}
+`

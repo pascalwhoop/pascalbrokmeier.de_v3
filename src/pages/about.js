@@ -438,7 +438,7 @@ export const query = graphql`
       }
     }
     allImageSharp(
-      filter: { sizes: { originalName: { eq: "portrait_pascal_2.jpg" } } }
+      filter: { sizes: { originalName: { eq: "portrait_pascal_4.jpg" } } }
     ) {
       edges {
         node {

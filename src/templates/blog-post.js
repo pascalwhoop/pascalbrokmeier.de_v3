@@ -9,7 +9,7 @@ import SEO from '../components/SEO'
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const cover = post.frontmatter.cover.childImageSharp.fluid
+    const cover = post.frontmatter.cover ? post.frontmatter.cover.childImageSharp.fluid : null;
 
 
     return (
@@ -17,7 +17,9 @@ class BlogPostTemplate extends React.Component {
         <SEO title={post.frontmatter.title} description={post.excerpt} />
 
         <div className="main">
+          {cover && 
           <Img fluid={cover} style={{maxHeight: '400px'}}></Img>
+          }
           <div className="inner">
             <h1> {post.frontmatter.title} </h1>
             <p> {post.frontmatter.date} </p>

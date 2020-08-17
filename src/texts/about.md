@@ -5,8 +5,7 @@ I am a <span id="age"></span> years old engineer living in Brussels, Belgium. I
 emigrated from Germany in 2018, initially working for *Space Applications Services* on
 an ISS planning project but quickly switched fields to work as a Data Engineer and
 Google Cloud Specialist for *Data Minded*. During the covid lockdown of 2020 I decided
-to join McKinsey Digital to get a more global exposure and to see how business is done
-on a global stage.
+to join McKinsey Digital to see how business is done on a global stage.
 
 <!--
 Before, I worked 6 years in software engineering in Germany and Australia. So far, I have lived

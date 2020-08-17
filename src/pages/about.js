@@ -11,7 +11,7 @@ import Img from 'gatsby-image'
 import * as QrCode from 'qrcode.react'
 
 var DATE_FORMAT = 'MM/YY'
-class Contact extends React.Component {
+class About extends React.Component {
   constructor(props) {
     super(props)
     this.renderExperience = this.renderExperience.bind(this)
@@ -374,9 +374,9 @@ class Contact extends React.Component {
   }
 }
 
-export default Contact
+export default About
 
-//uses fragment from Contact component
+//uses fragment from About component
 export const query = graphql`
   query AboutQuery {
     markdownRemark(frontmatter: { id: { eq: "aboutme-snippet" } }) {

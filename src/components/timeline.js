@@ -102,9 +102,9 @@ function Timeline({ projects, positions }) {
   useEffect(renderTimeline)
 
   return (
-    <div>
+    <div className="timeline-container">
       <h2>Technology timeline</h2>
-      <div className="timeline-container" ref={containerRef}>
+      <div ref={containerRef}>
         <div ref={elRef}>{/* chart will be rendered in this div */}</div>
       </div>
       {/* <h3>IN</h3> */}

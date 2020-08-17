@@ -42,7 +42,7 @@ class About extends React.Component {
             <div className="inner" id="about">
               <h1>About me</h1>
 
-              <div class="print-info">
+              <div className="print-info">
                 <p>Note that this is a printout version of my CV and it may not render perfectly on a printout / pdf version. 
                   For a well rendered version, visit <a href="https://pascalbrokmeier.de/about">https://pascalbrokmeier.de/about</a>
                 </p>

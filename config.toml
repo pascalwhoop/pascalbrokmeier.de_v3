@@ -29,6 +29,23 @@ theme= "hello-friend-ng"
   keywords = "homepage, blog"
   images = [""]
 
+  [params.portrait]
+    path     = "/img/portrait_pascal_2.jpg"
+    alt      = "Portrait"
+    maxWidth = "150px"
+
+  [params.logo]
+    logoMark     = "$"
+    logoText     = "pascalbrokmeier.de "
+    logoHomeLink = "/"
+    # Set true to remove the logo cursor entirely.
+    # logoCursorDisabled = false
+    # Set to a valid CSS color to change the cursor in the logo.
+    # logoCursorColor    = "#67a2c9"
+    # Set to a valid CSS time value to change the animation duration, "0s" to disable.
+    # logoCursorAnimate  = "2s"
+
+
   [[params.social]]
     name = "email"
     url  = "mailto:public@pascalbrokmeier.de"
@@ -54,6 +71,10 @@ theme= "hello-friend-ng"
     url  = "https://telegram.me/pascalwhoop"
 
   [[params.social]]
+    name = "goodreads"
+    url  = "https://www.goodreads.com/user/show/101578711-pascal-brokmeier"
+
+  [[params.social]]
     name = "keybase"
     url  = "https://keybase.io/pascalbrokmeier"
 
@@ -61,25 +82,3 @@ theme= "hello-friend-ng"
     category = "blog"
     tag      = "tags"
     series   = "series"
-
-#[languages]
-#  [languages.en]
-#    title = "Hello Friend NG"
-#    subtitle = "A simple theme for Hugo"
-#    keywords = ""
-#    copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a>'
-#    readOtherPosts = "Read other posts"
-#
-#    [languages.en.params.logo]
-#      logoText = "hello friend ng"
-#      logoHomeLink = "/"
-#    # or
-#    #
-#    # path = "/img/your-example-logo.svg"
-#    # alt = "Your example logo alt text"
-#
-#  # And you can even create generic menu
-#  [[menu.main]]
-#    identifier = "blog"
-#    name       = "Blog"
-#    url        = "/posts"

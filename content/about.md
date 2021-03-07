@@ -8,8 +8,8 @@ aliases = ["about"]
 
 I am a {{< age >}} years old digital engineer living in Brussels, Belgium. 
 I choose to call myself a digital engineer because it appears to be the best match 
-for what I do. I've worked as a Software, Cloud and Data engineer. I'm currently employed
-by McKinsey & Company and I am part of their Quantum Black team. I aim to apply my knowledge
+for what I do. I've worked as a Software, Cloud and Data Engineer. I'm currently employed
+by *McKinsey & Company* and I am part of their *Quantum Black* team. I aim to apply my knowledge
 of digital systems which I gained over the last 10 years to learn more about 
 biological systems which I want to dedicate my next 10 years to. Thankfully, a lot of
 similarities allow for a quick understanding of these fascinating structures.
@@ -36,8 +36,8 @@ Looking at tech, I have a broad technical knowledge of a variety of systems. Dro
 that requires numerous systems to talk to each other and work together and I tend to find 
 my way around and get it to work. Recognising the right people to talk to and working 
 to keep my team productive is a key component of this.
-I am a certified _Professional Data Engineer_ and _Cloud Architect_ for the
-Google Cloud Platform.  I also have a bit of
+I am a certified *Professional Data Engineer and Cloud Architect for the
+Google Cloud Platform*.  I also have a bit of
 a passion for IT privacy and security.  Currently, I mostly work with Kubernetes, AWS,
 terraform and BigData tech like Spark and Kafka. According to some colleagues I'm also
 pretty fun to watch interacting with my shell. Happy to share some tricks and learn some new ones
@@ -50,6 +50,6 @@ Belgium](https://hackyourfuture.be/) as a coach, teaching web-development and ge
 SWE skills to refugees. I'd like to get back into this a bit more. 
 
 In my free time I enjoy a number of podcasts and books (see [reading
-list](http://pascalbrokmeier.de/reading/)) as well as water and mountain sports and
+list](https://www.goodreads.com/user/show/101578711-pascal-brokmeier)) as well as water and mountain sports and
 exploring cities, people and cultures. For the day-to-day, I recently got a road bike
 which I enjoy as well.

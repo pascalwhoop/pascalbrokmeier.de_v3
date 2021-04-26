@@ -4,14 +4,17 @@ title = "Pascal Brokmeier"
 theme= "hello-friend-ng"
 
 [menu]
-#    [[menu.main]]
-#      identifier = "blog"
-#      name       = "Blog"
-#      url        = "/posts"
+    [[menu.main]]
+      identifier = "blog"
+      name       = "Blog"
+      url        = "/posts"
     [[menu.main]]
       identifier = "about"
       name       = "About"
       url        = "/about"
+      
+[permalinks]
+  posts = "/posts/:year/:month/:title/"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -36,7 +39,7 @@ theme= "hello-friend-ng"
 
   [params.logo]
     logoMark     = "$"
-    logoText     = "pascalbrokmeier.de "
+    logoText     = "PB >"
     logoHomeLink = "/"
     # Set true to remove the logo cursor entirely.
     # logoCursorDisabled = false

@@ -4,6 +4,7 @@ date = "2021-03-01"
 aliases = ["about"]
 [ author ]
   name = "Pascal Brokmeier"
+
 +++
 
 I am a {{< age >}} years old digital engineer living in Brussels, Belgium. 

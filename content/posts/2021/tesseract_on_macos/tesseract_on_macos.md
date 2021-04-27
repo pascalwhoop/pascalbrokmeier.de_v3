@@ -1,5 +1,6 @@
 +++
 categories = ["macos", "technology", "documents"]
+draft = true
 date = "2021-03-09"
 description = "How to get text from documents on macos or Linux using pdfsandwich"
 featured = "pic01.jpg"

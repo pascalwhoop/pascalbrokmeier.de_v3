@@ -18,8 +18,23 @@ jobs:
     - uses: jakejarvis/hugo-build-action@master  # ...or replace 'master' with a full version tag, such as: v0.64.1
       with:
         args: --minify #--buildDrafts
+    - name: Upload build result
+      uses: actions/upload-artifact@v2
+      with:
+        name: build_result
+        path: public
+  deploy:
+    name: deploy
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download result
+      uses: actions/download-artifact@v2
+      with:
+        name: build_result
     - name: Deploy to Firebase
       uses: lowply/deploy-firebase@v0.0.4
       env:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         FIREBASE_PROJECT: pascalbrokmeier-de
+

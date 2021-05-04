@@ -33,7 +33,7 @@ theme= "hello-friend-ng"
   images = [""]
 
   [params.portrait]
-    path     = "/img/portrait_pascal_2_small.jpg"
+    path     = "/img/portrait_pascal_4_small.jpg"
     alt      = "Portrait"
     maxWidth = "150px"
 

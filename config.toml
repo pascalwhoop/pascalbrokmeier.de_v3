@@ -22,7 +22,7 @@ theme= "hello-friend-ng"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
 
-  homeSubtitle = "My personal blog and digital business card"
+  homeSubtitle = "Creative Lead Data Engineer & Cloud Architect at Quantum Black, AI by McKinsey"
 
   # Enable sharing buttons, if you like
   enableSharingButtons = true

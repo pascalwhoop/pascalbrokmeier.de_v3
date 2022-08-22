@@ -37,6 +37,6 @@ jobs:
     - name: Deploy to Firebase
       uses: lowply/deploy-firebase@v0.0.4
       env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
         FIREBASE_PROJECT: pascalbrokmeier-de
 

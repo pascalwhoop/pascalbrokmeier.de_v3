@@ -9,11 +9,15 @@ aliases = ["about"]
 
 I am a {{< age >}} years old digital engineer living in Brussels, Belgium. 
 I choose to call myself a digital engineer because it appears to be the best match 
-for what I do. I've worked as a Software, Cloud and Data Engineer. I'm currently employed
-by *McKinsey & Company* and I am part of their *Quantum Black* team. I aim to apply my knowledge
-of digital systems which I gained over the last 10 years to learn more about 
-biological systems which I want to dedicate my next 10 years to. Thankfully, a lot of
-similarities allow for a quick understanding of these fascinating structures.
+for what I do. I've worked as a Software, Cloud and Data Engineer. 
+
+__I'm currently employed by *McKinsey & Company* and I am part of their *Quantum Black*
+group.__
+
+I aim to apply my knowledge of digital systems which I gained over the last 10 years to
+__learn more about biological systems which I want to dedicate my next 10-20 years to__.
+Thankfully, a lot of similarities allow for a quick understanding of these fascinating
+structures.
 
 
 <!--
@@ -28,21 +32,19 @@ degree was a mix between business and computer science. I took the chance of Uni
 to explore classes such as Decision Theory and Evolunionary and Behavior Psychology next to
 my main themes. 
 
-After University  I moved to Belgium to work for
- *Space Applications Services* on
-an ISS planning project but quickly switched fields to work as a Data Engineer and
-Google Cloud Specialist for *Data Minded*. Finally, I joined McKinsey in late 2020.
+After University  I moved to Belgium to work for *Space Applications Services* on an ISS
+planning project but quickly switched fields to work as a Data Engineer and Google Cloud
+Specialist for *Data Minded*. Finally, I joined McKinsey in late 2020.
 
-Looking at tech, I have a broad technical knowledge of a variety of systems. Drop me in a project
-that requires numerous systems to talk to each other and work together and I tend to find 
-my way around and get it to work. Recognising the right people to talk to and working 
-to keep my team productive is a key component of this.
-I am a certified *Professional Data Engineer and Cloud Architect for the
-Google Cloud Platform*.  I also have a bit of
-a passion for IT privacy and security.  Currently, I mostly work with Kubernetes, AWS,
-terraform and BigData tech like Spark and Kafka. According to some colleagues I'm also
-pretty fun to watch interacting with my shell. Happy to share some tricks and learn some new ones
-as well.
+Looking at tech, I have a broad technical knowledge of a variety of systems. Drop me in
+a project that requires numerous systems to talk to each other and work together and I
+tend to find my way around and get it to work. Recognising the right people to talk to
+and working to keep my team productive is a key component of this.  I am a certified
+*Professional Data Engineer and Cloud Architect for the Google Cloud Platform*.  I also
+have a bit of a passion for IT privacy and security.  Currently, I mostly work with
+__Kubernetes, AWS, terraform and BigData tech like Spark and Kafka__. According to some
+colleagues I'm also pretty fun to watch interacting with my shell. Happy to share some
+tricks and learn some new ones as well.
 
 From a social perspective, I have volunteered a number of years in the [Erasmus Student
 Network](https://esn.org/about), where I was appointed as the National Partnership

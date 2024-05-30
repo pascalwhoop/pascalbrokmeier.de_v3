@@ -7,24 +7,23 @@ aliases = ["about"]
 
 +++
 
-I am a {{< age >}} years old digital engineer living in Brussels, Belgium. 
+I am a {{< age >}} years old digital engineer living in Amsterdam. 
 I choose to call myself a digital engineer because it appears to be the best match 
 for what I do. I've worked as a Software, Cloud and Data Engineer. 
 
-__I'm currently employed by *McKinsey & Company* and I am part of their *Quantum Black*
-group.__
+I'm currently working at Every Cure as Head of Engineering. We are building a platform
+to help people with rare diseases by finding existing drugs that can be repurposed for
+their disease. Before this, I worked almost 4 years at McKinsey & Company in their Quantum
+Black / AI practice. Here, next to the usual client projects, I led the team that made
+GenAI available to over 800 technologists within McKinsey, enabling over 100 projects to
+use AI in their work.
 
-I aim to apply my knowledge of digital systems which I gained over the last 10 years to
-__learn more about biological systems which I want to dedicate my next 10-20 years to__.
-Thankfully, a lot of similarities allow for a quick understanding of these fascinating
-structures.
+In the coming 10 years, I want to apply my knowledge of digital systems to
+__help us all understand and direct biological systems better__. In my opinion, AI and data driven approaches
+will play a crucial role in understanding the complexity of biological systems.
 
 
-<!--
-Before, I worked 6 years in software engineering in Germany and Australia. So far, I have lived
-in 5 countries across three continents. That used to be something special but now I meet
-people every day who can only smile at that.
--->
+### Background
 
 Academically, my master thesis was on future energy markets, exploring the 
 challenges of energy supply in a hopefully sustainable future. My University
@@ -35,6 +34,8 @@ my main themes.
 After University  I moved to Belgium to work for *Space Applications Services* on an ISS
 planning project but quickly switched fields to work as a Data Engineer and Google Cloud
 Specialist for *Data Minded*. Finally, I joined McKinsey in late 2020.
+
+### Skills and passions
 
 Looking at tech, I have a broad technical knowledge of a variety of systems. Drop me in
 a project that requires numerous systems to talk to each other and work together and I

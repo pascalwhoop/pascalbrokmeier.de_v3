@@ -55,19 +55,19 @@ theme= "hello-friend-ng"
 
   [[params.social]]
     name = "github"
-    url  = "https://github.com/github"
+    url  = "https://github.com/pascalwhoop"
 
   [[params.social]]
     name = "linkedin"
-    url  = "https://www.linkedin.com/in/pascalbrokmeier"
+    url  = "https://www.linkedin.com/in/pascalwhoop"
 
   [[params.social]]
     name = "stackoverflow"
     url  = "https://stackoverflow.com/users/1170940/pascalwhoop"
 
-  [[params.social]]
-    name = "unsplash"
-    url  = "https://unsplash.com/@pascalwhoop"
+#   [[params.social]]
+#     name = "unsplash"
+#     url  = "https://unsplash.com/@pascalwhoop"
     
   [[params.social]]
     name = "telegram"

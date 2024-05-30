@@ -39,10 +39,7 @@ jobs:
       with:
         args: deploy --only hosting
       env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-    - name: Deploy to Firebase
-      uses: lowply/deploy-firebase@v0.0.4
-      env:
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
-        FIREBASE_PROJECT: pascalbrokmeier-de
+        GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        GCP_SA_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        PROJECT_ID: pascalbrokmeier-de
 

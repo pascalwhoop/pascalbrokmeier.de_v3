@@ -7,7 +7,7 @@ theme= "hello-friend-ng"
     [[menu.main]]
       identifier = "blog"
       name       = "Blog"
-      url        = "/posts"
+      url        = "https://curiloo.com"
     [[menu.main]]
       identifier = "about"
       name       = "About"

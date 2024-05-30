@@ -1,2 +1,4 @@
 resources/_gen/
 public/
+.firebase/
+.hugo_build.lock

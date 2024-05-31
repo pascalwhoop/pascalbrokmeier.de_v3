@@ -40,6 +40,6 @@ jobs:
         args: deploy --only hosting
       env:
         GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
-        GCP_SA_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        GCP_SA_KEY: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS | base64 -w 0}}
         PROJECT_ID: pascalbrokmeier-de
 
